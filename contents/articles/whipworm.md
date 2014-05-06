@@ -4,6 +4,7 @@ author: Proem
 date: 01-10
 filename: burnplate-no1/:title.html
 template: article.jade
+tags: 'Burnplate no.1'
 ---
 
 Trichuris trichiura or Trichocephalus trichiuris), is a roundworm, which causes trichuriasis when it infects a human large intestine. The name whipworm refers to the shape of the worm; they look like whips with wider "handles" at the posterior end.

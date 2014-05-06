@@ -4,6 +4,7 @@ author: Proem
 date: 01-01
 filename: burnplate-no1/:title.html
 template: article.jade
+tags: 'Burnplate no.1'
 ---
 
 I had recently converted to veganism  

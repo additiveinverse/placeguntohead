@@ -4,6 +4,7 @@ author: Proem
 date: 01-04
 filename: burnplate-no1/:title.html
 template: article.jade
+tags: 'Burnplate no.1'
 ---
 
 in houston there used to be a coffee shop  

@@ -4,6 +4,7 @@ author: Proem
 date: 01-08
 filename: burnplate-no1/:title.html
 template: article.jade
+tags: 'Burnplate no.1'
 ---
 
 * 6 slices French bred electro - 1/2" thick - day-old prefered
