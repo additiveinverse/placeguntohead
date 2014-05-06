@@ -26,7 +26,6 @@
 		"smart_indent": false,
 		"tab_size": 4,
 		"translate_spaces_to_tabs": true,
-		"trim_trailing_white_space_on_save": true,
 		"use_tab_stops": true
 	}
 }

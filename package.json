@@ -4,7 +4,7 @@
   "description": "The book of proem. a semi historical account of the discography",
   "main": "index.html",
   "author": "Richard Bailey",
-  "repository": "none",
+  "repository": "https://github.com/additiveinverse/placeguntohead.git",
   "manifest": {
     "contents/css/layout.min.css": [
       "app_modules/normalize-less/normalize.less",
@@ -23,13 +23,14 @@
     "grunt": "~0.4.2",
     "matchdep": ">=0.1.2",
     "grunt-concurrent": "~0.5.0",
-    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-wintersmith": "0.0.2",
     "grunt-contrib-clean": "*",
     "grunt-contrib-copy": ">=0.4.1",
     "grunt-contrib-csslint": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-less": "*"
+    "grunt-contrib-less": "*",
+    "wintersmith": "~2.0.10",
+    "wintersmith-tag-pages": "~0.1.1"
   }
 }

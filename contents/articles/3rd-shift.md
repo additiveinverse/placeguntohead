@@ -1,46 +1,74 @@
 ---
 title: 3rd Shift
 author: Proem
-date: 2013-04-30
-record: Burnplate no.1
+date: 01-02
+filename: 3rd-shift.html
+filename: burnplate-no1/:title.html
 template: article.jade
 ---
 
-I had recently converted to veganism
-shortly before writing what would become burnplate no.1
-(after being an ova-lacto vegetarian for 7 years)
-it was a giant leap in the "me doing things all the way instead of half ass" category.
+I cant sleep.  
 
-It wasn't that much of an adjustment
-I set a date and tried to eat everything i thought i would ever miss
-for two weeks prior to my vegan launch date
-in the refrigerator
-were two turtle cheesecakes
-of which i ate a piece twice a day
-one for breakfast
-one after dinner
+at night.  
+like a normal person  
+i have never been able to  
+because of this  
+i've lost many Mcjobs  
+every so often id take a graveyard job in attempt to counter this  
+let me just say,...  
+i LOVE graveyard shifts  
+which if you've ever worked a graveyard shift anywhere  
+you know what they can be like  
+especially if you get to work them by yourself  
 
-post vegan launch
-however
-it was difficult to maintain the conviction
-and resist cravings for things made with dairy and eggs
-staying informed on all the unnecessary animal biproducts and ingredients that make their way into food that one would think would be animal free
+in 98 or 99  
+i was working nights at a gas station every night from 11pm to 7am  
+shielded behind two inches of plexiglass  
+talking to my friends  
+the ones still awake at two or three  
+through a circular vent in the plexiglass wall  
+and  
+then they'd leave to sleep  
+while i kept drinking coffee  
 
-who puts beef fat into snack cakes?
-i mean really
-beef fat
-or milk bi-products into non-dairy creamer?
+there is a calmness  
+that sets in between the hours of 3 and 4  
+its lovely  
 
-so.
-I devised a system (you have to have a system)
-If i was struck with a particular craving for something non-vegan
-I'd recall the texture of scrambled eggs
-as old gum stuck under a greasy spoon diner table
-scraped off
-served hot
-with a sprig of parsley
-hair stuck to it
-perhaps a shard or two of broken glass
-or pebbles for a decorative touch
+the downside of working a graveyard shift  
+is over a period of time  
+regardless of how social you try to be  
+you begin to feel terribly disconnected  
+your whole life becomes sheilded behind two inches of plexiglass  
+where you sit  
+head against it  
+drawing pictures in the fog from your breath  
+bored  
+feeling drained  
+it follows you home  
+it clings to you  
+it becomes a suit of plastic armor  
 
-as you can imagine this method worked for most things.
+there were words to this song  
+appearing one line per pattern as they played through  
+
+> its well after  
+two am  
+the plexiglass  
+dividing  
+me from the rest  
+of the world  
+is fogged over  
+with the stale  
+lifeless residue  
+that calls at  
+this hour  
+leaving grease  
+prints behind.  
+the parking lot  
+empty. except  
+for the wind  
+blowing the  
+trash back  
+out onto the  
+streets again  

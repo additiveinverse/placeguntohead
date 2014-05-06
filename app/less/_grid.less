@@ -11,19 +11,19 @@
 @gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
 
 // Set @total-width to 100% for a fluid layout
-@total-width: @gridsystem-width;
+@total-width: 100%;
 
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix() {
 	&:before,
 	&:after {
-	    content: "";
-	    display: table;
+			content: "";
+			display: table;
 	}
 
 	&:after {
-	    clear: both;
+			clear: both;
 	}
 }
 
@@ -47,7 +47,6 @@ body {
 // just the width ma'am
 .col( @x, @columns: @columns ) {
 	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-	// margin: auto @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
 
 .tall( @x, @columns: @columns ) {
@@ -62,3 +61,12 @@ body {
 .pull( @offset: 1 ) {
 	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
+
+.grid-loop (@i) when (@i > 0) {
+	.g@{i} {
+		.column(@i);
+	}
+
+	.grid-loop(@i - 1);
+}
+// .grid-loop(@columns);

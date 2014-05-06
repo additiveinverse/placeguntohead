@@ -16,22 +16,30 @@ html(lang='en')
 			link(rel='stylesheet', href='/css/layout.min.css')
 			link(rel='stylesheet', href='/css/global.css')
 
-	body(class='page ' + bodyclass)
+	body(class='page page-' + bodyclass)
 		header(class='header page-header')
 			block header
 				h1(class='ttl page-header-ttl')
 					a(class='lnk page-header-lnk', href=locals.url)= locals.name
 				p(class='page-header-description description')= locals.description
 
+			aside(class='header-aside-about')
+				!=contents['about.md'].html
+
+			ul( role='menu', class='lst ' + Aname + '-lst' )
+				- var articles = env.helpers.getArticles(contents)
+				each article in articles
+					- var permalink = locals.url + article.url
+					li( role='menuitem', class='itm ' + Aname + '-itm ' + Aname )
+						a( class=Aname + '-lnk lnk', href=permalink )= article.title
+
+			block footer
+
+			aside(class='header-aside-info')
+				p(class='header-aside-copy') &copy; #{ new Date().getFullYear() } #{ locals.owner }
+				
+				p(class='header-aside-poweredby')  powered by 
+					a(href='https://github.com/jnordberg/wintersmith') Wintersmith
+
 		main(class='page-content main-content content')
 			block content
-
-		footer(class='footer page-footer')
-			block footer
-				section.about
-					!=contents['about.md'].html
-
-				section.copy
-					p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
-						a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-						//- please leave the "powered by" if you use the design

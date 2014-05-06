@@ -28,7 +28,7 @@ module.exports = (env, callback) ->
 		articles = contents[options.articles]._.directories.map (item) -> item.index
 		# add articles that are in the *contents/articles* folder
 		articles = articles.concat contents[options.articles]._.pages
-		articles.sort (a, b) -> b.date - a.date
+		articles.sort (b, a) -> a.date - b.date
 		return articles
 
 	class PaginatorPage extends env.plugins.Page

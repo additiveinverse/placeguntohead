@@ -10,10 +10,18 @@ block prepend title
 block content
 	article( class=bodyclass )
 		h1( class=bodyclass + '-ttl ttl fn' )= page.title
-		section(class=bodyclass + '-main')!= page.html
+		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
+			!= page.record
 
-//- block prepend footer
-//-   div.nav
-//-     a(href=contents.index.url) « Full blog
+block prepend footer
+	nav(class='nav-lst')
+		if prevPage
+			a(href=prevPage.url) « Back
+		else
+			a(href='/archive.html') « Archives
+		if nextPage
+			a(href=nextPage.url) Next »
+
+		a(href=contents.index.url) « Full blog
 
 

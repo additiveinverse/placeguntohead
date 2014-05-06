@@ -12,17 +12,6 @@
 	100% { opacity: 1 }
 }
 
-.ng-hide {
-	opacity: 0;
-}
-
-// .ng-hide-remove {
-// 	-webkit-animation: flash 0.7s 1s;
-// 	 		animation: flash 0.7s 1s;
-// 	-webkit-animation-fill-mode: both;
-// 	 		animation-fill-mode: both;
-// }
-
 .sprite {
 	background-image: url(../im/sprite.png);
 }
@@ -31,26 +20,10 @@
 	.transition( all, 0.3s );
 }
 
-// .animate-enter.animate-enter-active {
-// 	opacity: 1;
-// }
-
 .lnk {
 	&:extend( .animate );
 }
 
-.ng-enter,
-.ng-leave {
-	&:extend( .animate );
-}
-
-// .ng-enter,
-// .ng-leave,
-// .ng-move {
-// 	&:extend( .animate );
-// }
-
-.filter-itm:after,
 .antisocial-itm:after,
 .social-itm {
 	.transition( opacity, .2s );
@@ -62,12 +35,27 @@ body {
 }
 
 .page {
+	position: relative;
+
 	&-header {
-		padding: @base-margin-half @base-magin;
-		background-color: @white-out;
+		.col(4);
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: @base-margin-half @base-margin;
 
 		&-ttl {
-			color: @grey;
+			.font-size(@base-type-h3);
+			text-transform: capitalize;
+
+			&-lnk {
+				color: @grey;
+			}
+		}
+
+		&-description {
+			color: @blue;
+			margin: 0;
 		}
 	}
 
@@ -84,16 +72,8 @@ body {
 		&:extend( .sprite );
 	}
 
-	&-description {
-		color: @blue;
-		margin: 0;
-		font-size: 0.6em;
-		overflow: hidden;
-		position: absolute;
-		top: @base-margin;
-	}
-
 	&-content {
+		width: 100% - 31.25%;
 		padding: @base-margin-half @base-margin;
 	}
 }
@@ -183,7 +163,6 @@ body {
 }
 
 .post {
-	padding: 3.6em 0 0;
 	color: @white;
 	text-shadow: 1px 1px 0 @grey-dark;
 
