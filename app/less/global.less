@@ -24,11 +24,6 @@
 	&:extend( .animate );
 }
 
-.antisocial-itm:after,
-.social-itm {
-	.transition( opacity, .2s );
-}
-
 body {
 	color: @white;
 	background: @grey-darker;
@@ -78,14 +73,15 @@ body {
 	}
 }
 
+.author-photo {
+	width: 50%;
+	border: 10px solid @white-off;
+}
+
 .navlist {
 	list-style: none;
-	border-bottom: 1px dashed @white;
-	border-top: 1px dashed fade( @grey, 10% );
 	margin: auto;
 	padding: 1.2em 0;
-	text-shadow: 1px 1px 0 @white;
-	// font-weight: bold;
 	text-transform: uppercase;
 }
 
@@ -96,7 +92,7 @@ body {
 	}
 
 	&-itm {
-		.icon( "app", @link );
+		// .icon( "app", @link );
 
 		&:after {
 			opacity: 0
@@ -125,8 +121,11 @@ body {
 		font-size: 0;
 		line-height: 1;
 		border-radius: 32px;
-		box-shadow: 1px 1px 0 @white;
 		&:extend( .sprite );
+
+		box-shadow: 1px 1px 0 fade(@white, 25% ), 1px 1px 0 @grey-dark inset;
+		.transition( box-shadow, .3s );
+		margin-left: 1%;
 
 		&-flickr 		{ background-position: 0 0 }
 		&-twitter 		{ background-position: -40px 0 }
@@ -134,7 +133,9 @@ body {
 		&-soundcloud 	{ background-position: -160px 0 }
 		&-society6 		{ background-position: -240px 0 }
 
-		&:hover { opacity: 0.8 }
+		&:hover {
+			box-shadow: 1px 1px 0 @grey-dark, 1px 1px 0 fade(@white, 35%) inset;
+		}
 	}
 }
 
@@ -147,18 +148,13 @@ body {
 	&:extend( .animate );
 }
 
-.expand-btn {
-	position: absolute;
-	right: 0;
-	font-size: 0;
-	top: 0;
-	z-index: 22;
-	opacity: 0;
-	.icon("app", @plus, 24 );
+.posts {
+	&-index {
 
-	&:after {
-		.transition( all, 0.1s );
-		padding: 0.25em 0.45em;
+	}
+
+	&-lst {
+		&:extend( .navlist );
 	}
 }
 
@@ -167,7 +163,7 @@ body {
 	text-shadow: 1px 1px 0 @grey-dark;
 
 	&-content {
-	    background: fade(@grey-dark, 35%);
+		background: fade(@grey-dark, 35%);
 	}
 }
 

@@ -1,5 +1,5 @@
 ---
-title: Wet Groveries
+title: Wet Groceries
 author: Proem
 date: 01-06
 filename: burnplate-no1/:title.html

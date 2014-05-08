@@ -1,7 +1,6 @@
 .ico_base,
 .ico:before,
-.ico:after,
-.expand-btn:after {
+.ico:after {
   position: relative;
   line-height: 1;
   font-family: "typicons";
@@ -41,11 +40,6 @@ body {
 .btn {
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
-}
-.antisocial-itm:after,
-.social-itm {
-  -webkit-transition: opacity 0.2s ease-in-out 0s;
-  transition: opacity 0.2s ease-in-out 0s;
 }
 body {
   color: #ffffff;
@@ -88,15 +82,17 @@ body {
   width: 68.75%;
   padding: 0.75em 1.5em;
 }
+.author-photo {
+  width: 50%;
+  border: 10px solid #f0f3f3;
+}
 .navlist,
 .antisocial-lst,
-.social-lst {
+.social-lst,
+.posts-lst {
   list-style: none;
-  border-bottom: 1px dashed #ffffff;
-  border-top: 1px dashed rgba(94, 94, 99, 0.1);
   margin: auto;
   padding: 1.2em 0;
-  text-shadow: 1px 1px 0 #ffffff;
   text-transform: uppercase;
 }
 .antisocial-lst {
@@ -120,7 +116,10 @@ body {
   font-size: 0;
   line-height: 1;
   border-radius: 32px;
-  box-shadow: 1px 1px 0 #ffffff;
+  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 #202022 inset;
+  -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+  transition: box-shadow 0.3s ease-in-out 0s;
+  margin-left: 1%;
 }
 .social-itm-flickr {
   background-position: 0 0;
@@ -138,7 +137,7 @@ body {
   background-position: -240px 0;
 }
 .social-itm:hover {
-  opacity: 0.8;
+  box-shadow: 1px 1px 0 #202022, 1px 1px 0 rgba(255, 255, 255, 0.35) inset;
 }
 .btn {
   color: #04b4bf;
@@ -147,25 +146,6 @@ body {
   background-color: #000000;
   background-image: -webkit-linear-gradient(0deg, #000000 0%, #202022 100%);
   background-image: linear-gradient(0deg, #000000 0%, #202022 100%);
-}
-.expand-btn {
-  position: absolute;
-  right: 0;
-  font-size: 0;
-  top: 0;
-  z-index: 22;
-  opacity: 0;
-}
-.expand-btn:after {
-  font-size: 2.4rem;
-  font-size: 24px;
-  content: '\e0c1';
-  display: inline-block;
-}
-.expand-btn:after {
-  -webkit-transition: all 0.1s ease-in-out 0s;
-  transition: all 0.1s ease-in-out 0s;
-  padding: 0.25em 0.45em;
 }
 .post {
   color: #ffffff;

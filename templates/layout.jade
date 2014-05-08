@@ -16,30 +16,30 @@ html(lang='en')
 			link(rel='stylesheet', href='/css/layout.min.css')
 			link(rel='stylesheet', href='/css/global.css')
 
-	body(class='page page-' + bodyclass)
-		header(class='header page-header')
-			block header
-				h1(class='ttl page-header-ttl')
-					a(class='lnk page-header-lnk', href=locals.url)= locals.name
-				p(class='page-header-description description')= locals.description
+	body( class='page page-' + bodyclass )
+		header.header.page-header
+			h1.ttl.page-header-ttl
+				a(class='lnk page-header-ttl-lnk', href=locals.url)= locals.name
+			p.page-header-desc.description= locals.description
 
-			aside(class='header-aside-about')
-				!=contents['about.md'].html
-
-			ul( role='menu', class='lst ' + Aname + '-lst' )
-				- var articles = env.helpers.getArticles(contents)
-				each article in articles
-					- var permalink = locals.url + article.url
-					li( role='menuitem', class='itm ' + Aname + '-itm ' + Aname )
-						a( class=Aname + '-lnk lnk', href=permalink )= article.title
+			nav.page-header-nav.page-header-nav-posts
+				include _nav
+				- var art = env.helpers.getArticles(contents)
+				+menuMaker( 'posts', art )
 
 			block footer
-
-			aside(class='header-aside-info')
-				p(class='header-aside-copy') &copy; #{ new Date().getFullYear() } #{ locals.owner }
+				aside.header-aside-info
+					!=contents['about.md'].html
 				
-				p(class='header-aside-poweredby')  powered by 
-					a(href='https://github.com/jnordberg/wintersmith') Wintersmith
+					include _nav
+					+menuMaker( 'antisocial', locals.network.antisocial )
+					+menuMaker( 'social', locals.network.social )
+	
+					p.header-aside-copy &copy; #{ new Date().getFullYear() } #{ locals.owner }
+					
+					p.header-aside-poweredby
+						| powered by 
+						a(href='https://github.com/jnordberg/wintersmith') Wintersmith
 
-		main(class='page-content main-content content')
+		main.page-content.main-content.content
 			block content

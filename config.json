@@ -1,16 +1,16 @@
 {
-  "locals": {
-    "url": "http://localhost:8080",
-    "name": "placeguntohead",
-    "owner": "Richard Bailey",
-    "description": "the book of proem",
-    "network": {
-		"social": {
-			"twitter": "http://twitter.com/wallofknives",
-			"soundcloud": "http://soundcloud.com/proem",
-			"last-fm": "http://www.last.fm/user/proemland",
-			"flickr": "http://www.flickr.com/photos/proem/",
-			"society6": "http://society6.com/proem"
+	"locals": {
+		"url": "http://localhost:8080",
+		"name": "placeguntohead",
+		"owner": "Richard Bailey",
+		"description": "the book of proem",
+		"network": {
+			"social": {
+				"twitter": "http://twitter.com/wallofknives",
+				"soundcloud": "http://soundcloud.com/proem",
+				"last-fm": "http://www.last.fm/user/proemland",
+				"flickr": "http://www.flickr.com/photos/proem/",
+				"society6": "http://society6.com/proem"
 			},
 			"antisocial": {
 				"proemland": "http://proemland.com",
@@ -20,7 +20,6 @@
 	},
 	"plugins": [
 		"./plugins/paginator.coffee",
-		"./node_modules/wintersmith-tag-pages/",
 		"wintersmith-jade"
 	],
 	"require": {

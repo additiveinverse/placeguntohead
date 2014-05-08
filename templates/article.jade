@@ -11,7 +11,7 @@ block content
 	article( class=bodyclass )
 		h1( class=bodyclass + '-ttl ttl fn' )= page.title
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
-			!= page.record
+		
 
 block prepend footer
 	nav(class='nav-lst')
@@ -23,5 +23,3 @@ block prepend footer
 			a(href=nextPage.url) Next »
 
 		a(href=contents.index.url) « Full blog
-
-

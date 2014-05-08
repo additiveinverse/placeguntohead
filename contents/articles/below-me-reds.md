@@ -13,8 +13,8 @@ i didnt have to be there until 1pm
 i could be alone for a large portion of my shift  
 i was in the dark for 90% of it (barring a few cigarette breaks)  
 and once i started the next round of showings  
-> i could sleep on the extra movie seats the other projectionist  
-> and i had fashioned into a couch
+i could sleep on the extra movie seats the other projectionists  
+and i had fashioned into a couch
 
 but the best part of this barely over minimum wage nightmare  
 were thursday nights  
@@ -27,7 +27,7 @@ carefully
 to make sure that splices were in the right spots  
 and run upstairs to fix them if they broke  
 we had pretty crappy equipment   
-> most of which was rigged together  
+most of which was rigged together  
 
 so quality assurance was crucial for the next days business  
 
@@ -56,8 +56,10 @@ he quickly grabbed one of the collapsed cardboard popcorn boxes
 and   
 in his own blood  
 scrawled the words  
+
 > "too much caffiene, nicotine, and sodium"  
-then began dancing his best vaudville softshoe   
+
+then began dancing his best vaudeville softshoe   
 with his newly created signage  
 all the while  
 his head back  

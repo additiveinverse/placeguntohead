@@ -1,14 +1,19 @@
 extends layout
 
+block append vars
+	- bodyclass = 'posts-index'
+
 block content
-	include author
+
+	env.helpers.getAllTags()
+		
 	each article in articles
-		article
-			header
-				h1
-					a(href=article.url)= article.title
+		article(class=bodyclass + ' ' + bodyclass + '-lst')
+			header(class=bodyclass + '-hdr hdr')
+				h1(class=bodyclass + '-hdr-ttl ttl')
+					a(class=bodyclass + '-hdr-ttl-lnk lnk',href=article.url)= article.title
 
-				p.date
-					span= moment.utc(article.date).format('MM-DD')
+				p(class=bodyclass + '-hdr-info')= moment.utc(article.date).format('MM-DD')
 
-			| !{ typogr(article.intro).typogrify() }
+			section(class=bodyclass + '-main')
+				| !{ typogr(article.intro).typogrify() }
