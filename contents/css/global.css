@@ -49,6 +49,7 @@ body {
   position: relative;
 }
 .page-header {
+  background: #454549;
   width: 31.25%;
   position: absolute;
   right: 0;
