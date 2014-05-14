@@ -1,7 +1,7 @@
 ---
 title: 3rd Shift
 author: Proem
-date: 01-02
+date: 1999-05-24:01:02
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'

@@ -1,7 +1,7 @@
 ---
 title: Tether
 author: Proem
-date: 01-03
+date: 1999-05-24:01:03
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'

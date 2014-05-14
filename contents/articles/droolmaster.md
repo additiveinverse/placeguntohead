@@ -1,7 +1,7 @@
 ---
 title: Droolmaster
 author: Proem
-date: 01-04
+date: 1999-05-24:01:04
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'

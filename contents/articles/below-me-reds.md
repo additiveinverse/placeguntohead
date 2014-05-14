@@ -1,7 +1,7 @@
 ---
 title: Below me Reds
 author: Proem
-date: 02-01
+date: 2001-05-09:02:01
 filename: negativ/:title.html
 template: article.jade
 tags: 'Negativ'

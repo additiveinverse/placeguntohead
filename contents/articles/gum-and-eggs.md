@@ -1,7 +1,7 @@
 ---
 title: Gum & Eggs
 author: Proem
-date: 01-01
+date: 1999-05-24t01:01
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'

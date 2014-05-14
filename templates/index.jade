@@ -1,19 +1,15 @@
 extends layout
 
 block append vars
-	- bodyclass = 'posts-index'
+	- bodyclass = 'post-index'
+	- postclass = 'post'
 
 block content
 
-	env.helpers.getAllTags()
-		
 	each article in articles
-		article(class=bodyclass + ' ' + bodyclass + '-lst')
-			header(class=bodyclass + '-hdr hdr')
-				h1(class=bodyclass + '-hdr-ttl ttl')
-					a(class=bodyclass + '-hdr-ttl-lnk lnk',href=article.url)= article.title
-
-				p(class=bodyclass + '-hdr-info')= moment.utc(article.date).format('MM-DD')
-
-			section(class=bodyclass + '-main')
+		article(class=postclass + ' ' + postclass + '-lst')
+			header(class=postclass + '-hdr hdr')
+				h1(class=postclass + '-hdr-ttl ttl')= moment.utc(article.date).format('mm')
+					a(class=postclass + '-hdr-ttl-lnk lnk',href=article.url)= article.title
+			section(class=postclass + '-main')
 				| !{ typogr(article.intro).typogrify() }

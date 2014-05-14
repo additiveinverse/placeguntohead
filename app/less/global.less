@@ -40,7 +40,7 @@ body {
 		padding: @base-margin-half @base-margin;
 
 		&-ttl {
-			.font-size(@base-type-h3);
+			.font-size( @base-type-h3 );
 			text-transform: capitalize;
 
 			&-lnk {
@@ -48,7 +48,7 @@ body {
 			}
 		}
 
-		&-description {
+		&-desc {
 			color: @blue;
 			margin: 0;
 		}
@@ -148,19 +148,29 @@ body {
 	&:extend( .animate );
 }
 
-.posts {
+.post {
+	color: @white;
+	text-shadow: 1px 1px 0 @grey-dark;
+
 	&-index {
 
 	}
 
-	&-lst {
-		&:extend( .navlist );
-	}
-}
+	// &-lst {
+	// 	&:extend( .navlist );
+	// }
 
-.post {
-	color: @white;
-	text-shadow: 1px 1px 0 @grey-dark;
+	&-hdr {
+		&-ttl {
+			font-weight: 800;
+			.font-size(@base-type-h4);
+
+			&-lnk {
+				.font-size(@base-type-h1);
+				font-weight: 300;
+			}
+		}
+	}
 
 	&-content {
 		background: fade(@grey-dark, 35%);

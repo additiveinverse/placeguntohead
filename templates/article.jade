@@ -2,6 +2,7 @@ extends layout
 
 block append vars
 	- bodyclass = 'post'
+	- tag = env.helpers.getTagsFromArticle(page)
 
 block prepend title
 	| #{ page.title + " - "}
@@ -9,9 +10,11 @@ block prepend title
 
 block content
 	article( class=bodyclass )
+
 		h1( class=bodyclass + '-ttl ttl fn' )= page.title
+		p.nfo= tag
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
-		
+			//- var featureImage = env.helpers.getPathToLocalAssetWithFilename(article, article.metadata.featured )
 
 block prepend footer
 	nav(class='nav-lst')

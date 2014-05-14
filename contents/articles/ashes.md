@@ -1,7 +1,7 @@
 ---
 title: Ashes
 author: Proem
-date: 01-07
+date: 1999-05-24:01:07
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'

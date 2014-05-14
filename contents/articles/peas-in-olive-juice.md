@@ -1,8 +1,8 @@
 ---
 title: Peas in Olive Juice
 author: Proem
-date: 01-11
-filename: :tags/:title.html
+date: 1999-05-24:01:11
+filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'
 ---

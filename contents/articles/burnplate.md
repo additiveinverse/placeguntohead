@@ -1,7 +1,7 @@
 ---
 title: Burnplate
 author: Proem
-date: 01-05
+date: 1999-05-24:01:05
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'

@@ -121,7 +121,7 @@ module.exports = function(grunt) {
 			,	dateFormat: function( time )
 				{
 					grunt.log.writeln('Hickory Dickory Dock the Mouse ran up the clock in ' + time + 'ms');
-					grunt.log.writeln('MOAR changes Sucka... bring them!');
+					grunt.log.writeln('MOAR changes... bring them you must!');
 				}
 			}
 		}

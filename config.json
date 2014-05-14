@@ -20,7 +20,7 @@
 	},
 	"plugins": [
 		"./plugins/paginator.coffee",
-		"wintersmith-jade"
+		"wintersmith-tag"
 	],
 	"require": {
 		"moment": "moment",
@@ -36,5 +36,9 @@
 	},
 	"paginator": {
 		"perPage": 100
-	}
+	},
+	"tag": {
+        "template": "index.jade",
+        "perPage": 4
+    }
 }

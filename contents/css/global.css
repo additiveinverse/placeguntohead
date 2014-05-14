@@ -63,7 +63,7 @@ body {
 .page-header-ttl-lnk {
   color: #5e5e63;
 }
-.page-header-description {
+.page-header-desc {
   color: #04b4bf;
   margin: 0;
 }
@@ -88,8 +88,7 @@ body {
 }
 .navlist,
 .antisocial-lst,
-.social-lst,
-.posts-lst {
+.social-lst {
   list-style: none;
   margin: auto;
   padding: 1.2em 0;
@@ -150,6 +149,16 @@ body {
 .post {
   color: #ffffff;
   text-shadow: 1px 1px 0 #202022;
+}
+.post-hdr-ttl {
+  font-weight: 800;
+  font-size: 2.4rem;
+  font-size: 24px;
+}
+.post-hdr-ttl-lnk {
+  font-size: 6.4rem;
+  font-size: 64px;
+  font-weight: 300;
 }
 .post-content {
   background: rgba(32, 32, 34, 0.35);

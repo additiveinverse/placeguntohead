@@ -1,7 +1,7 @@
 ---
 title: Red Blocks
 author: Proem
-date: 01-09
+date: 1999-05-24:01:09
 filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'
