@@ -5,11 +5,15 @@ block append vars
 	- postclass = 'post'
 
 block content
-
 	each article in articles
 		article(class=postclass + ' ' + postclass + '-lst')
 			header(class=postclass + '-hdr hdr')
-				h1(class=postclass + '-hdr-ttl ttl')= moment.utc(article.date).format('mm')
-					a(class=postclass + '-hdr-ttl-lnk lnk',href=article.url)= article.title
+				h1(class=postclass + '-hdr-ttl ttl')
+					a(class=postclass + '-hdr-ttl-lnk lnk', href=article.url)= article.title
+					span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
+						= moment.utc(article.date).format('mm')
+					span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
+						= env.helpers.getTagsFromArticle(article)
+	
 			section(class=postclass + '-main')
 				| !{ typogr(article.intro).typogrify() }

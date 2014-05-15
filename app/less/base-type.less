@@ -40,7 +40,7 @@ h6 {
 
 h1 {
 	.font-size( @base-type-h1 );
-	line-height: 1;
+	line-height: @base-line-height;
 }
 
 h2 {
@@ -105,14 +105,14 @@ th,
 p,
 dt,
 dd,
-li {
+li,
+td {
 	line-height: @base-line-height
 }
 
 th { text-align: left }
 
 td {
-	line-height: @base-line-height;
 	padding-bottom: 0
 }
 

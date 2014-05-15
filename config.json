@@ -35,10 +35,10 @@
 		"smartypants": true
 	},
 	"paginator": {
-		"perPage": 100
+		"perPage": 10
 	},
 	"tag": {
         "template": "index.jade",
-        "perPage": 4
+        "perPage": 100
     }
 }

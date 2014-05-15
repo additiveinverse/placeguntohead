@@ -34,7 +34,7 @@ body {
 
 	&-header {
 		background: @grey-darker;	
-		.col(4);
+		.col(3.5);
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -70,8 +70,10 @@ body {
 
 	&-content {
 		// background-color: fade(@black, 25%);
-		width: 100% - 31.25%;
-		padding: @base-margin-half @base-margin;
+		width: 100%;
+
+		padding: @base-margin-half @base-margin-half @base-margin;
+		.suffix(4);
 	}
 }
 
@@ -163,19 +165,40 @@ body {
 	// }
 
 	&-hdr {
+		position: relative;
+
 		&-ttl {
-			font-weight: 800;
-			.font-size(@base-type-h4);
+			font-weight: 300;
+			.font-size(@base-type-h1);
 
 			&-lnk {
-				.font-size(@base-type-h1);
-				font-weight: 300;
+				.push(1)
+			}
+		}
+
+		&-meta {
+			.font-size(@base-type-h4);
+			font-weight: 800;
+			display: inline-block;
+			position: absolute;
+
+			&-track {
+				line-height: 4;
+				left: 0;
+				.col(1);
+				text-align: center;
+			}
+
+			&-release {
+				right: 0;
+				.font-size(@base-type-size);
+				color: @grey;
 			}
 		}
 	}
 
-	&-content {
-		background: fade(@grey-dark, 35%);
+	&-main {
+		.prefix(1);
 	}
 }
 

@@ -4,7 +4,7 @@
 
 // Defaults which you can freely override
 @column-width: 60;
-@gutter-width: 20;
+@gutter-width: 0;
 @columns: 12;
 
 // Utility variable — you should never need to modify this
@@ -60,6 +60,14 @@ body {
 
 .pull( @offset: 1 ) {
 	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+
+.prefix( @offset: 1 ) {
+	padding-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+
+.suffix( @offset: 1 ) {
+	padding-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
 
 .grid-loop (@i) when (@i > 0) {
