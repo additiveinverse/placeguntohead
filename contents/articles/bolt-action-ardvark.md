@@ -6,8 +6,7 @@ filename: negativ/:title.html
 template: article.jade
 tags: 'Negativ'
 ---
-
-sometimes your imagination puts on its running shoes and goes for a brisk jog into word association  
+Sometimes your imagination puts on its running shoes and goes for a brisk jog into word association  
 often combining words or phrases that shouldnt  
 and perhaps wouldnt exist outside of madness and obscurity  
 
