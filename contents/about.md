@@ -1,7 +1,6 @@
 ---
 view: none
 ---
-
 <img class='author-photo' src='/images/5715462.jpg'>  
 Richard Bailey has been releasing music under the 'Proem' moniker since 1999 on labels like Merck, n5MD, and Hydrant. He does a fair amount of mucking around as a Lead front end developer
 

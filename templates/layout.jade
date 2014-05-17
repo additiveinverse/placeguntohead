@@ -22,21 +22,19 @@ html(lang='en')
 				a.lnk.page-header-ttl-lnk( href=locals.url )= locals.name
 			p.page-header-desc.description= locals.description
 
-			nav.page-header-nav.page-header-nav-posts
+			nav.page-header-nav.page-nav-posts
 				include _nav
 				- var art = env.helpers.getArticles(contents)
-				+menuMaker( 'post', art )
+				+menuMaker( 'page-nav-post', art )
 
 			block footer
-				aside.header-aside-info
-					!=contents['about.md'].html
-				
+				aside.header-aside.page-header-aside
 					include _nav
-					+menuMaker( 'antisocial', locals.network.antisocial )
-					+menuMaker( 'social', locals.network.social )
-	
+					+menuMaker( 'page-nav-social', locals.network.social )
+					+menuMaker( 'page-nav-antisocial', locals.network.antisocial )
+					!=contents['about.md'].html
+
 					p.header-aside-copy &copy; #{ new Date().getFullYear() } #{ locals.owner }
-					
 					p.header-aside-poweredby
 						| powered by 
 						a(href='https://github.com/jnordberg/wintersmith') Wintersmith

@@ -31,8 +31,8 @@ body {
   }
 }
 .sprite,
-.page-logo,
-.social-itm {
+.page-nav-social-itm,
+.page-logo {
   background-image: url(../im/sprite.png);
 }
 .animate,
@@ -50,7 +50,7 @@ body {
 }
 .page-header {
   background: #454549;
-  width: 29.16666667%;
+  width: 33.33333333%;
   position: absolute;
   right: 0;
   top: 0;
@@ -68,6 +68,53 @@ body {
   color: #04b4bf;
   margin: 0;
 }
+.page-nav-post-lst {
+  padding-left: 0;
+}
+.page-nav-antisocial-lst {
+  border-bottom: none;
+}
+.page-nav-antisocial-itm:after {
+  opacity: 0;
+}
+.page-nav-antisocial-itm:hover:after {
+  opacity: 1;
+}
+.page-nav-social-lst {
+  border: none;
+  padding-top: 0;
+}
+.page-nav-social-itm {
+  display: inline-block;
+  vertical-align: top;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  line-height: 1;
+  border-radius: 32px;
+  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 #202022 inset;
+  -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+  transition: box-shadow 0.3s ease-in-out 0s;
+  margin-left: 1%;
+}
+.page-nav-social-itm-flickr {
+  background-position: 0 0;
+}
+.page-nav-social-itm-twitter {
+  background-position: -40px 0;
+}
+.page-nav-social-itm-last-fm {
+  background-position: -80px 0;
+}
+.page-nav-social-itm-soundcloud {
+  background-position: -160px 0;
+}
+.page-nav-social-itm-society6 {
+  background-position: -240px 0;
+}
+.page-nav-social-itm:hover {
+  box-shadow: 1px 1px 0 #202022, 1px 1px 0 rgba(255, 255, 255, 0.35) inset;
+}
 .page-logo {
   top: 0;
   position: absolute;
@@ -82,63 +129,21 @@ body {
 .page-content {
   width: 100%;
   padding: 0.75em 0.75em 1.5em;
-  padding-right: 33.33333333%;
+  padding-right: 37.5%;
 }
 .author-photo {
-  width: 50%;
-  border: 10px solid #f0f3f3;
+  width: 35%;
+  border-radius: 50%;
+  border: 8px solid #f0f3f3;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25), -1px -1px 1px #202022;
 }
 .navlist,
-.antisocial-lst,
-.social-lst {
+.page-nav-antisocial-lst,
+.page-nav-social-lst {
   list-style: none;
   margin: auto;
   padding: 1.2em 0;
   text-transform: uppercase;
-}
-.antisocial-lst {
-  border-bottom: none;
-}
-.antisocial-itm:after {
-  opacity: 0;
-}
-.antisocial-itm:hover:after {
-  opacity: 1;
-}
-.social-lst {
-  border: none;
-  padding-top: 0;
-}
-.social-itm {
-  display: inline-block;
-  vertical-align: top;
-  width: 32px;
-  height: 32px;
-  font-size: 0;
-  line-height: 1;
-  border-radius: 32px;
-  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25), 1px 1px 0 #202022 inset;
-  -webkit-transition: box-shadow 0.3s ease-in-out 0s;
-  transition: box-shadow 0.3s ease-in-out 0s;
-  margin-left: 1%;
-}
-.social-itm-flickr {
-  background-position: 0 0;
-}
-.social-itm-twitter {
-  background-position: -40px 0;
-}
-.social-itm-last-fm {
-  background-position: -80px 0;
-}
-.social-itm-soundcloud {
-  background-position: -160px 0;
-}
-.social-itm-society6 {
-  background-position: -240px 0;
-}
-.social-itm:hover {
-  box-shadow: 1px 1px 0 #202022, 1px 1px 0 rgba(255, 255, 255, 0.35) inset;
 }
 .btn {
   color: #04b4bf;
@@ -151,12 +156,6 @@ body {
 .post {
   color: #ffffff;
   text-shadow: 1px 1px 0 #202022;
-}
-.post-lst {
-  padding-left: 0;
-}
-.post-itm {
-  width: calc(100% / 2);
 }
 .post-hdr {
   position: relative;

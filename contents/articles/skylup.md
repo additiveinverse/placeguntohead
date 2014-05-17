@@ -8,7 +8,7 @@ tags: 'Negativ'
 ---	
 I often wish I could take snap shots of the sky  
 Turn them sideways  
-Translate them into -what I imagine as the hidden music of the world  
+Translate them into <strike>what I imagine as</strike> the hidden music of the world  
 Return them as loosely coupled sonnets  
 That repeat  
 endlessly  
@@ -20,6 +20,6 @@ Send them fluttering upwards
 To streak across the sky  
 Beautiful alarms  
 Warning end of day  
-And in shining streaks of firefly gold 
-Herald the best parts of the evening  
+And in shining streaks of firefly gold  
+carry on the best parts of the evening  
 With you.
