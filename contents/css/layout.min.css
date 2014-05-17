@@ -411,6 +411,9 @@ ol,
 dl {
   margin-top: 1.5em;
 }
+ul li {
+  list-style: none;
+}
 table {
   margin-bottom: 0.75em;
 }
@@ -433,10 +436,6 @@ th {
 }
 td {
   padding-bottom: 0;
-}
-caption,
-dt {
-  font-weight: bold;
 }
 ol {
   list-style: decimal;

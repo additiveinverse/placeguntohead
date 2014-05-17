@@ -17,39 +17,36 @@ that you are told to _NEVER_ do as a child
 and finally
 don't run with scissors
 
-They like to call it "common sense"
-but they are
+They like to call it "common sense"  
+but they are  
+_Rules_.
 
-rules.
+as an adult  
+the running with scissors thing  
+you probably still shouldn't do  
+but I encourage you to test your adulthood  
+take those scissors  
+defy common sense  
+spit in the eye of reason  
+run down the hall  
+or a flight of stairs  
+make shrieking noises as you realize  
+there is no one to stop you  
+no one to reprimand you   
+no ensueing punishment  
+for your disregard  
+and recklessness  
 
-as an adult
-the running with scissors thing
-you probably still shouldnt do
-but I encourage you to test your adulthood
-take those scissors
-defy common sense
-spit in the eye of reason
-run down the hall
-or a flight of stairs
-make shrieking noises as you realize
-there is no one to stop you
-no one to reprimand you 
-no ensueing punishment
-for your disregard
-and recklessness
+I dare you.  
+It's liberating  
 
-I dare you.
-It's liberating
+However,  
+in the event that you fall  
+- slice open an artery and bleed to death
+- have an untimely visit to the emergency room 
+- gouge out an eye
+- wind up in jail for accidental manslaugher
 
-However
-in the event that you fall
-slice open an artery and bleed to death
-Or
-have an untimely visit to the emergency room 
-gouge out an eye
-Or
-wind up in jail for accidental manslaugher
-
-Don't say no one ever warned you
-and certainly
-dont' blame me.
+Don't say no one ever warned you  
+and certainly  
+dont' say I made you do it.

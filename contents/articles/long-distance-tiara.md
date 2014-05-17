@@ -6,47 +6,40 @@ filename: negativ/:title.html
 template: article.jade
 tags: 'Negativ'
 ---	
+We collectively had a thing for this girl who worked at starbucks  
+We would cut our visits short if she wasn't there  
+We learned her work schedule  
+We would arrive around 8 on the days she was working  
+We stayed till close
 
-we 
-all 
-collectively 
-had a thing for this girl
-who worked at starbucks 
+She would hook us up with the giant french press  
+She would take her breaks with us  
+She talked trash  
+- about the people she worked with
+- about the clientelle
+- about music, film, books, pretty much everything
 
-for months we would arrive
-promptly at 8
-stay till closing 
-drinking french press after french press
-Chain smoking
+She was one of us  
+She was not my type ( at all )
 
-we learned her work schedule
-she would take her breaks with us
-talk trash 
-    about the people she worked with
-     about the clientelle
-    about music, film, books, pretty much everything
+She was tall  
+She was very blonde  
+classic prep school dress code  
+had a million times more energy than was acceptible ( or tolerable )
 
-she was not my type
-at all
+She full of snark and damned funny  
+both major _hot_ points
 
-she was tall
-blonde
-had a million times more energy than was tolerable
-but 
-she was a smart ass
-And 
-if you can pull that off
-it goes a long way in my book
-
-after about six months
-it occured to us 
-that we didnt even know her real name
+After months of stalking this girl  
+getting to know her and her us  
+We realized  
+We didn't even know her real name  
 (she would purposely swap name tags with the other employees)
 
-we had been calling her barista longshot or the starbucks princess
+We had been calling her barista longshot or the starbucks princess  
 
-her name was tara
-and her boyfriend of 5 years
-was 
-    really
-        nice.
+Her name was Tara  
+Her boyfriend of 5 years  
+was  
+really  
+nice.

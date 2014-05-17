@@ -152,6 +152,12 @@ body {
   color: #ffffff;
   text-shadow: 1px 1px 0 #202022;
 }
+.post-lst {
+  padding-left: 0;
+}
+.post-itm {
+  width: calc(100% / 2);
+}
 .post-hdr {
   position: relative;
 }

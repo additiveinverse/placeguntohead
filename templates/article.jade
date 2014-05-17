@@ -2,19 +2,22 @@ extends layout
 
 block append vars
 	- bodyclass = 'post'
-	- tag = env.helpers.getTagsFromArticle(page)
 
 block prepend title
 	| #{ page.title + " - "}
 
 
 block content
-	article( class=bodyclass )
+	article(class=bodyclass + ' ' + bodyclass + '-lst')
+		header(class=bodyclass + '-hdr hdr')
+			h1(class=bodyclass + '-hdr-ttl ttl')
+				a(class=bodyclass + '-hdr-ttl-lnk lnk', href=page.url)= page.title
+				span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-track')
+					= moment.utc(page.date).format('mm')
+				span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-release')
+					= env.helpers.getTagsFromArticle(page)	
 
-		h1( class=bodyclass + '-ttl ttl fn' )= page.title
-		p.nfo= tag
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
-			//- var featureImage = env.helpers.getPathToLocalAssetWithFilename(article, article.metadata.featured )
 
 block prepend footer
 	nav(class='nav-lst')

@@ -20,3 +20,5 @@ Infection can be avoided by proper disposal of human feces, not eating dirt, and
 one of the original names i had picked out for myself to record under  
 but decided against  
 due to its somewhat subtle sado-masochistic undertones
+and obviously
+the poop.
