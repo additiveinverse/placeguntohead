@@ -5,8 +5,8 @@ block append vars
 	- postclass = 'post'
 
 block content
-	each article in articles
-		article(class=postclass + ' ' + postclass + '-lst')
+	each article, i in articles
+		article(class=postclass + ' ' + postclass + '-lst ' + postclass + '-' + i)
 			header(class=postclass + '-hdr hdr')
 				h1(class=postclass + '-hdr-ttl ttl')
 					a(class=postclass + '-hdr-ttl-lnk lnk', href=article.url)= article.title
@@ -14,6 +14,15 @@ block content
 						= moment.utc(article.date).format('mm')
 					span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
 						= env.helpers.getTagsFromArticle(article)
-	
+
 			section(class=postclass + '-main')
 				| !{ typogr(article.intro).typogrify() }
+
+block prepend footer
+	div.nav
+		if prevPage
+			a(href=prevPage.url) « Newer
+		else
+			a(href='/archive.html') « Archives
+		if nextPage
+			a(href=nextPage.url) Next page »

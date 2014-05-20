@@ -15,12 +15,12 @@ module.exports = (env, callback) ->
 	for key, value of defaults
 		options[key] ?= defaults[key]
 
-#  getArticles = (contents) ->
-		# helper that returns a list of articles found in *contents*
-		# note that each article is assumed to have its own directory in the articles directory
-#    articles = contents[options.articles]._.directories.map (item) -> item.index
-#    articles.sort (a, b) -> b.date - a.date
-#    return articles
+	# getArticles = (contents) ->
+	# 	# helper that returns a list of articles found in *contents*
+	# 	#	note that each article is assumed to have its own directory in the articles directory
+	# 	articles = contents[options.articles]._.directories.map (item) -> item.index
+	# 	articles.sort (a, b) -> b.date - a.date
+	# 	return articles
 
 	getArticles = (contents) ->
 		# helper that returns a list of articles found in *contents*

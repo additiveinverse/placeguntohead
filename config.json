@@ -14,6 +14,7 @@
 			},
 			"antisocial": {
 				"proemland": "http://proemland.com",
+				"placeguntohead": "http://placeguntohead.com",
 				"additiveinverse": "http://additiveinverse.com"
 			}
 		}
@@ -34,11 +35,8 @@
 		"smartLists": true,
 		"smartypants": true
 	},
-	"paginator": {
+	"paginator": { 
+		"template": "index.jade",
 		"perPage": 10
-	},
-	"tag": {
-        "template": "index.jade",
-        "perPage": 100
-    }
+	}
 }

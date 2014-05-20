@@ -13,7 +13,7 @@ html(lang='en')
 
 			link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
 			link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:800,300')
-			link(rel='stylesheet', href='/css/layout.min.css')
+			link(rel='stylesheet', href=locals.url+'/css/layout.min.css')
 			link(rel='stylesheet', href='/css/global.css')
 
 	body( class='page page-' + bodyclass )
@@ -30,8 +30,8 @@ html(lang='en')
 			block footer
 				aside.header-aside.page-header-aside
 					include _nav
-					+menuMaker( 'page-nav-social', locals.network.social )
-					+menuMaker( 'page-nav-antisocial', locals.network.antisocial )
+					+menuMaker( 'page-nav-antisocial', locals.network.antisocial, 'link' )
+					+menuMaker( 'page-nav-social', locals.network.social, 'link' )
 					!=contents['about.md'].html
 
 					p.header-aside-copy &copy; #{ new Date().getFullYear() } #{ locals.owner }

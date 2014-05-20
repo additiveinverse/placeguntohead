@@ -1,5 +1,5 @@
 {	
-	"template": "none",
+	"template": "index.jade",
 	"tags": 
 	[
 		"Burnplate no.1"

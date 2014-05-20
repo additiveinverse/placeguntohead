@@ -6,7 +6,6 @@ filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'
 ---
-
 there are little things that as a child   
 you did  
 quirks that cling to you through adulthood  

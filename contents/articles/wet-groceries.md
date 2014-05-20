@@ -6,17 +6,16 @@ filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'
 ---
-
 wet groceries is a slight homage to "dead" by they might be giants.  
 to quote:
  
->"I came back as a bag of groceries
-Accidently taken off the shelf
-Before the date stamped on myself
-Did a large procession wave their
-Torches as my head fell in the basket,
-And was everybody dancing on the casket?
-Now it's over I'm dead and I haven't done anything that I want (now it's over)
+>"I came back as a bag of groceries  
+Accidently taken off the shelf  
+Before the date stamped on myself  
+Did a large procession wave their  
+Torches as my head fell in the basket,  
+And was everybody dancing on the casket?  
+Now it's over I'm dead and I haven't done anything that I want (now it's over)  
 Or, I'm still alive and there's nothing I want to do"
  
 a little grim yes?

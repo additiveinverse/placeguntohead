@@ -6,8 +6,9 @@ filename: burnplate-no1/:title.html
 template: article.jade
 tags: 'Burnplate no.1'
 ---
-
-ashes float like snow flakes after what they once were burns away
+ashes  
+like snow  
+after what they were burns away
 
 - fire  
 - - smoke
