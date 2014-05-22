@@ -28,7 +28,6 @@
   }
 }
 .sprite,
-.page-logo,
 .author-network-social-itm {
   background-image: url(../im/sprite.png);
 }
@@ -69,17 +68,6 @@ body {
 }
 .page-nav-post-lst {
   padding-left: 0;
-}
-.page-logo {
-  top: 0;
-  position: absolute;
-  background-position: 0 -20px;
-  background-size: 281px;
-  width: 50px;
-  height: 50px;
-  left: 0;
-  top: -15px;
-  font-size: 0;
 }
 .page-content {
   width: 100%;
@@ -212,85 +200,4 @@ body {
   width: calc(100% / 3);
   display: inline-block;
   vertical-align: top;
-}
-@media only screen and (min-width: 320px) {
-  .music-grid {
-    width: 6.66666667%;
-    margin: 'auto' 0%;
-  }
-  .music-grid-active {
-    height: 41.66666667%;
-    margin-bottom: 0%;
-  }
-  .wall-grid {
-    width: 16.66666667%;
-    margin: 'auto' 0%;
-    margin-bottom: 10px;
-  }
-  .wall-grid-active {
-    height: 41.66666667%;
-    margin-bottom: 0%;
-  }
-}
-@media only screen and (min-width: 480px) {
-  .music-grid {
-    width: 6.66666667%;
-    margin: 'auto' 0%;
-  }
-  .music-grid-active {
-    width: 11.66666667%;
-    margin: 'auto' 0%;
-    height: 41.66666667%;
-    margin-bottom: 0%;
-  }
-}
-@media only screen and (min-width: 640px) {
-  .music-grid {
-    width: 5.08333333%;
-    margin: 'auto' 0%;
-    height: 20.83333333%;
-    margin-bottom: 0%;
-  }
-  .music-grid-active {
-    width: 33.33333333%;
-    margin: 'auto' 0%;
-    height: 41.66666667%;
-    margin-bottom: 0%;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .music-grid {
-    width: 25%;
-    margin: 'auto' 0%;
-    height: 25%;
-    margin-bottom: 0%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .music-grid {
-    width: 25%;
-    margin: 'auto' 0%;
-    height: 25%;
-    margin-bottom: 0%;
-  }
-  .music-grid-active {
-    width: 50%;
-    margin: 'auto' 0%;
-    height: 50%;
-    margin-bottom: 0%;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .music-grid {
-    width: 22.91666667%;
-    margin: 'auto' 0%;
-    height: 22.91666667%;
-    margin-bottom: 0%;
-  }
-  .music-grid-active {
-    width: 50%;
-    margin: 'auto' 0%;
-    height: 50%;
-    margin-bottom: 0%;
-  }
 }

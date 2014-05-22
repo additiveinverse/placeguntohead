@@ -1,28 +1,29 @@
 {
-	"locals": {
-		"url": "http://localhost:8080"
-	,	"name": "Placeguntohead"
-	,	"owner": "Richard Bailey"
-	,	"description": "the book of proem"
-	}
-,	"plugins": [
-		"./plugins/paginator.coffee"
-	,	"wintersmith-tag"
-	]
-,	"require": {
-		"moment": "moment"
-	,	"_": "underscore"
-	,	"typogr": "typogr"
-	}
-,	"jade": {
-		"pretty": true
-	}
-,	"markdown": {
-		"smartLists": true
-	,	"smartypants": true
-	}
-,	"paginator": { 
-		"template": "index.jade"
-	,	"perPage": 10
-	}
+  "locals": {
+    "url": "http://localhost:8080",
+    "name": "Placeguntohead",
+    "owner": "Richard Bailey",
+    "description": "the book of proem"
+  },
+  "plugins": [
+    "./plugins/paginator.coffee",
+    "wintersmith-tag",
+    "wintersmith-data-json"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "template": "index.jade",
+    "perPage": 10
+  }
 }

@@ -17,7 +17,10 @@
     "underscore": "1.4.x",
     "typogr": "0.5.x",
     "wintersmith-jade": "~0.1.0",
-    "wintersmith-less": "~0.2.2"
+    "wintersmith-data-json": "0.0.5",
+    "wintersmith-tag": "~1.0.2",
+    "wintersmith": "~2.0.10",
+    "wintersmith-tag-pages": "~0.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -30,7 +33,7 @@
     "grunt-contrib-copy": ">=0.4.1",
     "grunt-contrib-csslint": "*",
     "grunt-contrib-less": "*",
-    "wintersmith": "~2.0.10",
-    "wintersmith-tag-pages": "~0.1.1"
-  }
+    "grunt-csscss": "~0.6.2",
+    "grunt-contrib-imagemin": "~0.7.0"
+    }
 }

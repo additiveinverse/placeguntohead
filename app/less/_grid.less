@@ -35,7 +35,7 @@
 	margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
 }
 
-.column( @x, @columns: @columns, @margin-top: 'auto') {
+.column( @x, @columns: @columns, @margin-top: auto) {
 	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
 	margin: @margin-top @total-width*((@gutter-width*.5)/@gridsystem-width);
 }

@@ -12,31 +12,23 @@ module.exports = function(grunt) {
 	,	appIMG 		= appSRC + 'images/'
 	,	appJS 		= appSRC;
 
-	grunt.initConfig(
-	{
+	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json')
-	,	jshint:
-		{
-			gruntfile:
-			{
+	,	jshint: {
+			gruntfile: {
 				src: 'Gruntfile.js'
 			}
 		}
-	,	less:
-		{
-			dev:
-			{
-				options:
-				{
+	,	less: {
+			dev: {
+				options: {
 					path: appLESS
 				,	cleancss: false
 				}
 			,	files: manifest
 			}
-		,	production:
-			{
-				options:
-				{
+		,	production: {
+				options: {
 					path: appLESS
 				,	compress: true
 				,	cleancss: true
@@ -44,52 +36,40 @@ module.exports = function(grunt) {
 			,	files: manifest
 			}
 		}
-	// ,	imagemin:
-	// 	{
-	// 		dynamic:
-	// 		{
-	// 			options:
-	// 			{
-	// 				optimizationLevel: 5
-	// 			,	pngquant: true
-	// 			}
-	// 		,	files:
-	// 			[{
-	// 				expand: true
-	// 			,	cwd: appIMG
-	// 			,   src: [ '**/*.{png,jpg,gif}' ]
-	// 			,	dest: pathIMG
-	// 			}]
-	// 		}
-	// 	}
-	,	csslint:
-		{
-			src: pathCSS + '*.css'
-		,	csslintrc: '.csslintrc'
-		,	options:
-			{
-				formatters:
-				[{
-					id: 'text'
-				,	dest: '/CSSlint.txt'
+	,	imagemin: {
+			dynamic: {
+				options: {
+					optimizationLevel: 5
+				,	pngquant: true
+				}
+			,	files: [{
+					expand: true
+				,	cwd: appIMG
+				,   src: [ '**/*.{png,jpg,gif}' ]
+				,	dest: pathIMG
 				}]
 			}
 		}
-	,	csscss:
-		{
-			options:
-			{
+	,	csslint: {
+			src: pathCSS + '*.css'
+		,	csslintrc: '.csslintrc'
+		,	options: {
+				formatters: [{
+					id: 'text'
+				,	dest: 'CSSlint.txt'
+				}]
+			}
+		}
+	,	csscss: {
+			options: {
 				verbose: true
 			,	outputJson: true
 			}
-		,	dist: { '/DEV-report.json' : pathCSS }
+		,	dist: { 'DEV-report.json' : pathCSS }
 		}
-	,	wintersmith:
-		{
-			build:
-			{
-				options:
-				{
+	,	wintersmith: {
+			build: {
+				options: {
 					action: "build"
 				,	config: 'config.json'
 				}
@@ -101,8 +81,7 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-	,	watch:
-		{
+	,	watch: {
 			files: [
 						appLESS + '*'
 					, 	appIMG + '*'
@@ -110,12 +89,9 @@ module.exports = function(grunt) {
 					,	appSRC + "*"
 					,	"templates/*"
 					]
-		,	tasks: [
-					'less:dev'
-					]
-		,	options:
-			{
-				reload: false
+		,	tasks: [ 'less:dev', 'imagemin:dynamic' ]
+		,	options: {
+				reload: true
 			,	livereload: true
 			,	spawn: false
 			,	dateFormat: function( time )
@@ -125,10 +101,8 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-	,	concurrent:
-		{
-			target:
-			{
+	,	concurrent: {
+			target: {
 				tasks: ['wintersmith:preview', 'watch']
 			,	options:
 				{
