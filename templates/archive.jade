@@ -2,32 +2,36 @@
 extends layout
 //- this logic should be moved to a view at some point
 
+block append vars
+	- bodyclass = 'archive'
+
 block content
-	- var lineHeight = 2.2;
-	- var archives = _.chain(env.helpers.getArticles(contents)).groupBy(function(item) {
+	- var archives = _.chain( env.helpers.getArticles(contents) ).groupBy( function(item) {
 	-	 return item.date.getFullYear()
 	- }).value()
-	- for (var archive in archives) {
-	-	archives[archive] = _.groupBy(archives[archive], function(item){return item.date.getMonth();})
-	- }
-	- var month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-	section.archive
-		h2 Archive
-		ul
-			- var yearsK = _.chain(archives).keys().reverse().value()
-			- for(var year in yearsK)
-				- months = archives[yearsK[year]]
-				- var yearHeight = lineHeight * _.reduce(months, function(memo,month) { return memo + month.length; }, 0);
-				li
-					span.year-label=yearsK[year]
-					ul
-						- var monthsK = _.chain(months).keys().reverse().value()
-						- for(month in monthsK){
-							- var monthHeight = lineHeight * months[monthsK[month]].length
-							li
-								span.month-label=month_names[monthsK[month]]
-								ul
-									each item in months[monthsK[month]]
-										li
-											a(href=item.url)=item.title
-						- }
+
+	h1(class=bodyclass + '-ttl ttl') Archive
+	ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level1')
+		- var yearsK = _.chain(archives).keys().reverse().value()
+		- for(var year in yearsK)
+			- months = archives[yearsK[year]]
+			li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level1')
+				h2(class=bodyclass + '-ttl ttl ' + bodyclass + '-ttl-level2')= yearsK[year]
+				ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level2')
+					- var monthsK = _.chain(months).keys().reverse().value()
+					- for(month in monthsK){
+						each item in months[monthsK[month]]
+							li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
+								a(class=bodyclass + "-lnk lnk", href=item.url)=item.title
+					- }
+					
+block prepend navtop
+	div.nav
+		if prevPage
+			a(href=prevPage.url) « Newer
+		else
+			a(href='/archive.html') « Archives
+		if nextPage
+			a(href=nextPage.url) Next page »
+
+		a(href=contents.index.url) « Full blog

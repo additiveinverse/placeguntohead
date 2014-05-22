@@ -1,22 +1,26 @@
 doctype html
 block vars
 	- var bodyclass = null;
-html(lang='en')
+
+html( lang='en' )
 	head
 		block head
-			meta(charset='utf-8')
-			meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-			meta(name='viewport', content='width=device-width')
+			meta( charset='utf-8' )
+			meta( http-equiv='X-UA-Compatible', content='IE=edge,chrome=1' )
+			meta( name='viewport', content='width=device-width' )
+
 			title
 				block title
 					= locals.name
 
-			link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
-			link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:800,300')
-			link(rel='stylesheet', href=locals.url+'/css/layout.min.css')
-			link(rel='stylesheet', href='/css/global.css')
+			link( rel='alternate', href=locals.url + '/feed.xml', type='application/rss+xml', title=locals.description )
+			link( rel='stylesheet', href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Raleway:800,300' )
+			link( rel='stylesheet', href=locals.url + '/css/layout.min.css' )
+			link( rel='stylesheet', href=locals.url + '/css/global.css' )
 
 	body( class='page page-' + bodyclass )
+		block navtop
+
 		header.header.page-header
 			h1.ttl.page-header-ttl
 				a.lnk.page-header-ttl-lnk( href=locals.url )= locals.name
@@ -24,20 +28,18 @@ html(lang='en')
 
 			nav.page-header-nav.page-nav-posts
 				include _nav
-				- var art = env.helpers.getArticles(contents)
+				- var art = env.helpers.getArticles( contents )
 				+menuMaker( 'page-nav-post', art )
 
 			block footer
 				aside.header-aside.page-header-aside
-					include _nav
-					+menuMaker( 'page-nav-antisocial', locals.network.antisocial, 'link' )
-					+menuMaker( 'page-nav-social', locals.network.social, 'link' )
-					!=contents['about.md'].html
+					include _author
+					+author( 'proem' )
 
 					p.header-aside-copy &copy; #{ new Date().getFullYear() } #{ locals.owner }
 					p.header-aside-poweredby
 						| powered by 
-						a(href='https://github.com/jnordberg/wintersmith') Wintersmith
+						a( href='https://github.com/jnordberg/wintersmith' ) Wintersmith
 
 		main.page-content.main-content.content
 			block content

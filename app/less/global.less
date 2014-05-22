@@ -24,17 +24,20 @@
 	&:extend( .animate );
 }
 
+blockquote {
+	font-family: @font-serif;
+}
+
 body {
 	color: @white;
-	background: @grey-darker;
+	background: @grey url(../im/bg.texture.png);
 }
 
 .page {
 	position: relative;
 
 	&-header {
-		background: @grey-darker;	
-		.col(4);
+		.col(3.5);
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -58,63 +61,11 @@ body {
 	&-nav {
 		&-post {
 			&-itm {
+
 			}
+
 			&-lst {
 				padding-left: 0;
-			}
-		}
-
-		&-antisocial {
-			&-lst {
-				border-bottom: none;
-				&:extend( .navlist );
-			}
-
-			&-itm {
-				// .icon( "app", @link );
-
-				&:after {
-					opacity: 0
-				}
-
-				&:hover {
-					&:after {
-						opacity: 1
-					}
-				}
-			}
-		}
-
-		&-social {
-			&-lst {
-				border: none;
-				padding-top: 0;
-				&:extend( .navlist );
-			}
-
-			&-itm {
-				display: inline-block;
-				vertical-align: top;
-				width: 32px;
-				height: 32px;
-				font-size: 0;
-				line-height: 1;
-				border-radius: 32px;
-				&:extend( .sprite );
-
-				box-shadow: 1px 1px 0 fade(@white, 25% ), 1px 1px 0 @grey-dark inset;
-				.transition( box-shadow, .3s );
-				margin-left: 1%;
-
-				&-flickr 		{ background-position: 0 0 }
-				&-twitter 		{ background-position: -40px 0 }
-				&-last-fm 		{ background-position: -80px 0 }
-				&-soundcloud 	{ background-position: -160px 0 }
-				&-society6 		{ background-position: -240px 0 }
-
-				&:hover {
-					box-shadow: 1px 1px 0 @grey-dark, 1px 1px 0 fade(@white, 35%) inset;
-				}
 			}
 		}
 	}
@@ -137,19 +88,84 @@ body {
 		width: 100%;
 
 		padding: @base-margin-half @base-margin-half @base-margin;
-		.suffix(4.5);
+		.suffix(4);
 	}
 }
 
-.author-photo {
-	width: 35%;
-	border-radius: 50%;
-	border: 8px solid @white-off;
-	box-shadow: 1px 1px 1px fade(@white, 25% ), -1px -1px 1px @grey-dark;
+.author {
+	border-bottom: 1px dashed @white;
+	border-top: 1px dashed fade( @grey, 10% );
+
+	&-photo {
+		display: inline-block;
+		position: relative;
+		border-radius: 50%;
+		border: 8px solid @white-off;
+		top: 1em;
+		box-shadow: 1px 1px 1px fade(@white, 25% ), -1px -1px 1px @grey-dark;
+		.col(4);
+	}
+
+	&-network {
+		display: inline-block;
+		margin-left: @base-margin;
+		.col(7);
+
+		&-antisocial {
+			&-lst {
+				border-bottom: none;
+				&:extend( .navlist );
+			}
+
+			&-itm {
+				// .icon( "app", @link );
+				&:after {
+					opacity: 0
+				}
+
+				&:hover {
+					&:after {
+						opacity: 1
+					}
+				}
+			}
+		}
+
+		&-social {
+			&-lst {
+				border: none;
+				padding: 0;
+				margin-top: 0;
+			}
+
+			&-itm {
+				display: inline-block;
+				vertical-align: top;
+				width: 32px;
+				height: 32px;
+				font-size: 0;
+				line-height: 1;
+				border-radius: 32px;
+				margin-left: 1%;
+				box-shadow: 1px 1px 0 fade( @white, 25% ), 1px 1px 0 @grey-dark inset;
+				.transition( box-shadow, .3s );
+				&:extend( .sprite );
+
+				&-flickr 		{ background-position: 0 0 }
+				&-twitter 		{ background-position: -40px 0 }
+				&-last-fm 		{ background-position: -80px 0 }
+				&-soundcloud 	{ background-position: -160px 0 }
+				&-society6 		{ background-position: -240px 0 }
+
+				&:hover {
+					box-shadow: 1px 1px 0 @grey-dark, 1px 1px 0 fade( @white, 35% ) inset;
+				}
+			}
+		}
+	}
 }
 
 .navlist {
-	list-style: none;
 	margin: auto;
 	padding: 1.2em 0;
 	text-transform: uppercase;
@@ -172,30 +188,30 @@ body {
 
 		&-ttl {
 			font-weight: 300;
-			.font-size(@base-type-h1);
 
 			&-lnk {
-				.push(1)
+				.push(1);
 			}
 		}
 
 		&-meta {
-			.font-size(@base-type-h4);
 			font-weight: 800;
 			display: inline-block;
 			position: absolute;
+			top: 1em;
+			line-height: 1;
 
 			&-track {
-				line-height: 4;
-				left: 0;
-				.col(1);
+				.font-size( @base-type-h4 );
+				color: @blue;
 				text-align: center;
+				.col(1);	
 			}
 
 			&-release {
-				right: 0;
-				.font-size(@base-type-size);
 				color: @grey;
+				.rotate( 90deg, 0 53px 0 );
+				.font-size( @base-type-sm );
 			}
 		}
 	}
@@ -205,5 +221,20 @@ body {
 	}
 }
 
+.archive {
+	&-lst {
+		&-level1 {
+			vertical-align: top;
+		}
+	}
+
+	&-itm {
+		&-level1 {
+			width: calc(~"100% / 3");
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+}
 
 @import './media';

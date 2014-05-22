@@ -10,15 +10,15 @@ block content
 			header(class=postclass + '-hdr hdr')
 				h1(class=postclass + '-hdr-ttl ttl')
 					a(class=postclass + '-hdr-ttl-lnk lnk', href=article.url)= article.title
-					span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
-						= moment.utc(article.date).format('mm')
-					span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
-						= env.helpers.getTagsFromArticle(article)
+				span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
+					= moment.utc(article.date).format('mm')
+				span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
+					= env.helpers.getTagsFromArticle(article)
 
 			section(class=postclass + '-main')
 				| !{ typogr(article.intro).typogrify() }
 
-block prepend footer
+block prepend navtop
 	div.nav
 		if prevPage
 			a(href=prevPage.url) « Newer

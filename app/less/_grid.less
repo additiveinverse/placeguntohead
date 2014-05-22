@@ -18,21 +18,17 @@
 .clearfix() {
 	&:before,
 	&:after {
-			content: "";
-			display: table;
+		content: "";
+		display: table;
 	}
 
 	&:after {
-			clear: both;
+		clear: both;
 	}
 }
 
 
 // ////////// GRID //
-body {
-	width: 100%;
-}
-
 .row( @columns: @columns ) {
 	display: block;
 	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
