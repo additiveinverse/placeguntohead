@@ -6,10 +6,10 @@ module.exports = function(grunt) {
 	, 	winterPath	= 'contents/'
 	,	pathJS 		= winterPath + 'js/'
 	,	pathCSS 	= winterPath + 'css/'
-	,	pathIMG 	= winterPath + 'img/'
+	,	pathIMG 	= winterPath + 'im/'
 	,	appSRC 		= 'app/'
 	,	appLESS 	= appSRC + 'less/'
-	,	appIMG 		= appSRC + 'images/'
+	,	appIMG 		= appSRC + 'images/src'
 	,	appJS 		= appSRC;
 
 	grunt.initConfig({
