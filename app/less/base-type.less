@@ -25,6 +25,10 @@ a {
 	&:focus { outline: none }
 }
 
+.grids { background: url(../im/text-16-24.png);
+	 // behold the deliciousness that is the background size 
+}
+
 // Headings
 h1,
 h2,
@@ -38,43 +42,45 @@ h6 {
 	position: relative;
 }
 
+
 h1 {
-	.font-size( @base-type-h1 );
-	line-height: @base-line-height;
+	.font-size( @base-type-h1, 3 );
+	// top: @base-line-height / unit( @base-type-h1, em);
 }
 
 h2 {
-	.font-size( @base-type-h2 );
-	line-height: @base-line-height;
-	top: 4px;
+	.font-size( @base-type-h2, 2 );
+	// line-height: @base-line-multiplier / @base-type-h2 * 2;
+	// margin-bottom: @base-line-multiplier / @base-type-h2 * 1em;
+	// top: 4px;
 }
 
 h3 {
 	.font-size( @base-type-h3 );
-	line-height: @base-line-height + 0.2143;
-	top: 7px;
+	// line-height: ( @base-line-height * 1 ) / @base-type-h3;
+	// top: 7px;
 }
 
 h4 {
 	.font-size( @base-type-h4 );
-	line-height: @base-line-height + 0.5;
-    margin-bottom: 0.5em;
-    top: @base-line-height * @base-type-h4 + 1px;
+	// line-height: @base-line-height + 0.5;
+ //    margin-bottom: 0.5em;
+ //    top: @base-line-height * @base-type-h4 + 1px;
 }
 
 h5 {
 	.font-size( @base-type-h5 );
-    line-height: @base-line-height + 0.7536;
-    top: -2px;
+    // line-height: @base-line-height + 0.7536;
+    // top: -2px;
 }
 
 h6 {
 	.font-size( @base-type-h6 );
-    line-height: @base-line-height + 1.0668;
-    top: -2px;
+    // line-height: @base-line-height + 1.0668;
+    // top: -2px;
 }
 
-blockquote { margin: @base-margin @base-margin-half }
+blockquote { margin: @base-margin }
 
 p,
 th,
@@ -139,6 +145,12 @@ dd { margin-left: 0 }
 
 sup { bottom: @base-margin-half }
 sub { bottom: -@base-margin-half }
+
+small,
+sup,
+sub {
+	.font-size( @base-type-sm, 0.5 )
+}
 
 img,
 object,

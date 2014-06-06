@@ -22,10 +22,11 @@
 	background-clip: @arguments;
 }
 
-.font-size( @font-size: 16 ) {
+.font-size( @font-size: @base-type-size, @offset: 1 ) {
 	@rem: ( @font-size / 10 );
 	font-size : ~"@{rem}rem";
-	font-size : @font-size * 1px;
+	font-size : unit( @font-size, px );
+	line-height: @base-line-multiplier / @font-size * @offset;
 }
 
 ._inject( @content: "" ) {

@@ -48,15 +48,17 @@ body {
   position: relative;
 }
 .page-header {
-  width: 29.16666667%;
   position: absolute;
   right: 0;
   top: 0;
-  padding: 0.75em 1.5em;
+  padding: 1.5em;
+  width: 29.16666667%;
 }
 .page-header-ttl {
   font-size: 3.2rem;
   font-size: 32px;
+  line-height: 1.5;
+  margin-bottom: 0;
   text-transform: capitalize;
 }
 .page-header-ttl-lnk {
@@ -66,17 +68,26 @@ body {
   color: #04b4bf;
   margin: 0;
 }
+.page-header-aside-copy {
+  margin-bottom: 0;
+}
+.page-header-aside-poweredby {
+  font-size: 1.2rem;
+  font-size: 12px;
+  line-height: 1;
+}
 .page-nav-post-lst {
   padding-left: 0;
 }
 .page-content {
   width: 100%;
-  padding: 0.75em 0.75em 1.5em;
+  padding: 0 0.75em 1.5em;
   padding-right: 33.33333333%;
 }
 .author {
   border-bottom: 1px dashed #ffffff;
   border-top: 1px dashed rgba(94, 94, 99, 0.1);
+  margin-bottom: 1em;
 }
 .author-photo {
   display: inline-block;
@@ -168,27 +179,26 @@ body {
   font-weight: 800;
   display: inline-block;
   position: absolute;
-  top: 1em;
-  line-height: 1;
 }
 .post-hdr-meta-track {
-  font-size: 2.6rem;
-  font-size: 26px;
+  top: 24px;
   color: #04b4bf;
   text-align: center;
   width: 8.33333333%;
 }
 .post-hdr-meta-release {
+  top: 16px;
   color: #5e5e63;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  -webkit-transform-origin: 0 53px 0;
-  -moz-transform-origin: 0 53px 0;
-  -ms-transform-origin: 0 53px 0;
-  transform-origin: 0 53px 0;
-  font-size: 1.3rem;
-  font-size: 13px;
+  -webkit-transform-origin: 0 50px 0;
+  -moz-transform-origin: 0 50px 0;
+  -ms-transform-origin: 0 50px 0;
+  transform-origin: 0 50px 0;
+  font-size: 1.2rem;
+  font-size: 12px;
+  line-height: 1;
 }
 .post-main {
   padding-left: 8.33333333%;

@@ -87,9 +87,10 @@ module.exports = function(grunt) {
 					, 	appIMG + '*'
 					, 	appJS + '*'
 					,	appSRC + "*"
-					,	"templates/*"
+					,	"templates/*.jade"
+					, 	"Gruntfile.js"
 					]
-		,	tasks: [ 'less:dev', 'imagemin:dynamic' ]
+		,	tasks: [ 'less:dev' ]
 		,	options: {
 				reload: true
 			,	livereload: true
