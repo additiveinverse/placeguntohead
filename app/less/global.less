@@ -29,7 +29,9 @@ blockquote {
 }
 
 body {
+	&:extend(.grids);
 	color: @white;
+	// background: url(../im/text-16-24.png);
 	background: @grey url(../im/bg.texture.png);
 }
 
@@ -37,7 +39,7 @@ body {
 	position: relative;
 
 	&-header {
-		position: absolute;
+		position: fixed;
 		right: 0;
 		top: 0;
 		padding: @base-margin;
@@ -60,7 +62,7 @@ body {
 
 		&-aside {
 			&-copy {
-				margin-bottom: 0;
+				margin-bottom: 0; 
 			}
 			&-poweredby {
 				.font-size( @base-type-sm, 0.5 );
@@ -174,7 +176,7 @@ body {
 
 .navlist {
 	margin: auto;
-	padding: 1.2em 0;
+	padding: @base-margin 0;
 	text-transform: uppercase;
 }
 

@@ -48,7 +48,7 @@ body {
   position: relative;
 }
 .page-header {
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   padding: 1.5em;
@@ -151,7 +151,7 @@ body {
 .navlist,
 .author-network-antisocial-lst {
   margin: auto;
-  padding: 1.2em 0;
+  padding: 1.5em 0;
   text-transform: uppercase;
 }
 .btn {
