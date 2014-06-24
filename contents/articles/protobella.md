@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:05
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---	
 Some mistakes  
 typos for instance  

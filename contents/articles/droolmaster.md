@@ -4,7 +4,7 @@ author: Proem
 date: 1999-05-24:01:04
 filename: burnplate-no1/:title.html
 template: article.jade
-tags: 'Burnplate no.1'
+record: 'Burnplate no.1'
 ---
 In houston there used to be a coffee shop  
 the only one that was open 24 hours  

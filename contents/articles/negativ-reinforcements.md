@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:11
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---	
 
 Negative reinforcement occurs when the rate of a behavior increases because an aversive event or stimulus is removed or prevented from happening.

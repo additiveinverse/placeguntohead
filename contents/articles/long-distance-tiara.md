@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:04
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---	
 We collectively had a thing for this girl who worked at starbucks  
 We would cut our visits short if she wasn't there  

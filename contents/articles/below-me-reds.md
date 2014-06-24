@@ -4,17 +4,16 @@ author: Proem
 date: 2001-05-09:02:01
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---
-
-i used to work as a projectionist at a dollar theater  
-it was one of the best shit jobs i've ever had  
-i didnt have to be there until 1pm  
-i could be alone for a large portion of my shift  
-i was in the dark for 90% of it (barring a few cigarette breaks)  
-and once i started the next round of showings  
-i could sleep on the extra movie seats the other projectionists  
-and i had fashioned into a couch
+I used to work as a projectionist at a dollar theater  
+it was one of the best shit jobs I've ever had  
+I didnt have to be there until 1pm  
+I could be alone for a large portion of my shift  
+I was in the dark for 90% of it (barring a few cigarette breaks)  
+and once I started the next round of showings  
+I could sleep on the extra movie seats the other projectionists  
+and I had fashioned into a couch
 
 but the best part of this barely over minimum wage nightmare  
 were thursday nights  

@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:02
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---
 
 for a few months i was heavily into swing and big band  

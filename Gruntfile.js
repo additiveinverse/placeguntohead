@@ -81,6 +81,12 @@ module.exports = function(grunt) {
 				}
 			}
 		}
+	, 	open: {
+			dev : {
+      			path: 'http://localhost:8080'
+      		,	app: 'Firefox'
+    		}
+		}
 	,	watch: {
 			files: [
 						appLESS + '*'
@@ -104,7 +110,7 @@ module.exports = function(grunt) {
 		}
 	,	concurrent: {
 			target: {
-				tasks: ['wintersmith:preview', 'watch']
+				tasks: ['wintersmith:preview', 'open', 'watch']
 			,	options:
 				{
 					logConcurrentOutput: true

@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:10
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---	
 There was this dude.  
 His name was mike.  

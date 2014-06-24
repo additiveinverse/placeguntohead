@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:12
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---	
 I often wish I could take snap shots of the sky  
 Turn them sideways  

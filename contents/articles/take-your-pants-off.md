@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:07
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---	
 The most popular topic of song  
 aside from failing relationship drama  

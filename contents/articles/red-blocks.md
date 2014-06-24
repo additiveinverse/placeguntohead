@@ -4,7 +4,7 @@ author: Proem
 date: 1999-05-24:01:09
 filename: burnplate-no1/:title.html
 template: article.jade
-tags: 'Burnplate no.1'
+record: 'Burnplate no.1'
 ---
 
 my friends and i developed a method for composition  

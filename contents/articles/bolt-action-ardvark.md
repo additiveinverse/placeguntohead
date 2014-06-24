@@ -4,7 +4,7 @@ author: Proem
 date: 2001-05-09:02:08
 filename: negativ/:title.html
 template: article.jade
-tags: 'Negativ'
+record: 'Negativ'
 ---
 Sometimes your imagination puts on its running shoes and goes for a brisk jog into word association  
 often combining words or phrases that shouldnt  
