@@ -14,7 +14,7 @@ block content
 			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-track')
 				= moment.utc(page.date).format('mm')
 			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-release')
-				= env.helpers.getTagsFromArticle(page)	
+				= page.metadata.record	
 
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
 

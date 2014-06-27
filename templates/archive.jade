@@ -14,13 +14,16 @@ block content
 	ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level1')
 		- var yearsK = _.chain(archives).keys().reverse().value()
 		- for(var year in yearsK)
-			- months = archives[yearsK[year]]
+			- var archiveYear = yearsK[ year ]
+			- months = archives[ archiveYear ]
+			- var monthsK = _.chain(months).keys().value()
+
 			li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level1')
-				h2(class=bodyclass + '-ttl ttl ' + bodyclass + '-ttl-level2')= yearsK[year]
+				h2(class=bodyclass + '-ttl ttl ' + bodyclass + '-ttl-level2')= archiveYear
 				ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level2')
-					- var monthsK = _.chain(months).keys().reverse().value()
-					- for(month in monthsK){
-						each item in months[monthsK[month]]
+					- for( month in monthsK ) {
+						- var m = monthsK[ month ]
+						each item in months[ m ]
 							li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
 								a(class=bodyclass + "-lnk lnk", href=item.url)=item.title
 					- }

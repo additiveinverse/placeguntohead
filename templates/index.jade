@@ -13,7 +13,7 @@ block content
 				span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
 					= moment.utc(article.date).format('mm')
 				span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
-					= env.helpers.getTagsFromArticle(article)
+					= article.metadata.record
 
 			section(class=postclass + '-main')
 				| !{ typogr(article.intro).typogrify() }

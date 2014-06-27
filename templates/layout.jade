@@ -27,22 +27,19 @@ html( lang='en' )
 			p.page-header-desc.description= locals.description
 
 			nav.page-header-nav.page-nav-posts
-				//- 2. extract tags as an array
-				//- 3. loop through articles based on tags array
-				- var t = [ "Burnplate no.1", "Negativ", "Among Others", "Socially Inept", "You Shall Have Ever Been", "A Permanent Solution", "Till There's No Breath", "Enough Conflict", "Before It Finds You" ]
-
-				//- 1. get the list of content
 				- var articles = env.helpers.getArticles( contents )
-				//- - var articlesTag = _.chain( articles ).sortby( function( a ) { return a.metadata.tags } ).value()
-				
-				each val, i in articles
-					- var archives = _.chain( val.metadata.record ).value()
-					h5( role='menuitem' )= archives	
-					ul
-						li= val.title
+				- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
+				- 	return article.metadata.record
+				- }).value()
 
-				//- include _nav
-				//- +menuMaker( 'page-nav-post', articles )
+				ul.page-nav-posts-lst.page-nav-posts-l1-lst
+					- var record = _.chain( articlesGroup ).keys().value()
+					each arts, i in articles
+						li.page-nav-posts-itm.page-nav-posts-l1-itm
+							h5.page-nav-posts-hdr.page-nav-posts-l1-hdr= record[i]
+							- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
+							include _nav
+							+menuMaker( 'page-nav-posts-l2', item )
 
 			block footer
 				aside.page-header-aside

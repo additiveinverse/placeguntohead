@@ -48,6 +48,7 @@ body {
   position: relative;
 }
 .page-header {
+  position: absolute;
   right: 0;
   top: 0;
   padding: 1.5em;
@@ -75,7 +76,7 @@ body {
   font-size: 12px;
   line-height: 1;
 }
-.page-nav-post-lst {
+.page-nav-posts-lst {
   padding-left: 0;
 }
 .page-content {
