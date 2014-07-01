@@ -71,11 +71,27 @@ body {
 	}
 
 	&-nav {
-		&-posts {
-			&-itm {}
-
+		&-l1 {
 			&-lst {
 				padding-left: 0;
+			}
+
+			&-hdr {
+				cursor: pointer;
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+		&-l2 {
+			&-lst {
+				margin: 0;
+				height: 0;
+				overflow: hidden;
+				&-active {
+					height: auto;
+					margin: @base-margin 0
+				}
 			}
 		}
 	}

@@ -17,6 +17,7 @@ html( lang='en' )
 			link( rel='stylesheet', href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Raleway:800,300' )
 			link( rel='stylesheet', href=locals.url + '/css/layout.min.css' )
 			link( rel='stylesheet', href=locals.url + '/css/global.css' )
+			link( rel='stylesheet', href=locals.url + '/js/pgth.js' )
 
 	body( class='page page-' + bodyclass )
 		block navtop
@@ -26,20 +27,20 @@ html( lang='en' )
 				a.lnk.page-header-ttl-lnk( href=locals.url )= locals.name
 			p.page-header-desc.description= locals.description
 
-			nav.page-header-nav.page-nav-posts
+			nav.page-header-nav.page-nav
 				- var articles = env.helpers.getArticles( contents )
 				- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
 				- 	return article.metadata.record
 				- }).value()
 
-				ul.page-nav-posts-lst.page-nav-posts-l1-lst
+				ul.page-nav-lst.page-nav-l1-lst
 					- var record = _.chain( articlesGroup ).keys().value()
-					each arts, i in articles
-						li.page-nav-posts-itm.page-nav-posts-l1-itm
-							h5.page-nav-posts-hdr.page-nav-posts-l1-hdr= record[i]
+					each arts, i in record
+						li.page-nav-itm.page-nav-l1-itm
+							h5.page-nav-hdr.page-nav-l1-hdr= record[i]
 							- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
 							include _nav
-							+menuMaker( 'page-nav-posts-l2', item )
+							+menuMaker( 'page-nav-l2', item )
 
 			block footer
 				aside.page-header-aside

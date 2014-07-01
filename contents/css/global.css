@@ -76,8 +76,23 @@ body {
   font-size: 12px;
   line-height: 1;
 }
-.page-nav-posts-lst {
+.page-nav-l1-lst {
   padding-left: 0;
+}
+.page-nav-l1-hdr {
+  cursor: pointer;
+}
+.page-nav-l1-hdr:hover {
+  opacity: 0.8;
+}
+.page-nav-l2-lst {
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+}
+.page-nav-l2-lst-active {
+  height: auto;
+  margin: 1.5em 0;
 }
 .page-content {
   width: 100%;

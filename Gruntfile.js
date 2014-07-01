@@ -83,9 +83,9 @@ module.exports = function(grunt) {
 		}
 	, 	open: {
 			dev : {
-      			path: 'http://localhost:8080'
-      		,	app: 'Firefox'
-    		}
+				path: 'http://localhost:8080'
+			,	app: 'Firefox'
+			}
 		}
 	,	watch: {
 			files: [
