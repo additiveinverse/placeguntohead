@@ -33,6 +33,7 @@
 }
 .animate,
 .lnk,
+.page-nav-l2-lst,
 .btn {
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
@@ -87,12 +88,15 @@ body {
 }
 .page-nav-l2-lst {
   margin: 0;
+  padding-left: 0.75em;
   height: 0;
   overflow: hidden;
+  opacity: 0;
 }
 .page-nav-l2-lst-active {
+  opacity: 1;
   height: auto;
-  margin: 1.5em 0;
+  margin: 0.75em 0;
 }
 .page-content {
   width: 100%;

@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json')
 	,	jshint: {
 			sitefiles: {
-				src: 'pgth.js'
+				src: appJS + '*.js'
 			}
 		,	gruntfile: {
 				src: 'Gruntfile.js'

@@ -85,12 +85,17 @@ body {
 		}
 		&-l2 {
 			&-lst {
+				&:extend( .animate );
 				margin: 0;
+				padding-left: @base-margin-half;
 				height: 0;
 				overflow: hidden;
+				opacity: 0;
+
 				&-active {
+					opacity: 1;
 					height: auto;
-					margin: @base-margin 0
+					margin: @base-margin-half 0
 				}
 			}
 		}
