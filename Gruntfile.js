@@ -10,12 +10,15 @@ module.exports = function(grunt) {
 	,	appSRC 		= 'app/'
 	,	appLESS 	= appSRC + 'less/'
 	,	appIMG 		= appSRC + 'images/src'
-	,	appJS 		= appSRC;
+	,	appJS 		= appSRC + 'js/';
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json')
 	,	jshint: {
-			gruntfile: {
+			sitefiles: {
+				src: 'pgth.js'
+			}
+		,	gruntfile: {
 				src: 'Gruntfile.js'
 			}
 		}
@@ -81,6 +84,22 @@ module.exports = function(grunt) {
 				}
 			}
 		}
+	, 	copy: {
+			main: {
+				expand: true
+			,	cwd: appJS
+			,	src: '*.js'
+			,	dest: pathJS
+			, 	flatten: true
+			}
+		,	bowerstuff: {
+				expand: true
+			,	cwd: bowerPath
+			,	src: [ 'jq/dist/jquery.min.js' ]
+			,	dest: pathJS
+			, 	flatten: true
+			}
+		}
 	, 	open: {
 			dev : {
 				path: 'http://localhost:8080'
@@ -96,7 +115,7 @@ module.exports = function(grunt) {
 					,	"templates/*.jade"
 					, 	"Gruntfile.js"
 					]
-		,	tasks: [ 'less:dev' ]
+		,	tasks: [ 'less:dev', 'copy' ]
 		,	options: {
 				reload: true
 			,	livereload: true
@@ -110,7 +129,7 @@ module.exports = function(grunt) {
 		}
 	,	concurrent: {
 			target: {
-				tasks: ['wintersmith:preview', 'open', 'watch']
+				tasks: [ 'wintersmith:preview', 'watch', 'open' ]
 			,	options:
 				{
 					logConcurrentOutput: true
