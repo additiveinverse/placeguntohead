@@ -108,13 +108,13 @@ module.exports = function(grunt) {
 		}
 	,	watch: {
 			files: [
-						appLESS + '*'
-					, 	appIMG + '*'
-					, 	appJS + '*'
-					,	appSRC + "*"
-					,	"templates/*.jade"
-					, 	"Gruntfile.js"
-					]
+				appLESS + '*'
+			, 	appIMG + '*'
+			, 	appJS + '*'
+			,	appSRC + "*"
+			,	"templates/*.jade"
+			, 	"Gruntfile.js"
+			]
 		,	tasks: [ 'less:dev', 'copy' ]
 		,	options: {
 				reload: true

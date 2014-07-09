@@ -17,7 +17,7 @@
 }
 
 .animate {
-	.transition( all, 0.3s );
+	.transition( all, 0.5s );
 }
 
 .lnk {
@@ -81,6 +81,9 @@ body {
 				&:hover {
 					opacity: 0.8;
 				}
+				&.active {
+
+				}
 			}
 		}
 		&-l2 {
@@ -92,7 +95,7 @@ body {
 				overflow: hidden;
 				opacity: 0;
 
-				&-active {
+				&.active {
 					opacity: 1;
 					height: auto;
 					margin: @base-margin-half 0

@@ -35,8 +35,8 @@
 .lnk,
 .page-nav-l2-lst,
 .btn {
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 blockquote {
   font-family: 'Gloria Hallelujah', cursive;
@@ -93,7 +93,7 @@ body {
   overflow: hidden;
   opacity: 0;
 }
-.page-nav-l2-lst-active {
+.page-nav-l2-lst.active {
   opacity: 1;
   height: auto;
   margin: 0.75em 0;

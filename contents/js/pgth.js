@@ -1,29 +1,28 @@
 var toggler = {
 	_vars: {
-		hdr: '', 	
-		uls: '',
-		active: ''
-	},
-	config: function( hdr, uls, ac ) {
-		// var t = this._vars
-		// 	t.hdr = hdr,
-		// 	t.uls = uls,
-		// 	t.active = ac;
-	},
-	binder: function() {
-
+		element: ''
+	,	uls: ''
+	,	active: 'active'
 	}
-};
+,	_con: function( elem, ev, activator ) {
+		$( elem ).on( ev, activator, function( ev ) {
+			var	active = this._vars.active
+			,	elem = ev.currentTarget
+			,	elemActive = elem.classList[0] + '-' + active
+			,	$this = $( elem );
 
-$(function() {
-	$('.page-nav-l1-hdr').on('click', function(e) {
-		var target = e.currentTarget,	
-			sibling = target.nextElementSibling,
-			active = 'active',	
-			targetclass = target.classList[0] + '-' + active,
-			siblingclass = target.nextElementSibling.classList[1] + '-' + active;
-		
-		$( target ).toggleClass( targetclass );
-		$( sibling ).toggleClass( siblingclass );
+		});
+	}
+}
+
+$( function() {
+	$( '.page-nav-lst' ).on( 'click', '.page-nav-l1-itm', function( e ) {
+		var	active = 'active';
+		var elem = e.currentTarget;
+		var	elemActive = elem.classList[0] + '-' + active;
+		var	$this = $( elem );
+
+		$this.addClass( elemActive ).children().toggleClass( active, $this.hasClass(elemActive) );
+		$this.siblings().removeClass( elemActive ).children().removeClass( active );
 	});
-});
+})
