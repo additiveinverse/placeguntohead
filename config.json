@@ -1,39 +1,39 @@
 {
-  "locals": {
-    "url": "http://localhost:8080",
-    "name": "Placeguntohead",
-    "owner": "Richard Bailey",
-    "description": "the book of proem",
-    "tags": 	[
-		"Burnplate no.1"
-	,	"Negativ"
-	,	"Among Others"
-	, 	"Socially Inept"
-	,	"You Shall Have Ever Been"
-	,	"A Permanent Solution"
-	,	"Till There's No Breath"
-	,	"Enough Conflict"
-	,	"Before It Finds You"
-	]
-  },
-  "plugins": [
-    "./plugins/paginator.coffee",
-    "wintersmith-data-json"
-  ],
-  "require": {
-    "moment": "moment",
-    "_": "underscore",
-    "typogr": "typogr"
-  },
-  "jade": {
-    "pretty": true
-  },
-  "markdown": {
-    "smartLists": true,
-    "smartypants": true
-  },
-  "paginator": {
-    "template": "index.jade",
-    "perPage": 12
-  }
+	"locals": {
+		"url": "http://localhost:8080",
+		"name": "Placeguntohead",
+		"owner": "Richard Bailey",
+		"description": "the book of proem",
+		"tags": [
+			"Burnplate no.1",
+			"Negativ",
+			"Among Others",
+			"Socially Inept",
+			"You Shall Have Ever Been",
+			"A Permanent Solution",
+			"Till There's No Breath",
+			"Enough Conflict",
+			"Before It Finds You"
+		]
+	},
+	"plugins": [
+		"./plugins/paginator.coffee",
+		"wintersmith-data-json"
+	],
+	"require": {
+		"moment": "moment",
+		"_": "underscore",
+		"typogr": "typogr"
+	},
+	"jade": {
+		"pretty": true
+	},
+	"markdown": {
+		"smartLists": true,
+		"smartypants": true
+	},
+	"paginator": {
+		"template": "index.jade",
+		"perPage": 12
+	}
 }

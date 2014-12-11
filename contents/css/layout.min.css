@@ -182,7 +182,7 @@ table {
 .ico:after {
   position: relative;
   line-height: 1;
-  font-family: "typicons";
+  font-family: 'typicons';
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -282,7 +282,7 @@ table {
 }
 .err-ttl {
   text-transform: uppercase;
-  font-family: 'Raleway', sans-serif;
+  font-family: sans-serif;
   text-shadow: 1px 1px 0 #dc0000;
 }
 .fld-err .error {
@@ -316,7 +316,7 @@ table {
 .ico:after {
   position: relative;
   line-height: 1;
-  font-family: "typicons";
+  font-family: 'typicons';
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -331,7 +331,7 @@ table {
 }
 html,
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: sans-serif;
   color: #202022;
   height: 100%;
   margin: 0;
@@ -342,7 +342,7 @@ a,
   color: #ff5e07;
 }
 a:hover {
-  color: #d34a00;
+  color: #b94100;
 }
 a:focus {
   outline: none;
@@ -356,10 +356,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: #f0b514;
+  color: #04b4bf;
   margin-bottom: 0;
   margin-top: 0;
   position: relative;
+  font-weight: normal;
 }
 h1 {
   font-size: 5.1rem;

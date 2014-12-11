@@ -17,11 +17,12 @@
 }
 
 .animate {
-	.transition( all, 0.5s );
+	.transition( all, 0.35s );
 }
 
 .lnk {
 	&:extend( .animate );
+	cursor: pointer;
 }
 
 blockquote {
@@ -44,23 +45,29 @@ body {
 		top: 0;
 		padding: @base-margin;
 		.col(3.5);
+				color: @grey-darker;
+				text-shadow: -1px -1px 0 @grey-dark;
 
 		&-ttl {
-			.font-size( @base-type-h3, 2 );
+			// .font-size( @base-type-h2, 2 );
 			margin-bottom: 0;
+			font-weight: 300;
 			text-transform: capitalize;
 
 			&-lnk {
-				color: @grey;
+				color: @grey-darker;
+				text-shadow: -1px -1px 0 @grey-dark;
 			}
 		}
 
-		&-desc {
-			color: @blue;
-			margin: 0;
+		&-desc { 
+			margin: 0; 
+			text-transform: uppercase;
 		}
 
 		&-aside {
+			color: @grey;
+			text-shadow: -1px -1px 0 @grey-dark;
 			&-copy {
 				margin-bottom: 0; 
 			}
@@ -71,21 +78,23 @@ body {
 	}
 
 	&-nav {
+		&-hdr {
+			color: @base-link;
+			&:extend(.lnk);
+
+			// &:hover {
+			// 	opacity: 0.8;
+			// }
+			&.active {}
+		}
+
 		&-l1 {
 			&-lst {
+				margin-bottom: 0;
 				padding-left: 0;
 			}
-
-			&-hdr {
-				cursor: pointer;
-				&:hover {
-					opacity: 0.8;
-				}
-				&.active {
-
-				}
-			}
 		}
+
 		&-l2 {
 			&-lst {
 				&:extend( .animate );
@@ -151,8 +160,8 @@ body {
 			}
 
 			&-itm {
-				// .icon( "app", @link );
 				&:after {
+					.icon( "app", @link );
 					opacity: 0
 				}
 
@@ -196,6 +205,11 @@ body {
 			}
 		}
 	}
+}
+
+.nav {
+	padding: @base-margin-half @base-margin;
+	background-color: multiply(@grey, @grey);
 }
 
 .navlist {
@@ -251,20 +265,45 @@ body {
 	&-main {
 		.prefix(1);
 	}
+
 }
 
-.archive {
+.post-index {
+	&-ttl {
+		font-weight: 300;
+
+		&-lnk {
+			.push(1);
+		}
+	}
+
+	&-img img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
 	&-lst {
+		&-level2,
 		&-level1 {
+			padding-left: 0;
 			vertical-align: top;
 		}
+		&-level1 {
+			font-size: 0;
+		}
+
+		&-level2 {
+			.font-size(@base-type-size);
+		}	
 	}
 
 	&-itm {
 		&-level1 {
-			width: calc(~"100% / 3");
+			width: calc(~"100% / 4");
 			display: inline-block;
 			vertical-align: top;
+			margin-right: unit(@base-margin * 10, px);
 		}
 	}
 }

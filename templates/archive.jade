@@ -6,27 +6,27 @@ block append vars
 	- bodyclass = 'archive'
 
 block content
-	- var archives = _.chain( env.helpers.getArticles(contents) ).groupBy( function(item) {
-	-	 return item.date.getFullYear()
+	- var archives = _.chain( articles ).groupBy( function( article ) {
+	- 	return article.metadata.record
 	- }).value()
 
-	h1(class=bodyclass + '-ttl ttl') Archive
+	h1(class=bodyclass + '-ttl ttl') Table of Contents
+
 	ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level1')
-		- var yearsK = _.chain(archives).keys().reverse().value()
-		- for(var year in yearsK)
-			- var archiveYear = yearsK[ year ]
-			- months = archives[ archiveYear ]
-			- var monthsK = _.chain(months).keys().value()
+		- var recordK = _.chain(archives).keys().reverse().value()
+		- for(var year in recordK)
+			- var recordName = recordK[ year ]
+			- var recordImg = recordName.toLowerCase().replace(/\s+/g, '')
+			- track = archives[ recordName ]
+			- var trackK = _.chain(track).keys().value()
 
 			li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level1')
-				h2(class=bodyclass + '-ttl ttl ' + bodyclass + '-ttl-level2')= archiveYear
+				h2(class=bodyclass + '-ttl ttl ' + bodyclass + '-ttl-level2')= recordName
+				img(src='/im/'+ recordImg + '.png' )
 				ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level2')
-					- for( month in monthsK ) {
-						- var m = monthsK[ month ]
-						each item in months[ m ]
-							li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
-								a(class=bodyclass + "-lnk lnk", href=item.url)=item.title
-					- }
+					each item, i in track
+						li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
+							a(class=bodyclass + "-lnk lnk", href=item.url)= item.title
 					
 block prepend navtop
 	div.nav

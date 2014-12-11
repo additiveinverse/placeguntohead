@@ -2,27 +2,52 @@ extends layout
 
 block append vars
 	- bodyclass = 'post-index'
-	- postclass = 'chapter'
+	- postclass = 'post'
 
 block content
-	each article, i in articles
-		article(class=postclass + ' ' + postclass + '-lst ' + postclass + '-' + i)
-			header(class=postclass + '-hdr hdr')
-				h1(class=postclass + '-hdr-ttl ttl')
-					a(class=postclass + '-hdr-ttl-lnk lnk', href=article.url)= article.title
-				span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
-					= moment.utc(article.date).format('mm')
-				span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
-					= article.metadata.record
+	//- each article, i in articles
+	//- 	article(class=postclass + ' ' + postclass + '-lst ' + postclass + '-' + i)
+	//- 		header(class=postclass + '-hdr hdr')
+	//- 			h1(class=postclass + '-hdr-ttl ttl')
+	//- 				a(class=postclass + '-hdr-ttl-lnk lnk', href=article.url)= article.title
+	//- 			span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
+	//- 				= moment.utc(article.date).format('mm')
+	//- 			span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
+	//- 				= article.metadata.record
 
-			section(class=postclass + '-main')
-				| !{ typogr(article.intro).typogrify() }
+	//- 		section(class=postclass + '-main')
+	//- 			| !{ typogr(article.intro).typogrify() }
+
+	- var archives = _.chain( articles ).groupBy( function( article ) {
+	- 	return article.metadata.record
+	- }).value()
+
+	h2(class=bodyclass + '-ttl ttl') Table of Contents
+
+	ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level1')
+		- var recordK = _.chain(archives).keys().value()
+		- for(var i in recordK)
+			- var recordName = recordK[ i ]
+			- var recordImg = recordName.toLowerCase().replace(/\s+/g, '')
+			- track = archives[ recordName ]
+			- var trackK = _.chain(track).keys().value()
+
+			li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level1')
+				p(class=bodyclass + '-img img ')
+					img(src='/im/'+ recordImg + '.png' )
+
+				h3(class=bodyclass + '-ttl ttl ' + bodyclass + '-ttl-level2')= recordName
+
+				ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level2')
+					each item, i in track
+						li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
+							a(class=bodyclass + "-lnk lnk", href=item.url)= item.title
 
 block prepend navtop
-	div.nav
-		if prevPage
-			a(href=prevPage.url) « Newer
-		else
-			a(href='/archive.html') « Archives
-		if nextPage
-			a(href=nextPage.url) Next page »
+	nav.nav
+		//- if prevPage
+		//- 	a(href=prevPage.url) « Newer
+		//- else
+		//- 	a(href='/archive.html') « Archives
+		//- if nextPage
+		//- 	a(href=nextPage.url) Next page »

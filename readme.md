@@ -3,6 +3,6 @@ The semi lucid book of history. which aims to disspell and illuminate the brief 
 
 good times.
 
-power by [wintersmith](https://github.com/jnordberg/wintersmith)
+powered by [wintersmith](https://github.com/jnordberg/wintersmith)
 and
-typing!
+all the typing!

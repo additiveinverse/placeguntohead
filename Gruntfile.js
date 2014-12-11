@@ -1,137 +1,143 @@
 /*global module:false*/
 module.exports = function(grunt) {
-	var name 		= '<%= pkg.name %>-v<%= pkg.version%>'
-	,	manifest 	= '<%= pkg.manifest %>'
-	,	bowerPath 	= 'app_modules/'
-	, 	winterPath	= 'contents/'
-	,	pathJS 		= winterPath + 'js/'
-	,	pathCSS 	= winterPath + 'css/'
-	,	pathIMG 	= winterPath + 'im/'
-	,	appSRC 		= 'app/'
-	,	appLESS 	= appSRC + 'less/'
-	,	appIMG 		= appSRC + 'images/src'
-	,	appJS 		= appSRC + 'js/';
+	var name = '<%= pkg.name %>-v<%= pkg.version%>',
+			manifest = '<%= pkg.manifest %>',
+			bowerPath = 'app_modules/',
+			winterPath = 'contents/',
+			pathJS = winterPath + 'js/',
+			pathCSS = winterPath + 'css/',
+			pathIMG = winterPath + 'im/',
+			appSRC = 'app/',
+			appLESS = appSRC + 'less/',
+			appIMG = appSRC + 'images/src',
+			appJS = appSRC + 'js/';
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json')
-	,	jshint: {
+		pkg: grunt.file.readJSON('package.json'),
+		jshint: {
 			sitefiles: {
 				src: appJS + '*.js'
-			}
-		,	gruntfile: {
+			},
+			gruntfile: {
 				src: 'Gruntfile.js'
 			}
-		}
-	,	less: {
+		},
+		less: {
 			dev: {
 				options: {
-					path: appLESS
-				,	cleancss: false
-				}
-			,	files: manifest
-			}
-		,	production: {
+					path: appLESS,
+					cleancss: false
+				},
+				files: manifest
+			},
+			production: {
 				options: {
-					path: appLESS
-				,	compress: true
-				,	cleancss: true
-				}
-			,	files: manifest
+					path: appLESS,
+					compress: true,
+					cleancss: true
+				},
+				files: manifest
 			}
-		}
-	,	imagemin: {
+		},
+		imagemin: {
 			dynamic: {
 				options: {
-					optimizationLevel: 5
-				,	pngquant: true
-				}
-			,	files: [{
-					expand: true
-				,	cwd: appIMG
-				,   src: [ '**/*.{png,jpg,gif}' ]
-				,	dest: pathIMG
+					optimizationLevel: 5,
+					pngquant: true
+				},
+				files: [{
+					expand: true,
+					cwd: appIMG,
+					src: [ '**/*.{png,jpg,gif}' ],
+					dest: pathIMG
 				}]
 			}
-		}
-	,	csslint: {
-			src: pathCSS + '*.css'
-		,	csslintrc: '.csslintrc'
-		,	options: {
-				formatters: [{
-					id: 'text'
-				,	dest: 'CSSlint.txt'
-				}]
-			}
-		}
-	,	csscss: {
+		},
+		csslint: {
+			src: pathCSS + '*.css',
+			csslintrc: '.csslintrc',
 			options: {
-				verbose: true
-			,	outputJson: true
+				formatters: [{
+					id: 'text',
+					dest: 'CSSlint.txt'
+				}]
 			}
-		,	dist: { 'DEV-report.json' : pathCSS }
-		}
-	,	wintersmith: {
+		},
+		wintersmith: {
 			build: {
 				options: {
-					action: "build"
-				,	config: 'config.json'
+					action: "build",
+					config: 'config.json'
 				}
-			}
-		,	preview: {
+			},
+			preview: {
 				options: {
-					action: "preview"
-				,	config: 'config.json'
+					action: "preview",
+					config: 'config.json'
 				}
 			}
-		}
-	, 	copy: {
+		},
+		copy: {
 			main: {
-				expand: true
-			,	cwd: appJS
-			,	src: '*.js'
-			,	dest: pathJS
-			, 	flatten: true
+				expand: true,
+				cwd: appJS,
+				src: '*.js',
+				dest: pathJS,
+				flatten: true
+			},
+			bowerstuff: {
+				expand: true,
+				cwd: bowerPath,
+				src: [ 'jq/dist/jquery.min.js' ],
+				dest: pathJS,
+				flatten: true
 			}
-		,	bowerstuff: {
-				expand: true
-			,	cwd: bowerPath
-			,	src: [ 'jq/dist/jquery.min.js' ]
-			,	dest: pathJS
-			, 	flatten: true
-			}
-		}
-	, 	open: {
+		},
+		open: {
 			dev : {
-				path: 'http://localhost:8080'
-			,	app: 'Firefox'
+				path: 'http://localhost:8080',
+				app: 'Firefox'
 			}
-		}
-	,	watch: {
+		},
+		'sftp-deploy': {
+			build: {
+				auth: {
+					host: 'proemland.com',
+					port: 22,
+					authKey: 'key1'
+				},
+				cache: 'sftpCache.json',
+				src: '/build',
+				dest: '/home/proemadmin/placeguntohead.com',
+				serverSep: '/',
+				concurrency: 4,
+				progress: true
+			}
+		},
+		watch: {
 			files: [
-				appLESS + '*'
-			, 	appIMG + '*'
-			, 	appJS + '*'
-			,	appSRC + "*"
-			,	"templates/*.jade"
-			, 	"Gruntfile.js"
-			]
-		,	tasks: [ 'less:dev', 'copy' ]
-		,	options: {
-				reload: true
-			,	livereload: true
-			,	spawn: false
-			,	dateFormat: function( time )
-				{
+				appLESS + '*',
+				appIMG + '*',
+				appJS + '*',
+				appSRC + "*",
+				"templates/*.jade",
+				"Gruntfile.js"
+			],
+			tasks: [ 'less:dev', 'imagemin', 'copy' ],
+			options: {
+				reload: true,
+				livereload: true,
+				spawn: false,
+				dateFormat: function( time ) {
 					grunt.log.writeln('Hickory Dickory Dock the Mouse ran up the clock in ' + time + 'ms');
 					grunt.log.writeln('MOAR changes... bring them you must!');
 				}
 			}
-		}
-	,	concurrent: {
+		},
+		concurrent: {
 			target: {
-				tasks: [ 'wintersmith:preview', 'watch', 'open' ]
-			,	options:
-				{
+				tasks: [ 'wintersmith:preview', 'open', 'watch' ],
+				options: {
 					logConcurrentOutput: true
 				}
 			}
@@ -147,5 +153,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('test', [ 'less:dev', 'csscss', 'csslint', 'wintersmith:build' ]);
 
 	// Deploy
-	grunt.registerTask('deploy', [ 'less:production', 'imagemin', 'concat', 'wintersmith:build' ]);
-}
+	grunt.registerTask('deploy', [ 'less:production', 'imagemin', 'wintersmith:build' ]);
+
+	// upload
+	grunt.registerTask('upload', [ 'deploy', 'sftp-deploy' ]);	
+};

@@ -3,7 +3,7 @@
 .ico:after {
   position: relative;
   line-height: 1;
-  font-family: "typicons";
+  font-family: 'typicons';
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -34,9 +34,14 @@
 .animate,
 .lnk,
 .page-nav-l2-lst,
-.btn {
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+.btn,
+.page-nav-hdr {
+  -webkit-transition: all 0.35s ease-in-out 0s;
+  transition: all 0.35s ease-in-out 0s;
+}
+.lnk,
+.page-nav-hdr {
+  cursor: pointer;
 }
 blockquote {
   font-family: 'Gloria Hallelujah', cursive;
@@ -54,20 +59,25 @@ body {
   top: 0;
   padding: 1.5em;
   width: 29.16666667%;
+  color: #454549;
+  text-shadow: -1px -1px 0 #202022;
 }
 .page-header-ttl {
-  font-size: 3.2rem;
-  font-size: 32px;
-  line-height: 1.5;
   margin-bottom: 0;
+  font-weight: 300;
   text-transform: capitalize;
 }
 .page-header-ttl-lnk {
-  color: #5e5e63;
+  color: #454549;
+  text-shadow: -1px -1px 0 #202022;
 }
 .page-header-desc {
-  color: #04b4bf;
   margin: 0;
+  text-transform: uppercase;
+}
+.page-header-aside {
+  color: #5e5e63;
+  text-shadow: -1px -1px 0 #202022;
 }
 .page-header-aside-copy {
   margin-bottom: 0;
@@ -77,14 +87,12 @@ body {
   font-size: 12px;
   line-height: 1;
 }
+.page-nav-hdr {
+  color: #ff5e07;
+}
 .page-nav-l1-lst {
+  margin-bottom: 0;
   padding-left: 0;
-}
-.page-nav-l1-hdr {
-  cursor: pointer;
-}
-.page-nav-l1-hdr:hover {
-  opacity: 0.8;
 }
 .page-nav-l2-lst {
   margin: 0;
@@ -167,6 +175,10 @@ body {
 .author-network-social-itm:hover {
   box-shadow: 1px 1px 0 #202022, 1px 1px 0 rgba(255, 255, 255, 0.35) inset;
 }
+.nav {
+  padding: 0.75em 1.5em;
+  background-color: #232326;
+}
 .navlist,
 .author-network-antisocial-lst {
   margin: auto;
@@ -222,11 +234,33 @@ body {
 .post-main {
   padding-left: 8.33333333%;
 }
-.archive-lst-level1 {
+.post-index-ttl {
+  font-weight: 300;
+}
+.post-index-ttl-lnk {
+  margin-left: 8.33333333%;
+}
+.post-index-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.post-index-lst-level2,
+.post-index-lst-level1 {
+  padding-left: 0;
   vertical-align: top;
 }
-.archive-itm-level1 {
-  width: calc(100% / 3);
+.post-index-lst-level1 {
+  font-size: 0;
+}
+.post-index-lst-level2 {
+  font-size: 1.6rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.post-index-itm-level1 {
+  width: calc(100% / 4);
   display: inline-block;
   vertical-align: top;
+  margin-right: 15px;
 }

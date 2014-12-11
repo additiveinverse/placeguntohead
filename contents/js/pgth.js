@@ -12,7 +12,7 @@ var toggler = {
 				$this = $( elem );
 		});
 	}
-}
+};
 
 $( function() {
 	$( '.page-nav-lst' ).on( 'click', '.page-nav-l1-itm', function( e ) {
@@ -24,4 +24,4 @@ $( function() {
 		$this.addClass( elemActive ).children().toggleClass( active, $this.hasClass(elemActive) );
 		$this.siblings().removeClass( elemActive ).children().removeClass( active );
 	});
-})
+});
