@@ -2,7 +2,7 @@
 title: Your grand father is dead
 author: Proem
 date: 2001-11-06:03:02
-filename: /:title.html
+filename: among-others/:title.html
 template: article.jade
 record: 'Among Others'
 ---	

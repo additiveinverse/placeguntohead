@@ -1,16 +1,15 @@
 var toggler = {
 	_vars: {
-		element: ''
-	,	uls: ''
-	,	active: 'active'
-	}
-,	_con: function( elem, ev, activator ) {
+		element: '',
+		uls: '',
+		active: 'active'
+	},
+	_con: function( elem, ev, activator ) {
 		$( elem ).on( ev, activator, function( ev ) {
-			var	active = this._vars.active
-			,	elem = ev.currentTarget
-			,	elemActive = elem.classList[0] + '-' + active
-			,	$this = $( elem );
-
+			var	active = this._vars.active,
+				elem = ev.currentTarget,
+				elemActive = elem.classList[0] + '-' + active,
+				$this = $( elem );
 		});
 	}
 }
