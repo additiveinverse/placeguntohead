@@ -219,3 +219,4 @@ pip-log.txt
 node_modules/
 app_modules/
 .ftppass
+sftpCache.json

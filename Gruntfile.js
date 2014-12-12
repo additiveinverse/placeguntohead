@@ -1,22 +1,43 @@
 /*global module:false*/
 module.exports = function(grunt) {
 	var name = '<%= pkg.name %>-v<%= pkg.version%>',
-			manifest = '<%= pkg.manifest %>',
-			bowerPath = 'app_modules/',
-			winterPath = 'contents/',
-			pathJS = winterPath + 'js/',
-			pathCSS = winterPath + 'css/',
-			pathIMG = winterPath + 'im/',
-			appSRC = 'app/',
-			appLESS = appSRC + 'less/',
-			appIMG = appSRC + 'images/src',
-			appJS = appSRC + 'js/';
+			manifest = '<%= pkg.manifest %>';
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		//////////////////////////////////////////////////////////////////////////////////// Constants
+		app: {
+			root: 'app/',
+			JS: 'app/js/',
+			LESS: 'app/less/',
+			IMG: {
+				root: 'app/images/',
+				src: 'app/images/src/'
+			}
+		},
+		winter: {
+			path: 'contents/',
+			css: 'contents/css/',
+			img: 'contents/img/'
+		},
+		prod: {
+			root: 'build/',
+			IMG: 'build/img/',
+			JS: 'build/js/',
+			CSS: 'build/css/'
+		},
+		bower: 'app_modules/',
+		reports: 'test/',	
+		manifest: {
+			"<%= winter.css %>layout.min.css": [
+				"<%= bower %>normalize-less/normalize.less",
+				"<%= app.LESS %>base-*.less"
+			],
+			"<%= winter.css %>global.css": "<%= app.LESS %>global.less"
+		},
 		jshint: {
 			sitefiles: {
-				src: appJS + '*.js'
+				src: '<%= app.JS %>*.js'
 			},
 			gruntfile: {
 				src: 'Gruntfile.js'
@@ -25,18 +46,18 @@ module.exports = function(grunt) {
 		less: {
 			dev: {
 				options: {
-					path: appLESS,
+					path: '<%= app.LESS %>',
 					cleancss: false
 				},
-				files: manifest
+				files: '<%= manifest %>'
 			},
 			production: {
 				options: {
-					path: appLESS,
+					path: '<%= app.LESS %>',
 					compress: true,
 					cleancss: true
 				},
-				files: manifest
+				files: '<%= manifest %>'
 			}
 		},
 		imagemin: {
@@ -47,19 +68,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: appIMG,
+					cwd: '<%= app.IMG.src %>',
 					src: [ '**/*.{png,jpg,gif}' ],
-					dest: pathIMG
-				}]
-			}
-		},
-		csslint: {
-			src: pathCSS + '*.css',
-			csslintrc: '.csslintrc',
-			options: {
-				formatters: [{
-					id: 'text',
-					dest: 'CSSlint.txt'
+					dest: '<%= prod.IMG %>'
 				}]
 			}
 		},
@@ -67,7 +78,7 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					action: "build",
-					config: 'config.json'
+					config: 'config-prod.json'
 				}
 			},
 			preview: {
@@ -80,17 +91,38 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				expand: true,
-				cwd: appJS,
+				cwd: '<%= app.JS %>',
 				src: '*.js',
-				dest: pathJS,
+				dest: '<%= prod.JS %>',
 				flatten: true
 			},
 			bowerstuff: {
 				expand: true,
-				cwd: bowerPath,
+				cwd: '<%= bower %>',
 				src: [ 'jq/dist/jquery.min.js' ],
-				dest: pathJS,
+				dest: '<%= prod.JS %>',
 				flatten: true
+			},
+			images: {
+				expand: true,
+				cwd: '<%= app.IMG.src %>',
+				src: [ '**/*.{png,gif,jpg}' ],
+				dest: '<%= winter.img %>',
+				flatten: true
+			}
+		},
+		htmlmin: {
+			dist: {
+				options: {
+					removeAttributeQuotes: true,
+					useShortDoctype: true,
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				expand: true,
+				cwd: 'build',
+				src: ['**/*.html'],
+				dest: 'build/'
 			}
 		},
 		open: {
@@ -107,7 +139,7 @@ module.exports = function(grunt) {
 					authKey: 'key1'
 				},
 				cache: 'sftpCache.json',
-				src: '/build',
+				src: 'build',
 				dest: '/home/proemadmin/placeguntohead.com',
 				serverSep: '/',
 				concurrency: 4,
@@ -116,10 +148,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			files: [
-				appLESS + '*',
-				appIMG + '*',
-				appJS + '*',
-				appSRC + "*",
+				'<%= app.root %>**/*',
 				"templates/*.jade",
 				"Gruntfile.js"
 			],
@@ -149,12 +178,9 @@ module.exports = function(grunt) {
 	// Develop
 	grunt.registerTask('default', [ 'concurrent' ]);
 
-	// Test
-	grunt.registerTask('test', [ 'less:dev', 'csscss', 'csslint', 'wintersmith:build' ]);
-
 	// Deploy
-	grunt.registerTask('deploy', [ 'less:production', 'imagemin', 'wintersmith:build' ]);
+	grunt.registerTask('build', [ 'less:production', 'imagemin', 'wintersmith:build', 'htmlmin' ]);
 
 	// upload
-	grunt.registerTask('upload', [ 'deploy', 'sftp-deploy' ]);	
+	grunt.registerTask('deploy', [ 'build', 'sftp-deploy' ]);	
 };

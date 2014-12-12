@@ -13,7 +13,7 @@
 }
 
 .sprite {
-	background-image: url(../im/sprite.png);
+	background-image: url(../img/sprite.png);
 }
 
 .animate {
@@ -33,7 +33,7 @@ body {
 	&:extend(.grids);
 	color: @white;
 	// background: url(../im/text-16-24.png);
-	background: @grey url(../im/bg.texture.png);
+	background: @grey url(../img/bg.texture.png);
 }
 
 .page {
@@ -43,15 +43,13 @@ body {
 		position: absolute;
 		right: 0;
 		top: 0;
-		padding: @base-margin;
+		padding: @base-margin @base-margin * 2 @base-margin 0;
 		.col(3.5);
 				color: @grey-darker;
 				text-shadow: -1px -1px 0 @grey-dark;
 
 		&-ttl {
-			// .font-size( @base-type-h2, 2 );
 			margin-bottom: 0;
-			font-weight: 300;
 			text-transform: capitalize;
 
 			&-lnk {

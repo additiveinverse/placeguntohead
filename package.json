@@ -5,13 +5,6 @@
   "main": "index.html",
   "author": "Richard Bailey",
   "repository": "https://github.com/additiveinverse/placeguntohead.git",
-  "manifest": {
-    "contents/css/layout.min.css": [
-      "app_modules/normalize-less/normalize.less",
-      "app/less/base-*.less"
-    ],
-    "contents/css/global.css": "app/less/global.less"
-  },
   "dependencies": {
     "moment": "2.3.x",
     "underscore": "1.4.x",
@@ -36,6 +29,7 @@
     "grunt-csscss": "~0.6.2",
     "grunt-contrib-imagemin": "~0.7.1",
     "grunt-open": "~0.2.3",
-    "grunt-sftp-deploy": "~0.2.2"
+    "grunt-sftp-deploy": "~0.2.2",
+    "grunt-contrib-htmlmin": "~0.3.0"
   }
 }
