@@ -21,8 +21,6 @@ html( lang='en' )
 			script( src=locals.url + '/js/pgth.js' )
 
 	body( class='page page-' + bodyclass )
-		block navtop
-
 		header.header.page-header
 			h1.ttl.page-header-ttl
 				a.lnk.page-header-ttl-lnk( href=locals.url )= locals.name
@@ -55,3 +53,6 @@ html( lang='en' )
 
 		main.page-content.main-content.content
 			block content
+
+			nav.page-content-nav.nav
+				block navtop

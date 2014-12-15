@@ -32,21 +32,28 @@ blockquote {
 body {
 	&:extend(.grids);
 	color: @white;
-	// background: url(../im/text-16-24.png);
 	background: @grey url(../img/bg.texture.png);
 }
 
 .page {
 	position: relative;
+	display: flex;
+	flex-flow: row; 
+	justify-content: center;
+	align-content: stretch;
+
+	&-header,
+	&-content {
+		padding: @base-margin 0 0;
+	}
 
 	&-header {
-		position: absolute;
-		right: 0;
-		top: 0;
-		padding: @base-margin @base-margin * 2 @base-margin 0;
-		.col(3.5);
-				color: @grey-darker;
-				text-shadow: -1px -1px 0 @grey-dark;
+		.col(2.5);
+		color: @grey-darker;
+		text-shadow: -1px -1px 0 @grey-dark;
+		order: 3;
+		flex: 0 0 auto;
+		align-self: stretch;
 
 		&-ttl {
 			margin-bottom: 0;
@@ -111,23 +118,10 @@ body {
 		}
 	}
 
-	// &-logo {
-	// 	top: 0;
-	// 	position: absolute;
-	// 	background-position: 0 -20px;
-	// 	background-size: 281px;
-	// 	width: 50px;
-	// 	height: 50px;
-	// 	left: 0;
-	// 	top: -15px;
-	// 	font-size: 0;
-	// 	&:extend( .sprite );
-	// }
-
 	&-content {
-		width: 100%;
-		padding: 0 @base-margin-half @base-margin;
-		.suffix(4);
+		order: 1;
+		flex: 0 0 auto;
+		.col(9);
 	}
 }
 
@@ -206,8 +200,11 @@ body {
 }
 
 .nav {
-	padding: @base-margin-half @base-margin;
-	background-color: multiply(@grey, @grey);
+	align-self: stretch;
+	&-list {
+		padding: @base-margin-half @base-margin;
+		background-color: multiply(@grey, @grey);
+	}	
 }
 
 .navlist {
@@ -288,8 +285,11 @@ body {
 			padding-left: 0;
 			vertical-align: top;
 		}
+
 		&-level1 {
-			font-size: 0;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: space-around;
 		}
 
 		&-level2 {
@@ -299,10 +299,7 @@ body {
 
 	&-itm {
 		&-level1 {
-			width: calc(~"100% / 4");
-			display: inline-block;
-			vertical-align: top;
-			margin-right: unit(@base-margin * 10, px);
+
 		}
 	}
 }
