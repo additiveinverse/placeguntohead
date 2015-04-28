@@ -26,14 +26,6 @@ html( lang='en' )
 				a.lnk.page-header-ttl-lnk( href=locals.url )= locals.name
 			p.page-header-desc.description= locals.description
 
-			- var sites = contents.authors['proem.json']
-			- var siteslnk = sites.metadata.network.antisocial
-
-			a.lnk.page-header-ttl-lnk-pland( href=siteslnk.proemland, title='to discography' )
-				to proemland
-			a.lnk.page-header-ttl-lnk-addin( href=siteslnk.additiveinverse, title='to portfolio' )
-				to additiveinverse
-
 	block footer
 		nav.page-nav
 			- var articles = env.helpers.getArticles( contents )

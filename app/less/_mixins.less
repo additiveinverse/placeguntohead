@@ -25,28 +25,27 @@
 //////////////////////////// Helper Class
 .ico_base {
 	position: relative;
-	line-height: 1;
+	line-height+: 1;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-			font-smoothing: antialiased;
+					font-smoothing: antialiased;
 }
 
 .ico {
 	&:before,
 	&:after {
-		font-family: @font-icon;
+		font-family+: @font-icon;
 		&:extend( .ico_base );
 	}
 }
 
 //////////////////////////// Let's go ahead and set the base icon styles
 ._ico( @_ico, @font-size: 14, @fnt: @font-icon ) {
-	font-family: @fnt;
-	&:extend( .ico_base );
-	.font-size( @font-size );
+	font-family+: @fnt;
+	font-size+: @font-size;
 	._inject( @_ico );
 }
 

@@ -35,7 +35,7 @@
 }
 .animate,
 .lnk,
-.page-nav-l2-lst,
+.page-nav-lst,
 .btn,
 .page-nav-hdr {
   -webkit-transition: all 0.35s;
@@ -46,6 +46,18 @@
 .lnk,
 .page-nav-hdr {
   cursor: pointer;
+}
+.navicon,
+.page-nav:before {
+  font-size: 0;
+  margin: 20px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #ffffff, #ffffff 20%, transparent 20%, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%, transparent 80%, #ffffff 80%, #ffffff 100%);
+  width: 40px;
+  height: 40px;
+}
+.page-nav:hover .navicon {
+  background: linear-gradient(to bottom, #524e42, #524e42 20%, transparent 20%, transparent 40%, #524e42 40%, #524e42 60%, transparent 60%, transparent 80%, #524e42 80%, #524e42 100%);
 }
 blockquote {
   font-family: 'Gloria Hallelujah', cursive;
@@ -75,33 +87,6 @@ body {
 .page-header-ttl-lnk:hover {
   color: #5c3913;
 }
-.page-header-ttl-lnk-pland,
-.page-header-ttl-lnk-addin {
-  font-size: 0;
-  position: absolute;
-  top: 30%;
-  display: inline-block;
-  vertical-align: top;
-  border: 15px solid;
-}
-.page-header-ttl-lnk-addin {
-  right: 0;
-  margin-right: 7.5px;
-  border-color: transparent transparent transparent #7c7764;
-}
-.page-header-ttl-lnk-addin:hover {
-  margin-right: 7.5px;
-  border-color: transparent transparent transparent #9b6020;
-}
-.page-header-ttl-lnk-pland {
-  left: -0.5%;
-  margin-left: 7.5px;
-  border-color: transparent #7c7764 transparent transparent;
-}
-.page-header-ttl-lnk-pland:hover {
-  margin-left: 7.5px;
-  border-color: transparent #9b6020 transparent transparent;
-}
 .page-header-desc {
   margin: 0;
   text-transform: uppercase;
@@ -121,17 +106,38 @@ body {
   font-size: 12px;
   line-height: 1;
 }
+.page-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+}
+.page-nav:before {
+  z-index: 90;
+  content: "";
+  display: inline-block;
+}
+.page-nav:hover .page-nav-lst {
+  top: -1.5em;
+}
+.page-nav-lst {
+  position: absolute;
+  text-align: left;
+  z-index: 40;
+  top: -1000px;
+  width: 100%;
+  padding-top: 1.5em;
+  background-color: rgba(0, 0, 0, 0.65);
+}
 .page-nav-l1-itm {
-  width: calc(100% / 8);
+  width: calc(100% / 6);
   display: inline-block;
   vertical-align: top;
 }
 .page-nav-l1-lst {
   margin-bottom: 0;
   padding-left: 0;
-}
-.page-nav-l2-lst {
-  padding-left: 0.75em;
 }
 .page-content {
   padding: 0 31% 0.75em 3em;

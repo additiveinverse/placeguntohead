@@ -26,6 +26,31 @@
 	cursor: pointer;
 }
 
+.navicon {
+	font-size: 0;
+	margin: 20px;
+	cursor: pointer;
+	background: linear-gradient(
+		to bottom, 
+		@white, @white 20%, 
+		transparent 20%, transparent 40%, 
+		@white 40%, @white 60%, 
+		transparent 60%, transparent 80%, 
+		@white 80%, @white 100%
+	);
+	.size(40px);
+	.page-nav:hover & {
+		background: linear-gradient(
+			to bottom, 
+			@grey-med, @grey-med 20%, 
+			transparent 20%, transparent 40%, 
+			@grey-med 40%, @grey-med 60%, 
+			transparent 60%, transparent 80%, 
+			@grey-med 80%, @grey-med 100%
+		);
+	}
+}
+
 blockquote {
 	font-family: @font-serif;
 }
@@ -57,33 +82,6 @@ body {
 				&:hover {
 					color: darken(@rust, 15%);
 				}
-				@arrow-width: 15px;
-
-				&-pland,
-				&-addin {
-					font-size: 0;
-					position: absolute;
-					top: 30%;
-					.inline-def;
-					border: @arrow-width solid;
-				}
-
-				&-addin {
-					right: 0;
-					// .arrow(left, @grey, @arrow-width);
-					.arrow_pointing(left, @grey, @arrow-width);
-					&:hover {
-						.arrow_pointing(left, @rust, @arrow-width);
-					}
-				}				
-
-				&-pland {
-					left: -0.5%;
-					.arrow_pointing(right, @grey, @arrow-width);
-					&:hover {
-						.arrow_pointing(right, @rust, @arrow-width);
-					}
-				}
 			}
 		}
 
@@ -110,18 +108,42 @@ body {
 	}
 
 	&-nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		text-align: right;
+
+		&:before {
+			z-index: 90;
+			&:extend(.navicon);
+			._inject();
+		}
+
+		&:hover {
+			.page-nav-lst {
+				top: -@base-margin;
+			}
+		}
+
 		&-lst {
-			.icon(@anchor);
+			position: absolute;
+			text-align: left;
+			z-index: 40;
+			top: -1000px;
+			width: 100%;
+			padding-top: @base-margin;
+			background-color: fadeout(@black, 35%);
+			&:extend(.animate);
 		}
 
 		&-hdr {
 			&:extend(.lnk);
-			&.active {}
 		}
 
 		&-l1 {
 			&-itm {
-				width: calc(~"100% / 8");
+				width: calc(~"100% / 6");
 				.inline-def;
 			}
 
@@ -132,9 +154,9 @@ body {
 		}
 
 		&-l2 {
+			&-itm {}
 			&-lst {
-				&:extend( .animate );
-				padding-left: @base-margin-half;
+				// padding-left: @base-margin-half;
 			}
 		}
 	}
