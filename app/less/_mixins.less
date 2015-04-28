@@ -1,25 +1,8 @@
 @import './_variables';
+@import './lesshat';
 
-.box-sizing ( @sizing: border-box ) {
-	-webkit-box-sizing: @sizing;
-	   -moz-box-sizing: @sizing;
-			box-sizing: @sizing;
-}
-
-.background-origin( @origin ) {
-	-webkit-origin-size: @origin;
-	   -moz-origin-size: @origin;
-	   		origin-size: @origin;
-}
-
-.background-size( @size ) {
-	-webkit-background-size: @size;
-	   -moz-background-size: @size;
-			background-size: @size;
-}
-
-.background-clip( @type: padding-box ) {
-	background-clip: @arguments;
+.uppercase() {
+	text-transform: uppercase;
 }
 
 .font-size( @font-size: @base-type-size, @offset: 1 ) {
@@ -34,11 +17,15 @@
 	display: inline-block;
 }
 
+.inline-def {
+	display: inline-block;
+	vertical-align: top;
+}
+
 //////////////////////////// Helper Class
 .ico_base {
 	position: relative;
 	line-height: 1;
-	font-family: @font-icon;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
@@ -50,12 +37,14 @@
 .ico {
 	&:before,
 	&:after {
+		font-family: @font-icon;
 		&:extend( .ico_base );
 	}
 }
 
 //////////////////////////// Let's go ahead and set the base icon styles
-._ico( @_ico, @font-size: 14 ) {
+._ico( @_ico, @font-size: 14, @fnt: @font-icon ) {
+	font-family: @fnt;
 	&:extend( .ico_base );
 	.font-size( @font-size );
 	._inject( @_ico );
@@ -63,10 +52,10 @@
 
 //////////////////////////// Let's make some icons
 // 	Here's where the magic happens
-.icon( @place, @_ico, @fs: 14 ) when ( @place = "pre" ) {
+.icon( @place, @_ico, @fs: 14, @fnt: @font-icon ) when ( @place = "pre" ) {
 	&:before {
 		margin-right: 0.25em;
-		._ico( @_ico, @fs );
+		._ico( @_ico, @fs, @fnt );
 	}
 }
 
@@ -129,58 +118,42 @@
 	border-left: @arguments
 }
 
-// box shadows
-.shadow( @x-axis: 0, @y-axis: 1px, @blur: 2px, @color: #000, @alpha: 0.1 ) {
-	box-shadow: @x-axis @y-axis @blur fade( @color, @alpha );
-}
-
 .gradient( @deg, @start: #EEE, @start-percent: 0%, @stop: #FFF, @stop-percent: 100% ) {
 	background-color: @start;
 	background-image: -webkit-linear-gradient( @deg, @start @start-percent, @stop @stop-percent );
-	background-image: 		  linear-gradient( @deg, @start @start-percent, @stop @stop-percent );
+	background-image: 		  	linear-gradient( @deg, @start @start-percent, @stop @stop-percent );
 	}
 
 // transforms
-.transform(...) {
+.transforms(...) {
 	-webkit-transform: @arguments;
 		-ms-transform: @arguments;
 			transform: @arguments;
 }
 
-.transform-origin(...) {
+.transforms-origin(...) {
 	-webkit-transform-origin: @arguments;
-	   -moz-transform-origin: @arguments;
-		-ms-transform-origin: @arguments;
-			transform-origin: @arguments;
+  	 -moz-transform-origin: @arguments;
+			-ms-transform-origin: @arguments;
+					transform-origin: @arguments;
 }
 
-	.rotate( @deg: 5deg, @origin: center ) {
-		.transform( rotate( @deg ) );
-		.transform-origin( @origin );
+	.rotates( @deg: 5deg, @origin: center ) {
+		.transforms( rotate( @deg ) );
+		.transforms-origin( @origin );
 	}
 
-	.scale( @r1: 1, @r2: 1, @origin: center ) {
-		.transform( scale( @r1, @r2 ) );
-		.transform-origin( @origin );
+	.scales( @r1: 1, @r2: 1, @origin: center ) {
+		.transforms( scale( @r1, @r2 ) );
+		.transforms-origin( @origin );
 	}
 
-	.translate( @x:0, @y:0, @origin: center ) {
-		.transform( translate( @x, @y ) );
-		.transform-origin( @origin );
+	.translates( @x:0, @y:0, @origin: center ) {
+		.transforms( translate( @x, @y ) );
+		.transforms-origin( @origin );
 	}
 
-	.translate3d( @x:0, @y:0, @origin: center ) {
-		.transform( translate3d( @x, @y ) );
-		.transform-origin( @origin );
+	.translates3d( @x:0, @y:0, @origin: center ) {
+		.transforms( translate3d( @x, @y ) );
+		.transforms-origin( @origin );
 	}
-
-.transition( @thing: all, @dur: 0.2s, @ease: ease-in-out, @delay: 0s) {
-	-webkit-transition: @arguments;
-			transition: @arguments;
-}
-
-.animator( @name, @time: 0.5s, @iteration: infinite, @delay: 0.5s, @fillmode: both ) {
-	-webkit-animation: @arguments;
-			animation: @arguments;
-}
-

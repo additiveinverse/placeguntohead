@@ -13,24 +13,27 @@ module.exports = function(grunt) {
 			IMG: {
 				root: 'app/images/',
 				src: 'app/images/src/'
-			}
+			},
+			font: 'app/font/'
 		},
 		winter: {
 			path: 'contents/',
 			css: 'contents/css/',
-			img: 'contents/img/'
+			img: 'contents/img/',
+			font: 'contents/fonts/'
 		},
 		prod: {
 			root: 'build/',
 			IMG: 'build/img/',
 			JS: 'build/js/',
-			CSS: 'build/css/'
+			CSS: 'build/css/',
+			font: 'build/fonts/'
 		},
 		bower: 'app_modules/',
 		reports: 'test/',	
 		manifest: {
 			"<%= winter.css %>layout.min.css": [
-				"<%= bower %>normalize-less/normalize.less",
+				"<%= app.LESS %>normalize.less",
 				"<%= app.LESS %>base-*.less"
 			],
 			"<%= winter.css %>global.css": "<%= app.LESS %>global.less"
@@ -47,7 +50,8 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					path: '<%= app.LESS %>',
-					cleancss: false
+					cleancss: false,
+					compress: false,
 				},
 				files: '<%= manifest %>'
 			},
@@ -96,18 +100,39 @@ module.exports = function(grunt) {
 				dest: '<%= prod.JS %>',
 				flatten: true
 			},
-			bowerstuff: {
+			js_deps: {
 				expand: true,
 				cwd: '<%= bower %>',
 				src: [ 'jq/dist/jquery.min.js' ],
 				dest: '<%= prod.JS %>',
 				flatten: true
 			},
+			css_deps: {
+				expand: true,
+				cwd: '<%= bower %>',
+				src: [ 'lesshat/build/lesshat.less',  'normalize-less/normalize.less'],
+				dest: '<%= app.LESS %>',
+				flatten: true
+			},			
 			images: {
 				expand: true,
 				cwd: '<%= app.IMG.src %>',
 				src: [ '**/*.{png,gif,jpg}' ],
 				dest: '<%= winter.img %>',
+				flatten: true
+			},
+			font: {
+				expand: true,
+				cwd: '<%= app.font %>',
+				src: [ '**/*.{eot,svg,ttf,woff}' ],
+				dest: '<%= winter.fonts %>',
+				flatten: true
+			},
+			prod_font: {
+				expand: true,
+				cwd: '<%= app.font %>',
+				src: [ '**/*.{eot,svg,ttf,woff}' ],
+				dest: '<%= prod.fonts %>',
 				flatten: true
 			}
 		},
@@ -152,7 +177,7 @@ module.exports = function(grunt) {
 				"templates/*.jade",
 				"Gruntfile.js"
 			],
-			tasks: [ 'less:dev', 'imagemin', 'copy' ],
+			tasks: [ 'less:dev', 'newer:copy:images', 'newer:copy:font', 'newer:imagemin'  ],
 			options: {
 				reload: true,
 				livereload: true,
@@ -179,7 +204,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', [ 'concurrent' ]);
 
 	// Deploy
-	grunt.registerTask('build', [ 'less:production', 'imagemin', 'wintersmith:build', 'htmlmin' ]);
+	grunt.registerTask('build', [ 'less:production', 'copy', 'imagemin', 'wintersmith:build', 'htmlmin' ]);
 
 	// upload
 	grunt.registerTask('deploy', [ 'build', 'sftp-deploy' ]);	

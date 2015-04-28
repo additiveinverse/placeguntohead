@@ -26,6 +26,14 @@ html( lang='en' )
 				a.lnk.page-header-ttl-lnk( href=locals.url )= locals.name
 			p.page-header-desc.description= locals.description
 
+			- var sites = contents.authors['proem.json']
+			- var siteslnk = sites.metadata.network.antisocial
+
+			a.lnk.page-header-ttl-lnk-pland( href=siteslnk.proemland )
+				to proemland
+			a.lnk.page-header-ttl-lnk-addin( href=siteslnk.additiveinverse )
+				to additiveinverse
+
 			nav.page-header-nav.page-nav
 				- var articles = env.helpers.getArticles( contents )
 				- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
@@ -41,15 +49,15 @@ html( lang='en' )
 							include _nav
 							+menuMaker( 'page-nav-l2', item )
 
-			block footer
-				aside.page-header-aside
-					include _author
-					+author( 'proem' )
+	block footer
+		aside.page-aside
+			include _author
+			+author( 'proem' )
 
-					p.page-header-aside-copy &copy; #{ new Date().getFullYear() } #{ locals.owner }
-					p.page-header-aside-poweredby
-						|  powered by 
-						a( href='https://github.com/jnordberg/wintersmith' ) Wintersmith
+			p.page-aside-copy &copy; #{ new Date().getFullYear() } #{ locals.owner }
+			p.page-aside-poweredby
+				|  powered by 
+				a( href='https://github.com/jnordberg/wintersmith' ) Wintersmith
 
 		main.page-content.main-content.content
 			block content

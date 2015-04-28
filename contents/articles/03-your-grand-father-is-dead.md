@@ -7,23 +7,22 @@ template: article.jade
 record: 'Among Others'
 ---	
 
-- These are the words my mother used  
-  When she called me one afternoon  
-  To relay the news of my grandfather  
-  Her fathers passing  
-  ( to where ive never been sure but its a thing people say)  
-    
-  When i was much younger i had loved my grandfather a great deal  
-  As i started to grow into the person i was to be   
-  He resisted  
-  With  
-  Grimaces at my long hair  
-  Mean spirited remarks about clothing choices  
-    
-  'What the fuck you wanna go and do a thing like that for? You look like a damned queer. You used to be such a nice kid. Now lookatchas'  
-  He was the only real racist i think i've had to know.  
-    
-  It was no wonder my mother stayed in the closet until he was barely lucid and senile  
-    
-  I did not miss him  
-  And i mourned his passing.
+These are the words my mother used  
+When she called me one afternoon  
+To relay the news of my grandfather  
+Her fathers passing  
+( to where I've never been sure but its a thing people say)  
+  
+When I was much younger I had loved my grandfather a great deal  
+As I started to grow into the person I was to be   
+He resisted  
+With  
+Grimaces at my long hair  
+Mean spirited remarks about clothing choices  
+  
+'What the fuck you wanna go and do a thing like that for? You look like a damned queer. You used to be such a nice kid. Now look at you.'  
+  
+It was no wonder my mother stayed in the closet until so close to his end.
+  
+I did not miss him.
+And I mourned his passing.

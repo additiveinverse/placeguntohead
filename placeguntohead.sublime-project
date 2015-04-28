@@ -2,13 +2,10 @@
 	"folders":
 	[
 		{
-			"follow_symlinks": true,
-			"path": ".",
-			"follow_symlinks": true,
-			// "folder_exclude_patterns":
-			// [
-			// 	"node_modules"
-			// ]
+			"path": "."
+		},
+		{
+			"path": "C:\\Users\\baileyr\\Desktop\\Dropbox\\Mindmaps"
 		}
 	],
 	"settings":

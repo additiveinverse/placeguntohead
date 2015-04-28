@@ -11,10 +11,15 @@ block content
 		header(class=bodyclass + '-hdr hdr')
 			h1(class=bodyclass + '-hdr-ttl ttl')
 				a(class=bodyclass + '-hdr-ttl-lnk lnk', href=page.url)= page.title
+
+			img(src='img/' + page.metadata.record + '.png')
+
 			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-track')
 				= moment.utc(page.date).format('mm')
+
 			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-release')
 				= page.metadata.record	
+
 
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
 
