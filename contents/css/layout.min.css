@@ -220,7 +220,7 @@ table {
   border: 0 none;
   padding: 0.375em 0.375em;
   width: calc(100% - @label-total);
-  box-shadow: 2px 2px 10px #9e9ea3;
+  box-shadow: 2px 2px 10px #a19d8b;
 }
 .sel:hover,
 .txtarea:hover,
@@ -260,7 +260,7 @@ table {
   font-style: italic;
 }
 .req {
-  box-shadow: 0 0 5px #ed997f inset;
+  box-shadow: 0 0 5px #ed7e29 inset;
   position: relative;
 }
 .req:after {
@@ -271,10 +271,10 @@ table {
 }
 .fault,
 .err {
-  color: #ed997f;
+  color: #ed7e29;
 }
 .err {
-  background-color: #ed997f;
+  background-color: #ed7e29;
   border-radius: 16px;
   height: auto;
   left: 33%;
@@ -339,17 +339,17 @@ table {
 html,
 body {
   font-family: sans-serif;
-  color: #202022;
+  color: #272620;
   height: 100%;
   margin: 0;
 }
 a,
 .lnk {
   text-decoration: none;
-  color: #ed997f;
+  color: #ed7e29;
 }
 a:hover {
-  color: #e4643c;
+  color: #f3a970;
 }
 a:focus {
   outline: none;

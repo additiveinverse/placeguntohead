@@ -26,9 +26,10 @@ blockquote {
 }
 
 body {
-	color: @white;
+	color: @base-type-color;
+
 	background: url(../img/bg.texture.png) repeat 0 0, 
-							url(../img/rando_texture.png) no-repeat top center @grey;
+							url(../img/rando_texture.png) no-repeat top center @grey-med;
 	background-size: 500px, 100% 750px;
 }
 
@@ -37,19 +38,22 @@ body {
 	position: relative;
 
 	&-header {
-		color: @grey-darker;
-		text-shadow: -1px -1px 0 @grey-dark;
+		color: @grey;
 		padding: @base-margin-half @base-margin * 2;
 		position: relative;
 
 		&-ttl {
 			margin-bottom: 0;
 			text-transform: capitalize;
+			text-shadow: -1px -1px 0 @grey-dark;
 			.col(6);
 
 			&-lnk {
-				color: @grey-darker;
-				text-shadow: -1px -1px 0 @grey-dark;
+				color: @rust;
+				&:hover {
+					color: darken(@rust, 15%);
+				}
+				@arrow-width: 15px;
 
 				&-pland,
 				&-addin {
@@ -57,21 +61,23 @@ body {
 					position: absolute;
 					top: 30%;
 					.inline-def;
+					border: @arrow-width solid;
 				}
 
 				&-addin {
 					right: 0;
-					.arrow(left, 15px, @grey);
+					// .arrow(left, @grey, @arrow-width);
+					.arrow_pointing(left, @grey, @arrow-width);
 					&:hover {
-					.arrow(left, 15px, @orange);
+						.arrow_pointing(left, @rust, @arrow-width);
 					}
 				}				
 
 				&-pland {
 					left: -0.5%;
-					.arrow(right, 15px, @grey);
+					.arrow_pointing(right, @grey, @arrow-width);
 					&:hover {
-						.arrow(right, 15px, @orange);
+						.arrow_pointing(right, @rust, @arrow-width);
 					}
 				}
 			}
@@ -89,8 +95,8 @@ body {
 		padding: @base-margin-half @base-margin * 2 @base-margin-half 0;
 		.col(3.3);
 		
-		color: @grey;
-		text-shadow: -1px -1px 0 @grey-dark;
+		color: @grey-lighter;
+		text-shadow: 1px 1px 0 @grey-dark;
 
 		&-copy {
 			margin-bottom: 0; 
@@ -105,7 +111,6 @@ body {
 		display: none;
 
 		&-hdr {
-			color: @base-link;
 			&:extend(.lnk);
 			&.active {}
 		}
@@ -339,7 +344,7 @@ body {
 		}
 
 		&-level1 {
-			display: flex;
+			.display(flex);
 			flex-wrap: wrap;
 			align-content: space-around;
 		}

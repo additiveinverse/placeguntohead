@@ -1,21 +1,23 @@
 // //////////////////////// Greyscale
 @black: 										rgb( 0, 0, 0 );
-@grey-darker:								darken( @grey, 10% );
-@grey-dark:									darken( @grey, 25% );
-@grey:											rgb( 94, 94, 99 );
-@grey-light:								lighten( @grey, 25% );
-@grey-lighter: 							lighten( @grey, 10% );
+@grey-dark:									darken( @grey-med, 15% );
+@grey-med:									darken( @grey, 15% );
+@grey:											rgb( 124, 119, 100 );
+@grey-light:								lighten( @grey, 15% );
+@grey-lighter:							lighten( @grey-light, 15% );
 @white: 										rgb( 255, 255, 255 );
 
 // //////////////////////// Branding
 @white-off: 								rgb( 240, 243, 243 );
+// @blue: 											rgb( 4, 180, 191 );
+@blue:											rgb(127, 211, 237);
 @white-out: 								fade( @white-off, 70% );
-@blue: 											rgb( 4, 180, 191 );
 @green: 										rgb( 72, 179, 14 );
-@orange: 										rgb(237, 153, 127);
+@orange: 										rgb(237, 126, 41);
+@rust:											rgb(155,96,32);
 @yellow: 										rgb(253, 255, 110);
 @red:												red;
-@peach:											rgb(187, 128, 148);
+@tan:												rgb(193, 180, 142);
 
 @font-sans-serif: 					sans-serif;
 @font-serif:								'Gloria Hallelujah', cursive;
@@ -29,13 +31,13 @@
 @base-type-color: 					@grey-dark;
 
 @base-type-heading:					@font-heading;
-@base-type-heading-color:   spin(@orange, 180);
+@base-type-heading-color:   @blue;
 
 @base-line-height: 					1.5;
 @base-line-multiplier:			@base-type-size * @base-line-height; // 24
 
 @base-link:									@orange;
-@base-link-hover:	 					darken( @base-link, 15% );
+@base-link-hover:	 					lighten( @base-link, 15% );
 @base-input-focus:					darken( @base-link, 25% );
 
 // ------------------------ Typography - headings
@@ -58,8 +60,8 @@
 @note:											@grey;
 
 // ------------------------ Forms - buttons
-@btn-primary: 							@yellow;
-@btn-secondary:	 						@orange;
+@btn-primary: 							@blue;
+@btn-secondary:	 						@rust;
 
 // ------------------------ Forms - labels
 @label-width: 							30%;
@@ -84,6 +86,6 @@
 @btn-bg:										@btn-primary;
 
 // ------------------------ icons
-@icon-color: 								@orange;
+@icon-color: 								@blue;
 
 @import './_typicons';
