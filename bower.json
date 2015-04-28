@@ -19,15 +19,13 @@
     "node_modules",
     "app_modules",
     "bower_components",
-    "app_modules",
     "test",
     "tests"
   ],
-  "dependencies": {
-    "jq": "*",
-    "normalize-less": "*"
-  },
   "devDependencies": {
-    "lesshat": "~3.0.2"
+    "jq": "*",
+    "normalize-less": "*",
+    "lesshat": "~3.0.2",
+    "typicons": "~2.0.7"
   }
 }

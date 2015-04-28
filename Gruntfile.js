@@ -20,14 +20,14 @@ module.exports = function(grunt) {
 			path: 'contents/',
 			css: 'contents/css/',
 			img: 'contents/img/',
-			font: 'contents/fonts/'
+			font: 'contents/font/'
 		},
 		prod: {
 			root: 'build/',
 			IMG: 'build/img/',
 			JS: 'build/js/',
 			CSS: 'build/css/',
-			font: 'build/fonts/'
+			font: 'build/font/'
 		},
 		bower: 'app_modules/',
 		reports: 'test/',	
@@ -123,16 +123,16 @@ module.exports = function(grunt) {
 			},
 			font: {
 				expand: true,
-				cwd: '<%= app.font %>',
-				src: [ '**/*.{eot,svg,ttf,woff}' ],
-				dest: '<%= winter.fonts %>',
+				cwd: '<%= bower %>',
+				src: [ 'typicons/src/*.{eot,svg,ttf,woff}' ],
+				dest: '<%= app.font %>',
 				flatten: true
 			},
 			prod_font: {
 				expand: true,
 				cwd: '<%= app.font %>',
-				src: [ '**/*.{eot,svg,ttf,woff}' ],
-				dest: '<%= prod.fonts %>',
+				src: [ '*.{eot,svg,ttf,woff}' ],
+				dest: '<%= prod.font %>',
 				flatten: true
 			}
 		},

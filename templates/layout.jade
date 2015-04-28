@@ -29,27 +29,27 @@ html( lang='en' )
 			- var sites = contents.authors['proem.json']
 			- var siteslnk = sites.metadata.network.antisocial
 
-			a.lnk.page-header-ttl-lnk-pland( href=siteslnk.proemland )
+			a.lnk.page-header-ttl-lnk-pland( href=siteslnk.proemland, title='to discography' )
 				to proemland
-			a.lnk.page-header-ttl-lnk-addin( href=siteslnk.additiveinverse )
+			a.lnk.page-header-ttl-lnk-addin( href=siteslnk.additiveinverse, title='to portfolio' )
 				to additiveinverse
 
-			nav.page-header-nav.page-nav
-				- var articles = env.helpers.getArticles( contents )
-				- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
-				- 	return article.metadata.record
-				- }).value()
-
-				ul.page-nav-lst.page-nav-l1-lst
-					- var record = _.chain( articlesGroup ).keys().value()
-					each arts, i in record
-						li.page-nav-itm.page-nav-l1-itm
-							h5.ttl.page-nav-hdr.page-nav-l1-hdr= record[i]
-							- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
-							include _nav
-							+menuMaker( 'page-nav-l2', item )
-
 	block footer
+		nav.page-nav
+			- var articles = env.helpers.getArticles( contents )
+			- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
+			- 	return article.metadata.record
+			- }).value()
+
+			ul.page-nav-lst.page-nav-l1-lst
+				- var record = _.chain( articlesGroup ).keys().value()
+				each arts, i in record
+					li.page-nav-itm.page-nav-l1-itm
+						h5.ttl.page-nav-hdr.page-nav-l1-hdr= record[i]
+						- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
+						include _nav
+						+menuMaker( 'page-nav-l2', item )
+
 		aside.page-aside
 			include _author
 			+author( 'proem' )
@@ -64,6 +64,8 @@ html( lang='en' )
 
 			nav.page-content-nav.nav
 				block navtop
+
+
 
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

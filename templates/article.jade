@@ -12,7 +12,7 @@ block content
 			h1(class=bodyclass + '-hdr-ttl ttl')
 				a(class=bodyclass + '-hdr-ttl-lnk lnk', href=page.url)= page.title
 
-			img(src='img/' + page.metadata.record + '.png')
+			//- img(src='/img/' + page.metadata.record + '-i.png')
 
 			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-track')
 				= moment.utc(page.date).format('mm')
