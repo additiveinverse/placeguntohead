@@ -1,5 +1,6 @@
 @import './_variables';
 @import './_mixins';
+@import './_utilities';
 @import './_grid';
 @import './_typicons';
 @import './lesshat';
@@ -69,7 +70,6 @@ body {
 
 	&-header {
 		color: @grey;
-		padding: @base-margin-half @base-margin * 2;
 		position: relative;
 
 		&-ttl {
@@ -92,11 +92,8 @@ body {
 	}
 
 	&-aside {
-		position: absolute;
-		right: 0;
 		padding: @base-margin-half @base-margin * 2 @base-margin-half 0;
 		color: @grey-lighter;
-		.col(3.3);
 
 		&-copy {
 			margin-bottom: 0; 
@@ -161,9 +158,9 @@ body {
 		}
 	}
 
-	&-content {
-		padding: 0 31% @base-margin-half @base-margin * 2;
-	}
+	// &-content {
+	// 	padding: 0 31% @base-margin-half @base-margin * 2;
+	// }
 }
 
 .author {
@@ -331,7 +328,6 @@ body {
 	&-main {
 		.prefix(1);
 	}
-
 }
 
 .post-index {
@@ -370,9 +366,6 @@ body {
 
 	&-itm {
 		&-level1 {
-			padding: 0 @base-margin 0 0;
-			flex: 1 1 auto;
-			width: 30px;
 			.transition;
 		}
 	}

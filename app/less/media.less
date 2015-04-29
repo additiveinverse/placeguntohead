@@ -1,5 +1,28 @@
 // 320px
 @media only screen and ( min-width: 320px ) {
+	.page {
+		&-header {
+			padding: @base-margin-half @base-margin;
+		}
+
+		&-nav {}
+
+		&-aside {
+			display: none;
+		}
+
+		&-content {
+			padding: 0 @base-margin @base-margin-half @base-margin;
+		}	
+	}	
+
+	.post {
+		&-index {
+			&-ttl {
+				.font-size(@base-type-h3);
+			}
+		}
+	}
 }
 
 // 480px
@@ -8,18 +31,63 @@
 
 // 640px
 @media only screen and ( min-width: 640px ) {
+	.post {
+		&-index {
+			&-itm {
+				&-level1 {
+					padding: 0 @base-margin 0 0;
+					flex: 1 1 auto;
+					width: 30px;
+				}
+			}			
+		}
+	}	
 }
 
 // 768px
 @media only screen and ( min-width: 768px ) {
+	.page {
+		&-header {
+			padding: @base-margin-half @base-margin * 2;
+		}
+		&-nav {}
+		&-aside {
+			position: absolute;
+			right: 0;
+		}
+		&-content {
+			padding: 0 31% @base-margin-half @base-margin * 2;
+		}	
+	}
+
+	.post {
+		&-index {
+			&-ttl {
+				.font-size(@base-type-h2);
+			}
+		}
+	}
 }
+
 
 // 980px
 @media only screen and ( min-width: 992px ) {
+
 }
 
 // 1024px
 @media only screen and ( min-width: 1024px ) {
+	.page {
+		&-header {}
+		&-nav {}
+		&-aside {
+			.col(3.3);
+		}
+
+		&-content {
+			padding: 0 31% @base-margin-half @base-margin * 2;
+		}	
+	}
 }
 
 // 1280px

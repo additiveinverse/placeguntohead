@@ -1,6 +1,6 @@
 @import './_variables';
-@import './lesshat';
 @import './_mixins';
+@import './lesshat';
 
 * {
 	.box-sizing;
@@ -12,6 +12,7 @@ body {
 	color: @base-type-color;
 	height: 100%;
 	margin: 0;
+	.font-size(@base-type-size);
 }
 
 // Links
@@ -25,11 +26,6 @@ a {
 
 	&:focus { outline: none }
 }
-
-// .grids { 
-// 	background: url(../im/text-16-24.png);
-// 	 // behold the deliciousness that is the background size 
-// }
 
 // Headings
 h1,
@@ -166,29 +162,3 @@ audio {
 img { height: auto }
 
 fieldset { border: none }
-
-// Lists
-.lst {}
-
-// List items
-.itm {}
-
-// Information wrappers
-.nfo {}
-
-// Information type
-.typ {}
-
-// Information values
-.val {}
-
-.lnk {
-	&:extend(a);
-}
-
-// titles
-.ttl {
-	font-family: @base-type-heading;
-	color: @base-type-heading-color;
-	// text-shadow: 1px 1px 0 @white-out;
-}

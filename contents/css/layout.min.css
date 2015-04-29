@@ -181,11 +181,6 @@ th {
   padding: 0;
 }
 
-
-.inline-def {
-  display: inline-block;
-  vertical-align: top;
-}
 .ico_base,
 .ico:before,
 .ico:after {
@@ -323,10 +318,6 @@ th {
   color: #000000;
 }
 
-.inline-def {
-  display: inline-block;
-  vertical-align: top;
-}
 .ico_base,
 .ico:before,
 .ico:after {
@@ -354,9 +345,11 @@ body {
   color: #272620;
   height: 100%;
   margin: 0;
+  font-size: 1.6rem;
+  font-size: 16px;
+  line-height: 1.5;
 }
-a,
-.lnk {
+a {
   text-decoration: none;
   color: #e78820;
 }
@@ -491,8 +484,4 @@ img {
 }
 fieldset {
   border: none;
-}
-.ttl {
-  font-family: 'Raleway', sans-serif;
-  color: #7fd3ed;
 }
