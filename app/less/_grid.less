@@ -35,6 +35,7 @@
 }
 
 .column( @x, @columns: @columns, @margin-top: auto) {
+	vertical-align: top;
 	display: inline-block;
 	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
 	margin: @margin-top @total-width*((@gutter-width*.5)/@gridsystem-width);
@@ -43,11 +44,6 @@
 // just the width ma'am
 .col( @x, @columns: @columns ) {
 	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-}
-
-.tall( @x, @columns: @columns ) {
-	height: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-	margin-bottom: @total-width*((@gutter-width*.5)/@gridsystem-width) * 2;
 }
 
 .push( @offset: 1 ) {

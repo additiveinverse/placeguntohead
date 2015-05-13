@@ -50,8 +50,11 @@
 }
 .animate,
 .lnk,
+#navicon .closed,
+.page-nav:before,
 .page-nav-lst,
 .btn,
+.page-nav:before,
 .page-nav-hdr {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -62,17 +65,18 @@
 .page-nav-hdr {
   cursor: pointer;
 }
-.navicon,
+#navicon .closed,
 .page-nav:before {
   font-size: 0;
   margin: 20px;
   cursor: pointer;
-  background: linear-gradient(to bottom, #ffffff, #ffffff 20%, transparent 20%, transparent 40%, #ffffff 40%, #ffffff 60%, transparent 60%, transparent 80%, #ffffff 80%, #ffffff 100%);
-  width: 40px;
-  height: 40px;
+  background: linear-gradient(to bottom, #c1b48e, #c1b48e 20%, transparent 20%, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 80%, #c1b48e 80%, #c1b48e 100%);
+  width: 35px;
+  height: 35px;
 }
-.page-nav:hover .navicon {
-  background: linear-gradient(to bottom, #524e42, #524e42 20%, transparent 20%, transparent 40%, #524e42 40%, #524e42 60%, transparent 60%, transparent 80%, #524e42 80%, #524e42 100%);
+#navicon .open,
+.page-nav:hover:before {
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 100%);
 }
 blockquote {
   font-family: 'Gloria Hallelujah', cursive;
@@ -89,25 +93,23 @@ body {
 .page-header {
   color: #7c7764;
   position: relative;
+  z-index: 10;
 }
 .page-header-ttl {
   margin-bottom: 0;
   text-transform: capitalize;
-  width: 47.91666667%;
 }
 .page-header-ttl-lnk {
   color: #9b6020;
-}
-.page-header-ttl-lnk:hover {
-  color: #5c3913;
 }
 .page-header-desc {
   margin: 0;
   text-transform: uppercase;
 }
 .page-aside {
-  padding: 0.75em 3em 0.75em 0;
   color: #c4c1b5;
+  border-top: 1px dashed rgba(240, 243, 243, 0.7);
+  font-size: 0;
 }
 .page-aside-copy {
   margin-bottom: 0;
@@ -118,6 +120,7 @@ body {
   line-height: 1;
 }
 .page-nav {
+  z-index: 100;
   position: absolute;
   top: 0;
   right: 0;
@@ -125,6 +128,7 @@ body {
   text-align: right;
 }
 .page-nav:before {
+  position: relative;
   z-index: 90;
   content: "";
   display: inline-block;
@@ -136,18 +140,21 @@ body {
   position: absolute;
   text-align: left;
   z-index: 40;
-  top: -1000px;
+  top: -1000em;
   width: 100%;
-  padding-top: 1.5em;
+  padding-top: 4.5em;
   background-color: rgba(0, 0, 0, 0.65);
 }
 .page-nav-l1-itm {
-  width: calc(100% / 6);
+  width: calc(100% / 3);
   display: inline-block;
   vertical-align: top;
 }
 .page-nav-l1-lst {
   margin-bottom: 0;
+  padding-left: 1.5em;
+}
+.page-nav-l2-lst {
   padding-left: 0;
 }
 .author {
@@ -168,13 +175,11 @@ body {
   border-radius: 50%;
   background-clip: padding-box;
   border: 8px solid #f0f3f3;
-  width: 31.25%;
 }
 .author-network {
   margin-left: 0.75em;
   display: inline-block;
   vertical-align: top;
-  width: 56.25%;
 }
 .author-network-antisocial-lst {
   border-bottom: none;
@@ -242,9 +247,6 @@ body {
   content: 'Q';
   display: inline-block;
 }
-.nav {
-  align-self: stretch;
-}
 .nav-list {
   padding: 0.75em 1.5em;
   background-color: #3c3827;
@@ -263,47 +265,6 @@ body {
   background-image: -webkit-linear-gradient(0deg, #000000 0%, #272620 100%);
   background-image: linear-gradient(0deg, #000000 0%, #272620 100%);
 }
-.post {
-  color: #ffffff;
-  padding-right: 0.75em;
-}
-.post-hdr {
-  position: relative;
-}
-.post-hdr-ttl {
-  font-weight: 300;
-}
-.post-hdr-ttl-lnk {
-  margin-left: 9.375%;
-}
-.post-hdr-meta {
-  font-weight: 800;
-  display: inline-block;
-  position: absolute;
-}
-.post-hdr-meta-track {
-  top: 24px;
-  color: #7fd3ed;
-  text-align: center;
-  width: 6.25%;
-}
-.post-hdr-meta-release {
-  top: 16px;
-  color: #7c7764;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  -webkit-transform-origin: 0 50px 0;
-  -moz-transform-origin: 0 50px 0;
-  -ms-transform-origin: 0 50px 0;
-  transform-origin: 0 50px 0;
-  font-size: 1.2rem;
-  font-size: 12px;
-  line-height: 1;
-}
-.post-main {
-  padding-left: 9.375%;
-}
 .post-index-ttl {
   font-weight: 300;
   margin: 0.4em 0;
@@ -321,15 +282,6 @@ body {
   padding-left: 0;
   vertical-align: top;
 }
-.post-index-lst-level1 {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
-}
 .post-index-lst-level2 {
   font-size: 1.6rem;
   font-size: 16px;
@@ -341,15 +293,40 @@ body {
   -o-transition: all 0s ease 0s;
   transition: all 0s ease 0s;
 }
+.post {
+  color: #c1b48e;
+  padding-right: 0.75em;
+}
+.post-header {
+  position: relative;
+}
+.post-header-title {
+  font-weight: 300;
+}
+.post-header-meta-track {
+  color: #7fd3ed;
+}
+.post-header-meta-release {
+  color: #7c7764;
+  font-size: 1.2rem;
+  font-size: 12px;
+  line-height: 2;
+}
+.post-meta {
+  margin-right: 0.75em;
+  font-weight: 800;
+  display: inline-block;
+}
 @media only screen and (min-width: 320px) {
-  .page-header {
+  .interior_row,
+  .page-header,
+  .page-aside,
+  .page-content {
     padding: 0.75em 1.5em;
   }
-  .page-aside {
-    display: none;
-  }
-  .page-content {
-    padding: 0 1.5em 0.75em 1.5em;
+  .page-header-ttl {
+    font-size: 32px;
+    line-height: 1;
   }
   .post-index-ttl {
     font-size: 3.2rem;
@@ -359,33 +336,40 @@ body {
 }
 @media only screen and (min-width: 640px) {
   .post-index-itm-level1 {
-    padding: 0 1.5em 0 0;
-    flex: 1 1 auto;
-    width: 30px;
+    vertical-align: top;
+    display: inline-block;
+    width: 31.25%;
+    margin: auto 1.04166667%;
   }
 }
 @media only screen and (min-width: 768px) {
-  .page-header {
-    padding: 0.75em 3em;
-  }
+  .interior_row,
+  .page-header,
+  .page-content,
   .page-aside {
-    position: absolute;
-    right: 0;
-  }
-  .page-content {
-    padding: 0 31% 0.75em 3em;
+    padding: 0.75em 3em;
   }
   .post-index-ttl {
     font-size: 4.1rem;
     font-size: 41px;
     line-height: 0.58536585;
   }
+  .post-header-title-link {
+    margin-left: 9.375%;
+  }
+  .post-header-meta-track {
+    top: 24px;
+    color: #7fd3ed;
+    text-align: center;
+    width: 6.25%;
+  }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1280px) {
+  .page {
+    width: 72.91666667%;
+    margin: 0 auto;
+  }
   .page-aside {
     width: 25.41666667%;
-  }
-  .page-content {
-    padding: 0 31% 0.75em 3em;
   }
 }

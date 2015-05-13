@@ -7,17 +7,17 @@ block prepend title
 	| #{ page.title + " - "}
 
 block content
-	article(class=bodyclass + ' ' + bodyclass + '-lst')
-		header(class=bodyclass + '-hdr hdr')
-			h1(class=bodyclass + '-hdr-ttl ttl')
-				a(class=bodyclass + '-hdr-ttl-lnk lnk', href=page.url)= page.title
+	article(class=bodyclass)
+		header(class=bodyclass + '-header hdr')
+			h1(class=bodyclass + '-header-title ttl')
+				a(class=bodyclass + '-header-title-link lnk', href=page.url)= page.title
 
 			//- img(src='/img/' + page.metadata.record + '-i.png')
 
-			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-track')
+			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-track')
 				= moment.utc(page.date).format('mm')
 
-			span(class=bodyclass + '-hdr-meta ' + bodyclass + '-hdr-meta-release')
+			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-release')
 				= page.metadata.record	
 
 
@@ -25,10 +25,6 @@ block content
 
 block prepend navtop
 	ul.nav-list.lst
-		//- if prevPage
-		//- 	a(href=prevPage.url) « Back
-		//- else
-		//- 	a(href='/index.html') « Back
 		if nextPage
 			li.nav-list-item.itm 
 				a.nav-list-item-lnk.lnk(href=nextPage.url) Next Story »
