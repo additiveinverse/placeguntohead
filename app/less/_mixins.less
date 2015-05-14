@@ -16,6 +16,7 @@
 
 //////////////////////////// Helper Class
 .ico_base {
+	color: @font-icon-color;
 	position: relative;
 	line-height+: 1;
 	font-style: normal;
@@ -38,6 +39,7 @@
 ._ico( @_ico, @font-size: 14, @fnt: @font-icon ) {
 	font-family+: @fnt;
 	font-size+: @font-size;
+	color: @font-icon-color;
 	._inject( @_ico );
 }
 
@@ -50,10 +52,10 @@
 	}
 }
 
-.icon( @place, @_ico, @fs ) when ( @place = "app" ) {
+.icon( @place, @_ico, @fs: 14, @fnt: @font-icon ) when ( @place = "app" ) {
 	&:after {
-		// margin-left: 0.25em;
-		._ico( @_ico, @fs );
+		margin-left: 0.25em;
+		._ico( @_ico, @fs, @fnt );
 	}
 }
 

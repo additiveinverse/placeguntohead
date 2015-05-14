@@ -90,24 +90,22 @@ body {
 
 	&-aside {
 		color: @grey-lighter;
-//		.bt(1px, dashed, fade( @grey, 10% ));
-		.bt(1px, dashed, @white-out);
 		font-size: 0;
+		.bt(1px, dashed, @white-out);
+
 		&-copy {
-			margin-bottom: 0; 
+			margin: @base-margin-quarter @base-margin-half 0; 
+			line-height: 1.5;
 		}
 
 		&-poweredby {
-			.font-size( @base-type-sm, 0.5 );
+			.font-size( @base-type-sm );
+			margin: 0 @base-margin-half @base-margin-quarter; 
+
 		}
 	}
 
 	&-nav {
-		z-index: 100;
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 100%;
 		text-align: right;
 
 		&:before {
@@ -165,31 +163,36 @@ body {
 }
 
 .author {
-	margin-bottom: 1em;
-	.bt(1px, dashed, fade( @grey, 10% ));
+	.bt(1px, dashed, @black );
 	.bb(1px, dashed, @white-out);
+	font-size: 0;
 
 	&-photo {
-		position: relative;
-		top: 1em;
 		box-shadow: 1px 1px 1px fade(@white, 25% ), -1px -1px 1px @grey-dark;
-		.inline-def;
-		.border-radius(50%);
 		.border( 8px, solid, @white-off );
+		.border-radius(50%);
+		.column(3);
+		margin-top+: unit(@base-margin, %);
+		margin-bottom+: unit(@base-margin, %);
+	}
+
+	&-bio {
+		margin-top: unit(@base-margin, %);
+		margin-bottom+: unit(@base-margin, %);
 	}
 
 	&-network {
 		margin-left: @base-margin-half;
-		.inline-def;
+		&:extend(.inline-def);
 		
 		&-antisocial {
 			&-lst {
-				border-bottom: none;
+				.font-size(@base-type-size);
 				&:extend( .navlist );
 			}
 
 			&-itm {
-				.icon( "app", @link );
+				.icon( "app", @bookmark );
 
 				&:hover {
 					&:after {
@@ -215,11 +218,13 @@ body {
 				overflow: hidden;
 				margin-right: 5px;
 				font-size: 0;
-				.transition( box-shadow, .3s );
+				opacity: 0.65;
+				.transition( all, .3s );
 
 				&:hover {
 					box-shadow: 1px 1px 0 @grey-dark, 
 											1px 1px 0 fade( @white, 35% ) inset;
+					opacity: 1;
 				}
 
 				&:before {
@@ -289,7 +294,8 @@ body {
 .post-index {
 	&-ttl {
 		font-weight: 300;
-		margin: 0.4em 0;
+		.column(12);
+		// margin: 0.4em 0;
 
 		&-lnk {
 			.push(1);
@@ -310,6 +316,7 @@ body {
 		}
 
 		&-level1 {
+			font-size: 0;
 			// .display(flex);
 			// flex-wrap: wrap;
 			// align-content: space-around;

@@ -2,6 +2,7 @@
 .ico:before,
 .ico:after,
 .author-network-social-itm:before {
+  color: #9b6020;
   position: relative;
   line-height: 1;
   font-style: normal;
@@ -15,7 +16,8 @@
 .ico:after {
   font-family: 'typicons';
 }
-.inline-def {
+.inline-def,
+.author-network {
   display: inline-block;
   vertical-align: top;
 }
@@ -108,23 +110,20 @@ body {
 }
 .page-aside {
   color: #c4c1b5;
-  border-top: 1px dashed rgba(240, 243, 243, 0.7);
   font-size: 0;
+  border-top: 1px dashed rgba(240, 243, 243, 0.7);
 }
 .page-aside-copy {
-  margin-bottom: 0;
+  margin: 0.375em 0.75em 0;
+  line-height: 1.5;
 }
 .page-aside-poweredby {
   font-size: 1.2rem;
   font-size: 12px;
-  line-height: 1;
+  line-height: 2;
+  margin: 0 0.75em 0.375em;
 }
 .page-nav {
-  z-index: 100;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
   text-align: right;
 }
 .page-nav:before {
@@ -158,31 +157,45 @@ body {
   padding-left: 0;
 }
 .author {
-  margin-bottom: 1em;
-  border-top: 1px dashed rgba(124, 119, 100, 0.1);
+  border-top: 1px dashed #000000;
   border-bottom: 1px dashed rgba(240, 243, 243, 0.7);
+  font-size: 0;
 }
 .author-photo {
-  position: relative;
-  top: 1em;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25), -1px -1px 1px #272620;
-  display: inline-block;
-  vertical-align: top;
+  border: 8px solid #f0f3f3;
   -webkit-border-radius: 50%;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 50%;
   -moz-background-clip: padding;
   border-radius: 50%;
   background-clip: padding-box;
-  border: 8px solid #f0f3f3;
+  vertical-align: top;
+  display: inline-block;
+  width: 22.91666667%;
+  margin: auto 1.04166667%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
+.author-bio {
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 }
 .author-network {
   margin-left: 0.75em;
-  display: inline-block;
-  vertical-align: top;
 }
 .author-network-antisocial-lst {
-  border-bottom: none;
+  font-size: 1.6rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.author-network-antisocial-itm:after {
+  margin-left: 0.25em;
+  font-family: 'typicons';
+  font-size: 14;
+  color: #9b6020;
+  content: '\e033';
+  display: inline-block;
 }
 .author-network-antisocial-itm:hover:after {
   opacity: 1;
@@ -200,13 +213,15 @@ body {
   overflow: hidden;
   margin-right: 5px;
   font-size: 0;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  -moz-transition: -moz-box-shadow 0.3s;
-  -o-transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
+  opacity: 0.65;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .author-network-social-itm:hover {
   box-shadow: 1px 1px 0 #272620, 1px 1px 0 rgba(255, 255, 255, 0.35) inset;
+  opacity: 1;
 }
 .author-network-social-itm:before {
   cursor: pointer;
@@ -267,7 +282,10 @@ body {
 }
 .post-index-ttl {
   font-weight: 300;
-  margin: 0.4em 0;
+  vertical-align: top;
+  display: inline-block;
+  width: 97.91666667%;
+  margin: auto 1.04166667%;
 }
 .post-index-ttl-lnk {
   margin-left: 9.375%;
@@ -281,6 +299,9 @@ body {
 .post-index-lst-level1 {
   padding-left: 0;
   vertical-align: top;
+}
+.post-index-lst-level1 {
+  font-size: 0;
 }
 .post-index-lst-level2 {
   font-size: 1.6rem;
@@ -321,17 +342,20 @@ body {
   .interior_row,
   .page-header,
   .page-aside,
-  .page-content {
+  .page-content,
+  .author {
     padding: 0.75em 1.5em;
   }
   .page-header-ttl {
     font-size: 32px;
     line-height: 1;
   }
-  .post-index-ttl {
-    font-size: 3.2rem;
-    font-size: 32px;
-    line-height: 0.75;
+  .page-nav {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -343,17 +367,6 @@ body {
   }
 }
 @media only screen and (min-width: 768px) {
-  .interior_row,
-  .page-header,
-  .page-content,
-  .page-aside {
-    padding: 0.75em 3em;
-  }
-  .post-index-ttl {
-    font-size: 4.1rem;
-    font-size: 41px;
-    line-height: 0.58536585;
-  }
   .post-header-title-link {
     margin-left: 9.375%;
   }
@@ -364,12 +377,29 @@ body {
     width: 6.25%;
   }
 }
-@media only screen and (min-width: 1280px) {
-  .page {
-    width: 72.91666667%;
-    margin: 0 auto;
-  }
+@media only screen and (min-width: 992px) {
+  .interior_row,
+  .page-header,
+  .page-nav,
+  .page-content,
   .page-aside {
-    width: 25.41666667%;
+    width: 992px;
+    margin: 0 auto;
+    padding: 0.75em 0;
+  }
+  .page-nav {
+    position: relative;
+    margin-top: -5em;
+  }
+  .author-network {
+    vertical-align: top;
+    display: inline-block;
+    width: 22.91666667%;
+    margin: auto 1.04166667%;
+  }
+  .author-bio {
+    width: 47.91666667%;
+    display: inline-block;
+    margin: 1.5% 0 1.5%;
   }
 }
