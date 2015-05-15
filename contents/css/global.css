@@ -1,7 +1,9 @@
 .ico_base,
-.ico:before,
-.ico:after,
-.author-network-social-itm:before {
+.ico,
+.author-network-antisocial-itm:after,
+.author-network-social-itm:before,
+.btn-prev:before,
+.btn-back:before {
   color: #9b6020;
   position: relative;
   line-height: 1;
@@ -11,10 +13,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-}
-.ico:before,
-.ico:after {
-  font-family: 'typicons';
 }
 .inline-def,
 .author-network {
@@ -190,10 +188,9 @@ body {
   line-height: 1.5;
 }
 .author-network-antisocial-itm:after {
-  margin-left: 0.25em;
+  margin-left: 0.375em;
   font-family: 'typicons';
   font-size: 14;
-  color: #9b6020;
   content: '\e033';
   display: inline-block;
 }
@@ -263,7 +260,7 @@ body {
   display: inline-block;
 }
 .nav-list {
-  padding: 0.75em 1.5em;
+  padding: 0.75em;
   background-color: #3c3827;
 }
 .navlist,
@@ -273,12 +270,22 @@ body {
   text-transform: uppercase;
 }
 .btn {
-  color: #7fd3ed;
-  text-shadow: -1px -1px 0 #000000, 1px 1px 0 #272620;
-  padding: 1.5em 0.75em;
-  background-color: #000000;
-  background-image: -webkit-linear-gradient(0deg, #000000 0%, #272620 100%);
-  background-image: linear-gradient(0deg, #000000 0%, #272620 100%);
+  color: #9b6020;
+  padding: 0.375em 0.75em;
+}
+.btn-prev:before {
+  margin-right: 0.75em;
+  font-family: 'typicons';
+  font-size: 14;
+  content: '\e049';
+  display: inline-block;
+}
+.btn-back:before {
+  margin-right: 0.75em;
+  font-family: 'typicons';
+  font-size: 14;
+  content: '\e047';
+  display: inline-block;
 }
 .post-index-ttl {
   font-weight: 300;
@@ -288,7 +295,7 @@ body {
   margin: auto 1.04166667%;
 }
 .post-index-ttl-lnk {
-  margin-left: 9.375%;
+  left: 9.375%;
 }
 .post-index-img img {
   display: block;
@@ -334,9 +341,8 @@ body {
   line-height: 2;
 }
 .post-meta {
-  margin-right: 0.75em;
   font-weight: 800;
-  display: inline-block;
+  display: inline;
 }
 @media only screen and (min-width: 320px) {
   .interior_row,
@@ -367,14 +373,33 @@ body {
   }
 }
 @media only screen and (min-width: 768px) {
-  .post-header-title-link {
-    margin-left: 9.375%;
+  .post-header {
+    position: relative;
   }
   .post-header-meta-track {
-    top: 24px;
-    color: #7fd3ed;
-    text-align: center;
-    width: 6.25%;
+    top: 2.1em;
+  }
+  .post-header-meta-release {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: 12px 12px 0;
+    -moz-transform-origin: 12px 12px 0;
+    -ms-transform-origin: 12px 12px 0;
+    transform-origin: 12px 12px 0;
+    top: 6.45em;
+  }
+  .post-meta {
+    position: absolute;
+    left: -5.20833333%;
+  }
+  .post-main {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 1.5em;
+    -moz-column-gap: 1.5em;
+    column-gap: 1.5em;
   }
 }
 @media only screen and (min-width: 992px) {

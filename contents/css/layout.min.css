@@ -182,8 +182,7 @@ th {
 }
 
 .ico_base,
-.ico:before,
-.ico:after {
+.ico {
   color: #9b6020;
   position: relative;
   line-height: 1;
@@ -193,10 +192,6 @@ th {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-}
-.ico:before,
-.ico:after {
-  font-family: 'typicons';
 }
 [placeholder] {
   cursor: pointer;
@@ -320,8 +315,7 @@ th {
 }
 
 .ico_base,
-.ico:before,
-.ico:after {
+.ico {
   color: #9b6020;
   position: relative;
   line-height: 1;
@@ -331,10 +325,6 @@ th {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-}
-.ico:before,
-.ico:after {
-  font-family: 'typicons';
 }
 * {
   -webkit-box-sizing: content-box;

@@ -177,7 +177,7 @@ body {
 	}
 
 	&-bio {
-		margin-top: unit(@base-margin, %);
+		margin-top+: unit(@base-margin, %);
 		margin-bottom+: unit(@base-margin, %);
 	}
 
@@ -272,7 +272,7 @@ body {
 
 .nav {
 	&-list {
-		padding: @base-margin-half @base-margin;
+		padding: @base-margin-half;
 		background-color: multiply(@grey, @grey);
 	}	
 }
@@ -284,11 +284,15 @@ body {
 }
 
 .btn {
-	color: @blue;
-	text-shadow: -1px -1px 0 @black, 1px 1px 0 @grey-dark;
-	padding: @base-margin @base-margin-half;
-	.gradient( 0deg, @black, 0%, @grey-dark, 100% );
+	color: @btn-secondary;
+	padding: @base-margin-quarter @base-margin-half;
 	&:extend( .animate );
+	&-prev {
+		.icon('pre', @chevron-right );
+	}
+	&-back {
+		.icon( "pre", @chevron-left );
+	}
 }
 
 .post-index {
@@ -359,9 +363,8 @@ body {
 	}
 
 	&-meta {
-		margin-right: @base-margin-half;
 		font-weight: 800;
-		display: inline-block;
+		display: inline;
 	}	
 }
 

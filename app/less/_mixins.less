@@ -28,18 +28,14 @@
 }
 
 .ico {
-	&:before,
-	&:after {
-		font-family+: @font-icon;
-		&:extend( .ico_base );
-	}
+	&:extend( .ico_base );
 }
 
 //////////////////////////// Let's go ahead and set the base icon styles
 ._ico( @_ico, @font-size: 14, @fnt: @font-icon ) {
 	font-family+: @fnt;
 	font-size+: @font-size;
-	color: @font-icon-color;
+	.ico;
 	._inject( @_ico );
 }
 
@@ -47,14 +43,14 @@
 // 	Here's where the magic happens
 .icon( @place, @_ico, @fs: 14, @fnt: @font-icon ) when ( @place = "pre" ) {
 	&:before {
-		margin-right: 0.25em;
+		margin-right: @base-margin-half;
 		._ico( @_ico, @fs, @fnt );
 	}
 }
 
 .icon( @place, @_ico, @fs: 14, @fnt: @font-icon ) when ( @place = "app" ) {
 	&:after {
-		margin-left: 0.25em;
+		margin-left: @base-margin-quarter;
 		._ico( @_ico, @fs, @fnt );
 	}
 }

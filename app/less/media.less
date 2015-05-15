@@ -89,32 +89,33 @@
 
 	.post {
 		&-header {
+			position: relative;			
 			&-title {
 				&-link {
-					.push(1);
 				}
 			}
 
 			&-meta {
 				&-track {
-					top: unit( @base-line-multiplier, px );
-					color: @blue;
-					text-align: center;
-					.col(1);	
+					top: @base-margin * 1.4;
 				}
 
 				&-release {
-					// top: unit( @base-type-size, px );
-					// color: @grey;
-					// .rotates( 90deg, 0 50px 0 );
-					// .font-size( @base-type-sm, 0.5 );
+					.rotates( 90deg, 12px 12px 0 );
+					top: @base-margin * 4.3;
+
 				}
 			}
 		}
+		&-meta {
+			position: absolute;
+			.pull(@base-margin-half);
+		}
 
-		// &-main {
-		// 	.prefix(1);
-		// }
+		&-main {
+			.column-count(2);
+			.column-gap(@base-margin);
+		}
 	}
 }
 
