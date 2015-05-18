@@ -68,23 +68,23 @@
 #navicon .closed,
 .page-nav:before {
   font-size: 0;
-  margin: 20px;
   cursor: pointer;
   background: linear-gradient(to bottom, #c1b48e, #c1b48e 20%, transparent 20%, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 80%, #c1b48e 80%, #c1b48e 100%);
   width: 35px;
   height: 35px;
 }
 #navicon .open,
+.page-nav.active:before,
 .page-nav:hover:before {
-  background: linear-gradient(to bottom, transparent 0%, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 100%);
+  background: linear-gradient(to bottom, transparent, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 100%);
 }
 blockquote {
-  font-family: 'Gloria Hallelujah', cursive;
+  font-style: italic;
 }
 body {
   text-shadow: -1px -1px 0 rgba(39, 38, 32, 0.5);
   color: #272620;
-  background: url(../img/bg.texture.png) repeat 0 0, url(../img/rando_texture.png) no-repeat top center #524e42;
+  background: url(../img/bg.texture.png) repeat 0 0 fixed, url(../img/rando_texture.png) no-repeat top center #524e42;
   background-size: 500px, 100% 750px;
 }
 .page {
@@ -130,6 +130,7 @@ body {
   content: "";
   display: inline-block;
 }
+.page-nav.active .page-nav-lst,
 .page-nav:hover .page-nav-lst {
   top: -1.5em;
 }
@@ -137,7 +138,7 @@ body {
   position: absolute;
   text-align: left;
   z-index: 40;
-  top: -1000em;
+  top: -112.5em;
   width: 100%;
   padding-top: 4.5em;
   background-color: rgba(0, 0, 0, 0.65);
@@ -328,28 +329,25 @@ body {
 .post-header {
   position: relative;
 }
-.post-header-title {
-  font-weight: 300;
-}
 .post-header-meta-track {
   color: #7fd3ed;
 }
 .post-header-meta-release {
   color: #7c7764;
-  font-size: 1.2rem;
-  font-size: 12px;
-  line-height: 2;
 }
 .post-meta {
-  font-weight: 800;
-  display: inline;
+  font-size: 1.6rem;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
 }
 @media only screen and (min-width: 320px) {
   .interior_row,
   .page-header,
   .page-aside,
   .page-content,
-  .author {
+  .author,
+  .author-bio {
     padding: 0.75em 1.5em;
   }
   .page-header-ttl {
@@ -361,7 +359,27 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 95%;
+  }
+  .page-nav:before {
+    margin: 20px;
+  }
+  .author-network {
+    vertical-align: top;
+    display: inline-block;
+    width: 47.91666667%;
+    margin: auto 1.04166667%;
+  }
+  .post-header-meta-track {
+    padding-right: 0.1875em;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .post-index-itm-level1 {
+    vertical-align: top;
+    display: inline-block;
+    width: 47.91666667%;
+    margin: auto 1.04166667%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -377,7 +395,7 @@ body {
     position: relative;
   }
   .post-header-meta-track {
-    top: 2.1em;
+    top: 2.25em;
   }
   .post-header-meta-release {
     -webkit-transform: rotate(90deg);
@@ -387,19 +405,11 @@ body {
     -moz-transform-origin: 12px 12px 0;
     -ms-transform-origin: 12px 12px 0;
     transform-origin: 12px 12px 0;
-    top: 6.45em;
+    top: 4.8em;
   }
   .post-meta {
     position: absolute;
     left: -5.20833333%;
-  }
-  .post-main {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 1.5em;
-    -moz-column-gap: 1.5em;
-    column-gap: 1.5em;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -425,6 +435,7 @@ body {
   .author-bio {
     width: 47.91666667%;
     display: inline-block;
+    padding: 0;
     margin: 1.5% 0 1.5%;
   }
 }
