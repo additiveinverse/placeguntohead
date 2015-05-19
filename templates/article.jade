@@ -9,25 +9,43 @@ block prepend title
 block content
 	article(class=bodyclass)
 		header(class=bodyclass + '-header hdr')
-			h1(class=bodyclass + '-header-title ttl')
-				a(class=bodyclass + '-header-title-link lnk', href=page.url)= page.title
-
-			//- img(src='/img/' + page.metadata.record + '-i.png')
-
 			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-track')
 				= moment.utc(page.date).format('mm')
 
 			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-release')
 				= page.metadata.record	
+			h1(class=bodyclass + '-header-title ttl')
+				a(class=bodyclass + '-header-title-link lnk', href=page.url)= page.title
+
+			//- img(src='/img/' + page.metadata.record + '-i.png')
+
 
 
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
+
+block prepend footer 
+	nav.page-nav
+		- var articles = env.helpers.getArticles( contents )
+		- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
+		- 	return article.metadata.record
+		- }).value()
+		ul.page-nav-lst.page-nav-l1-lst
+			- var record = _.chain( articlesGroup ).keys().value()
+			each arts, i in record
+				li.page-nav-itm.page-nav-l1-itm
+					h5.ttl.page-nav-hdr.page-nav-l1-hdr= record[i]
+					- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
+					include _nav
+					+menuMaker( 'page-nav-l2', item )
 
 block prepend navtop
 	ul.nav-list.lst
 		if nextPage
 			li.nav-list-item.itm 
 				a.nav-list-item-lnk.btn.btn-next(href=nextPage.url) Next Story »
-
+		if prevPage
+			li.nav-list-item.itm 
+				a.nav-list-item-lnk.btn.btn-next(href=prevPage.url) Prev Story »
+		
 		li.nav-list-item.itm 
 			a.nav-list-item-lnk.btn.btn-back(href=contents.index.url) Back to Table of Contents

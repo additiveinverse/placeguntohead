@@ -90,22 +90,6 @@ body {
 		}
 	}
 
-	&-aside {
-		color: @grey-lighter;
-		font-size: 0;
-		.bt(1px, dashed, @white-out);
-
-		&-copy {
-			margin: @base-margin-quarter @base-margin-half 0; 
-			line-height: 1.5;
-		}
-
-		&-poweredby {
-			.font-size( @base-type-sm );
-			margin: 0 @base-margin-half @base-margin-quarter; 
-
-		}
-	}
 
 	&-nav {
 		text-align: right;
@@ -163,29 +147,47 @@ body {
 		}
 	}
 
+	&-content {
+		.bb(1px, dashed, @grey);
+	}
+
+	&-footer {
+		.bt(1px, dashed, @black );
+
+		&-info {
+			color: @grey;
+			.font-size(@base-type-sm);
+			margin: @base-margin-half @base-margin;
+
+			&-copy,
+			&-poweredby {
+				.column(6);
+			}
+
+			&-poweredby {
+				text-align: right;
+			}
+		}
+	}
 }
 
 .author {
 	.bt(1px, dashed, @black );
-	.bb(1px, dashed, @white-out);
+	.bb(1px, dashed, @grey);
+
+	color: @grey-lighter;
 	font-size: 0;
 
 	&-photo {
 		box-shadow: 1px 1px 1px fade(@white, 25% ), -1px -1px 1px @grey-dark;
 		.border( 8px, solid, @white-off );
-		.border-radius(50%);
-		.column(3);
-		margin-top+: unit(@base-margin, %);
-		margin-bottom+: unit(@base-margin, %);
-	}
-
-	&-bio {
-		margin-top+: unit(@base-margin, %);
-		margin-bottom+: unit(@base-margin, %);
+		.border-radius( 100% );
+		.col(2.5);
+		.sepia(50%);
+		margin: unit(@base-margin * 2, %) unit(@base-margin * 2, %);
 	}
 
 	&-network {
-		margin-left: @base-margin-half;
 		&:extend(.inline-def);
 		
 		&-antisocial {
@@ -215,14 +217,14 @@ body {
 			&-itm {
 				display: inline-block;
 				text-align: center;
-				border-radius: 50px;
 				box-shadow: 1px 1px 0 fade( @white, 25% ), 
 										1px 1px 0 @grey-dark inset;
 				overflow: hidden;
 				margin-right: 5px;
 				font-size: 0;
-				opacity: 0.65;
+				opacity: @base-opacity;
 				.transition( all, .3s );
+				.border-radius(100%);
 
 				&:hover {
 					box-shadow: 1px 1px 0 @grey-dark, 
@@ -233,7 +235,7 @@ body {
 				&:before {
 					cursor: pointer;
 					color: @white;
-					padding: @base-margin-half / 3;
+					padding: @base-margin-quarter;
 					font-family: socicon;
 					&:extend( .ico_base );
 					.font-size( 22 );
@@ -276,19 +278,19 @@ body {
 .nav {
 	&-list {
 		padding: @base-margin-half;
-		background-color: multiply(@grey, @grey);
+		background-color: fade(@black, 65%);
 	}	
 }
 
 .navlist {
 	margin: auto;
-	padding: @base-margin 0;
+	padding: @base-margin 0 @base-margin-half;
 	text-transform: uppercase;
 }
 
 .btn {
 	color: @btn-secondary;
-	padding: @base-margin-quarter @base-margin-half;
+	padding: @base-margin-quarter @base-margin-eighth;
 	&:extend( .animate );
 	&-prev {
 		.icon('pre', @chevron-right );
@@ -300,10 +302,8 @@ body {
 
 .post-index {
 	&-ttl {
-		font-weight: 300;
 		.column(12);
-		// margin: 0.4em 0;
-
+	
 		&-lnk {
 			.push(1);
 		}
@@ -324,9 +324,6 @@ body {
 
 		&-level1 {
 			font-size: 0;
-			// .display(flex);
-			// flex-wrap: wrap;
-			// align-content: space-around;
 		}
 
 		&-level2 {
@@ -343,7 +340,6 @@ body {
 
 .post {
 	color: @tan;
-	padding-right: @base-margin-half;
 
 	&-header {
 		position: relative;

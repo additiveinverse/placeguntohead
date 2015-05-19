@@ -43,14 +43,14 @@
 // 	Here's where the magic happens
 .icon( @place, @_ico, @fs: 14, @fnt: @font-icon ) when ( @place = "pre" ) {
 	&:before {
-		margin-right: @base-margin-half;
+		margin-right: @base-margin-eighth;
 		._ico( @_ico, @fs, @fnt );
 	}
 }
 
 .icon( @place, @_ico, @fs: 14, @fnt: @font-icon ) when ( @place = "app" ) {
 	&:after {
-		margin-left: @base-margin-quarter;
+		margin-left: @base-margin-eighth;
 		._ico( @_ico, @fs, @fnt );
 	}
 }

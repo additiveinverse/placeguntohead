@@ -2,7 +2,7 @@ mixin author(authorName)
 	- var author = contents.authors[authorName + '.json']
 	- var imagepath = locals.url + '/img/'
 
-	.author
+	aside.author
 		img(class='author-photo', src=imagepath + author.metadata.photo)
 
 		.author-network
