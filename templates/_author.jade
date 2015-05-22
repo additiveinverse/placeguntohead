@@ -2,8 +2,8 @@ mixin author(authorName)
 	- var author = contents.authors[authorName + '.json']
 	- var imagepath = locals.url + '/img/'
 
-	aside.author
-		img(class='author-photo', src=imagepath + author.metadata.photo)
+	aside.page-author.author
+		img(class='author-photo photo', src=imagepath + author.metadata.photo)
 
 		.author-network
 			include _nav

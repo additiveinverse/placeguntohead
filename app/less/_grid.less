@@ -8,11 +8,16 @@
 @columns: 12;
 
 // Utility variable — you should never need to modify this
-@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+@gridsystem-width: (@column-width * @columns) + (@gutter-width * @columns) * 1px;
 
 // Set @total-width to 100% for a fluid layout
 @total-width: 100%;
 
+// Creates a wrapper for a series of columns
+.make-row(@gutter-width: @gutter-width) {
+  margin-left:  (@gutter-width / -2) * 0.1%;
+  margin-right: (@gutter-width / -2) * 0.1%;
+}
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix() {
@@ -29,21 +34,30 @@
 
 
 // ////////// GRID //
-.row( @columns: @columns ) {
-	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+.row( @columns: @columns, @total-width: @total-width ) {
+	@gutters: @total-width * ((@gutter-width * .5) / @gridsystem-width) * 2;
+	width: @total-width * ((@gutter-width + @gridsystem-width) / @gridsystem-width) - @gutters;
 	margin: 0 auto;
 }
 
-.column( @x, @columns: @columns, @margin-top: auto) {
-	vertical-align: top;
+.inline-block-defaults() {
 	display: inline-block;
-	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-	margin+: @margin-top @total-width*((@gutter-width*.5)/@gridsystem-width);
+	vertical-align: top;
+}
+
+.grid-margin(@columns: @columns, @margin-top: auto ) {
+	margin+: @margin-top @total-width * ((@gutter-width * .5) / @gridsystem-width) @margin-top;
 }
 
 // just the width ma'am
 .col( @x, @columns: @columns ) {
 	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+}
+
+.column( @x, @columns: @columns, @margin-top: auto) {
+	.inline-block-defaults;
+	.col(@x, @columns);
+	.grid-margin(@columns, @margin-top);
 }
 
 .push( @offset: 1 ) {

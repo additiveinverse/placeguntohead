@@ -144,46 +144,40 @@ body {
   border-bottom: 1px dashed #7c7764;
 }
 .page-footer {
-  border-top: 1px dashed #000000;
+  border-top: 1px dashed #7c7764;
 }
 .page-footer-info {
   color: #7c7764;
   font-size: 1.2rem;
   font-size: 12px;
   line-height: 2;
-  margin: 0.75em 1.5em;
+  margin-left: -1%;
+  margin-right: -1%;
 }
 .page-footer-info-copy,
 .page-footer-info-poweredby {
-  vertical-align: top;
   display: inline-block;
+  vertical-align: top;
   width: 47.91666667%;
-  margin: auto 1.04166667%;
+  margin: auto 1.04166667% auto;
 }
 .page-footer-info-poweredby {
   text-align: right;
 }
 .author {
-  border-top: 1px dashed #000000;
-  border-bottom: 1px dashed #7c7764;
   color: #c4c1b5;
   font-size: 0;
 }
 .author-photo {
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25), -1px -1px 1px #272620;
-  border: 8px solid #f0f3f3;
-  -webkit-border-radius: 100%;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 100%;
-  -moz-background-clip: padding;
   border-radius: 100%;
-  background-clip: padding-box;
-  width: 18.75%;
+  border: 8px solid #f0f3f3;
+  width: 209.167px;
+  height: 209.167px;
   -webkit-filter: sepia(50%);
   -moz-filter: sepia(50%);
   -ms-filter: sepia(50%);
   filter: sepia(50%);
-  margin: 3% 3%;
 }
 .author-network-antisocial-lst {
   font-size: 1.6rem;
@@ -274,7 +268,6 @@ body {
 .navlist,
 .author-network-antisocial-lst {
   margin: auto;
-  padding: 1.5em 0 0.75em;
   text-transform: uppercase;
 }
 .btn {
@@ -296,10 +289,10 @@ body {
   display: inline-block;
 }
 .post-index-ttl {
-  vertical-align: top;
   display: inline-block;
+  vertical-align: top;
   width: 97.91666667%;
-  margin: auto 1.04166667%;
+  margin: auto 1.04166667% auto;
 }
 .post-index-ttl-lnk {
   left: 9.375%;
@@ -316,6 +309,8 @@ body {
 }
 .post-index-lst-level1 {
   font-size: 0;
+  margin-left: -1%;
+  margin-right: -1%;
 }
 .post-index-lst-level2 {
   font-size: 1.6rem;
@@ -349,10 +344,12 @@ body {
 @media only screen and (min-width: 320px) {
   .interior_row,
   .page-header,
-  .page-aside,
+  .page-author,
   .page-content,
   .author,
   .author-bio {
+    width: 100%;
+    margin: 0 auto;
     padding: 0.75em 1.5em;
   }
   .page-header-ttl {
@@ -369,36 +366,60 @@ body {
   .page-nav:before {
     margin: 20px;
   }
+  .navlist,
+  .author-network-antisocial-lst {
+    padding: 0 0 0.75em;
+  }
+  .author-photo {
+    display: block;
+    margin: 4.5% auto;
+  }
+  .author-network {
+    margin: 0 auto;
+    display: block;
+    width: 81.25%;
+  }
+  .author-network-antisocial-lst {
+    padding-top: 0;
+  }
   .post-header-meta-track {
     padding-right: 0.1875em;
   }
 }
 @media only screen and (min-width: 480px) {
   .post-index-itm-level1 {
-    vertical-align: top;
     display: inline-block;
+    vertical-align: top;
     width: 47.91666667%;
-    margin: auto 1.04166667%;
+    margin: auto 1.04166667% auto;
+  }
+  .navlist,
+  .author-network-antisocial-lst {
+    padding: 1.5em 0 0.75em;
   }
   .author-network {
-    vertical-align: top;
     display: inline-block;
+    vertical-align: top;
     width: 47.91666667%;
-    margin: auto 1.04166667%;
+    margin: auto 1.04166667% auto;
   }
   .author-photo {
-    vertical-align: top;
     display: inline-block;
-    width: 39.58333333%;
-    margin: auto 1.04166667%;
+    vertical-align: top;
+    margin: 4.5% 4.5%;
   }
 }
 @media only screen and (min-width: 640px) {
   .post-index-itm-level1 {
-    vertical-align: top;
     display: inline-block;
+    vertical-align: top;
     width: 31.25%;
-    margin: auto 1.04166667%;
+    margin: auto 1.04166667% auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .author-photo {
+    margin: 3% 3%;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -406,10 +427,11 @@ body {
   .page-header,
   .page-nav,
   .page-content,
-  .page-aside {
+  .page-author,
+  .page-footer {
+    padding: 0.75em;
     width: 984px;
     margin: 0 auto;
-    padding: 0.75em;
   }
   .page-nav {
     position: relative;
@@ -436,23 +458,29 @@ body {
     left: -5.20833333%;
   }
   .author-network {
-    vertical-align: top;
     display: inline-block;
+    vertical-align: top;
     width: 22.91666667%;
-    margin: auto 1.04166667%;
+    margin: auto 1.04166667% auto;
+  }
+  .author-photo {
+    margin: 3% 1.04166667% 3%;
   }
   .author-bio {
-    width: 47.91666667%;
     display: inline-block;
+    vertical-align: top;
+    width: 47.91666667%;
+    margin: auto 1.04166667% auto;
     padding: 0;
-    margin: 1.5% 0 1.5%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
 }
 @media only screen and (min-width: 1024px) {
   .post-index-itm-level1 {
-    vertical-align: top;
     display: inline-block;
+    vertical-align: top;
     width: 22.91666667%;
-    margin: auto 1.04166667%;
+    margin: auto 1.04166667% auto;
   }
 }
