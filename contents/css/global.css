@@ -6,13 +6,14 @@
 .btn-back:before {
   color: #9b6020;
   position: relative;
-  line-height: 1;
   font-style: normal;
   font-weight: normal;
   speak: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1;
 }
 .inline-def,
 .author-network {
@@ -53,7 +54,9 @@
 #navicon .closed,
 .page-nav:before,
 .page-nav-lst,
+.author-network-social-itm,
 .btn,
+.post-index-itm-level1,
 .page-nav:before,
 .page-nav-hdr {
   -webkit-transition: all 0.35s;
@@ -113,7 +116,6 @@ body {
   position: relative;
   z-index: 90;
   content: "";
-  display: inline-block;
 }
 .page-nav.active .page-nav-lst,
 .page-nav:hover .page-nav-lst {
@@ -187,9 +189,7 @@ body {
 .author-network-antisocial-itm:after {
   margin-left: 0.1875em;
   font-family: 'typicons';
-  font-size: 14;
   content: '\e033';
-  display: inline-block;
 }
 .author-network-antisocial-itm:hover:after {
   opacity: 1;
@@ -207,16 +207,7 @@ body {
   margin-right: 5px;
   font-size: 0;
   opacity: 0.65;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-border-radius: 100%;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 100%;
-  -moz-background-clip: padding;
   border-radius: 100%;
-  background-clip: padding-box;
 }
 .author-network-social-itm:hover {
   box-shadow: 1px 1px 0 #272620, 1px 1px 0 rgba(255, 255, 255, 0.35) inset;
@@ -234,32 +225,26 @@ body {
 .author-network-social-itm-flickr:before {
   background-color: #ff0084;
   content: 'v';
-  display: inline-block;
 }
 .author-network-social-itm-twitter:before {
   background-color: #55acee;
   content: 'a';
-  display: inline-block;
 }
 .author-network-social-itm-last-fm:before {
   background-color: #d02127;
   content: 'q';
-  display: inline-block;
 }
 .author-network-social-itm-soundcloud:before {
   background-color: #ff5000;
   content: 'n';
-  display: inline-block;
 }
 .author-network-social-itm-society6:before {
   background-color: #000000;
   content: 's';
-  display: inline-block;
 }
 .author-network-social-itm-github:before {
   background-color: #000000;
   content: 'Q';
-  display: inline-block;
 }
 .nav-list {
   padding: 0.75em;
@@ -277,16 +262,12 @@ body {
 .btn-prev:before {
   margin-right: 0.1875em;
   font-family: 'typicons';
-  font-size: 14;
   content: '\e049';
-  display: inline-block;
 }
 .btn-back:before {
   margin-right: 0.1875em;
   font-family: 'typicons';
-  font-size: 14;
   content: '\e047';
-  display: inline-block;
 }
 .post-index-ttl {
   display: inline-block;
@@ -299,13 +280,10 @@ body {
 }
 .post-index-img img {
   display: block;
-  width: 100%;
-  height: auto;
 }
 .post-index-lst-level2,
 .post-index-lst-level1 {
   padding-left: 0;
-  vertical-align: top;
 }
 .post-index-lst-level1 {
   font-size: 0;
@@ -316,12 +294,6 @@ body {
   font-size: 1.6rem;
   font-size: 16px;
   line-height: 1.5;
-}
-.post-index-itm-level1 {
-  -webkit-transition: all 0s ease 0s;
-  -moz-transition: all 0s ease 0s;
-  -o-transition: all 0s ease 0s;
-  transition: all 0s ease 0s;
 }
 .post {
   color: #c1b48e;

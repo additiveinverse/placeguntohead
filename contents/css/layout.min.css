@@ -185,13 +185,14 @@ th {
 .ico {
   color: #9b6020;
   position: relative;
-  line-height: 1;
   font-style: normal;
   font-weight: normal;
   speak: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1;
 }
 * {
   -webkit-box-sizing: content-box;
@@ -318,7 +319,6 @@ ul {
 dt:after,
 dt::after {
   content: ":";
-  display: inline-block;
 }
 dd {
   margin-left: 0;

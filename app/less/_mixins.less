@@ -10,7 +10,7 @@
 
 ._inject( @content: "" ) {
 	content: @content;
-	display: inline-block;
+	// display: inline-block;
 }
 
 
@@ -18,13 +18,14 @@
 .ico_base {
 	color: @font-icon-color;
 	position: relative;
-	line-height+: 1;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 					font-smoothing: antialiased;
+	font-size: 14px;
+	line-height+: 1;
 }
 
 .ico {
@@ -34,7 +35,7 @@
 //////////////////////////// Let's go ahead and set the base icon styles
 ._ico( @_ico, @font-size: 14, @fnt: @font-icon ) {
 	font-family+: @fnt;
-	font-size+: @font-size;
+	// .font-size(@font-size);
 	.ico;
 	._inject( @_ico );
 }
