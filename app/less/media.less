@@ -1,7 +1,7 @@
 // 320px
 @media only screen and ( min-width: 320px ) {
 	.interior_row {
-		.row();
+		.row( 12, 85%);
 		padding: @base-margin-half @base-margin;
 	}
 
@@ -57,7 +57,8 @@
 		}
 
 		&-bio {
-			&:extend(.interior_row);
+			padding: @base-margin-half 0;
+			// &:extend(.interior_row);
 		}
 	}
 
@@ -74,6 +75,19 @@
 
 // 480px
 @media only screen and ( min-width: 480px ) {
+	.interior_row {
+		.row;
+		padding: @base-margin-half @base-margin;
+	}
+
+	.page {
+		&-content,
+		&-footer,
+		&-header {
+			&:extend(.interior_row);
+		}
+	}
+
 	.post-index {
 		&-itm {
 			&-level1 {
@@ -87,13 +101,14 @@
 	}
 
 	.author {
+		padding: @base-margin 0;
 		&-network {
 			.column(6);
 		}
 
 		&-photo {
 			.inline-def;
-			margin: unit(@base-margin * 3, %) unit(@base-margin * 3, %);
+			margin: unit(@base-margin * 3, %) unit(@base-margin * 2, %);
 		}
 	}
 }

@@ -8,6 +8,6 @@ mixin menuMaker( navName, stuff, def )
 			li( role='menuitem', class='itm ' + navName + '-itm ' + navName + '-itm-' + i )
 				case def
 					when 'link'
-						a( class=navName + '-lnk ' + i + '-lnk lnk', href= val )= i
+						a( class=navName + '-lnk btn-' + i, href= val )= i
 					default
 						a( class=navName + '-lnk lnk', href=val.url )= val.title

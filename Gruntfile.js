@@ -150,6 +150,24 @@ module.exports = function(grunt) {
 				dest: 'build/'
 			}
 		},
+		cacheBust: {
+			options: {
+				encoding: 'utf8',
+				algorithm: 'md5',
+				length: 16,
+				deleteOriginals: true
+			},
+			assets: {
+				files: [
+				{
+					expand: true,
+					cwd: '<%= prod.root %>',
+					baseDir: '<%= prod.root %>',
+					src: ['**/*.*']
+				},
+				]
+			}
+		},		
 		open: {
 			dev : {
 				path: 'http://localhost:8080',
