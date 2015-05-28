@@ -5,7 +5,7 @@
 	@rem: ( @font-size / 10 );
 	font-size : ~"@{rem}rem";
 	font-size : unit( @font-size, px );
-	line-height: @base-line-multiplier / @font-size * @offset;
+	line-height+: @base-line-multiplier / @font-size * @offset;
 }
 
 ._inject( @content: "" ) {

@@ -221,8 +221,7 @@ body {
   font-family: socicon;
   font-size: 2.2rem;
   font-size: 22px;
-  line-height: 1.09090909;
-  line-height: 1.25;
+  line-height: 1.25454545;
 }
 .author-network-social-itm-flickr {
   background-color: #ff0084;
@@ -329,15 +328,7 @@ body {
   .author {
     width: 85%;
     margin: 0 auto;
-    padding: 0.75em 1.5em;
-  }
-  .interior_row:before,
-  .interior_row:after {
-    content: "";
-    display: table;
-  }
-  .interior_row:after {
-    clear: both;
+    padding: 0.75em 0;
   }
   .page-header-ttl {
     font-size: 32px;
@@ -385,14 +376,6 @@ body {
     margin: 0 auto;
     padding: 0.75em 1.5em;
   }
-  .interior_row:before,
-  .interior_row:after {
-    content: "";
-    display: table;
-  }
-  .interior_row:after {
-    clear: both;
-  }
   .post-index-itm-level1 {
     display: inline-block;
     vertical-align: top;
@@ -409,7 +392,7 @@ body {
   .author-network {
     display: inline-block;
     vertical-align: top;
-    width: 47.91666667%;
+    width: 39.58333333%;
     margin: auto 1.04166667% auto;
   }
   .author-photo {
@@ -441,14 +424,6 @@ body {
     padding: 0.75em;
     width: 984px;
     margin: 0 auto;
-  }
-  .interior_row:before,
-  .interior_row:after {
-    content: "";
-    display: table;
-  }
-  .interior_row:after {
-    clear: both;
   }
   .page-nav {
     position: relative;

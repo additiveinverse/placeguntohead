@@ -2,12 +2,12 @@
 @media only screen and ( min-width: 320px ) {
 	.interior_row {
 		.row( 12, 85%);
-		padding: @base-margin-half @base-margin;
+		padding: @base-margin-half 0;
 	}
 
 	.page {
 		&-header {
-			&:extend(.interior_row);
+			&:extend(.interior_row all);
 
 			&-ttl {
 				font-size: unit(@base-type-h3, px);
@@ -26,13 +26,8 @@
 			}
 		}
 
-		&-author {
-			&:extend(.interior_row);
-		}
-
-		&-content {
-			&:extend(.interior_row);
-		}	
+		&-author:extend(.interior_row all) {}
+		&-content:extend(.interior_row all) {}
 	}	
 
 	.navlist {
@@ -40,7 +35,7 @@
 	}
 
 	.author {
-		&:extend(.interior_row);
+		&:extend(.interior_row all);
 		&-photo {
 			display: block;
 			margin: unit(@base-margin * 3, %) auto;
@@ -81,11 +76,9 @@
 	}
 
 	.page {
-		&-content,
-		&-footer,
-		&-header {
-			&:extend(.interior_row);
-		}
+		&-content:extend(.interior_row all) {};
+		&-footer:extend(.interior_row all) {};
+		&-header:extend(.interior_row all) {};
 	}
 
 	.post-index {
@@ -103,7 +96,7 @@
 	.author {
 		padding: @base-margin 0;
 		&-network {
-			.column(6);
+			.column(5);
 		}
 
 		&-photo {
@@ -127,19 +120,13 @@
 // 768px
 @media only screen and ( min-width: 768px ) {
 	.page {
-		&-header {
-			&:extend(.interior_row);
-		}
+		&-header:extend(.interior_row) {}
 
 		&-nav {}
 
-		&-content {
-			&:extend(.interior_row);
-		}	
+		&-content:extend(.interior_row all) {}
 
-		&-aside {
-			&:extend(.interior_row);
-		}
+		&-aside:extend(.interior_row all) {}
 	}
 
 	.author {
@@ -158,9 +145,7 @@
 	}
 
 	.page {
-		&-header {
-			&:extend(.interior_row);
-		}
+		&-header:extend(.interior_row all) {}
 
 		&-nav {
 			&:extend(.interior_row);
@@ -168,17 +153,11 @@
 			margin-top: -5em;
 		}
 
-		&-content {
-			&:extend(.interior_row);
-		}	
+		&-content:extend(.interior_row all) {}
 
-		&-author {
-			&:extend(.interior_row);
-		}
+		&-author:extend(.interior_row all) {}
 
-		&-footer {
-			&:extend(.interior_row);
-		}		
+		&-footer:extend(.interior_row all) {}
 	}
 
 	.post {
@@ -205,11 +184,6 @@
 			position: absolute;
 			.pull(@base-margin-half);
 		}
-
-		// &-main {
-		// 	.column-count(2);
-		// 	.column-gap(@base-margin);
-		// }
 	}	
 
 	.author {
@@ -224,7 +198,6 @@
 
 		&-bio {
 			.column(6);
-			// display: inline-block;
 			padding: 0;
 			margin-top: @base-margin;
 			margin-bottom: @base-margin;
