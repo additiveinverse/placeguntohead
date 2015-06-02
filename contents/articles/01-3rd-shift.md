@@ -16,7 +16,7 @@ because of this
 i've lost many Mcjobs  
 every so often id take a graveyard job in attempt to counter this  
 let me just say,...  
-i LOVE graveyard shifts  
+I LOVE graveyard shifts  
 which if you've ever worked a graveyard shift anywhere  
 you know what they can be like  
 especially if you get to work them by yourself  

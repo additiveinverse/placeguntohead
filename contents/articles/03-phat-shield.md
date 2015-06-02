@@ -47,4 +47,4 @@ glass was breaking
 doors flung open form the force of the wind
 and the worst of the jock types screams
 
-> There's Gigantor! Everyone duck behind her! Use her as a fat shield
+> There's Gigantor! Everyone duck behind her! Use her as a fat shield!
