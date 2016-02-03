@@ -14,6 +14,10 @@
 // 	background-image: url(../img/sprite.png);
 // }
 
+.opacity-transition {
+	.transition(opacity, .35s);
+}
+
 .animate {
 	.transition( all, 0.35s );
 }
@@ -69,8 +73,11 @@ body {
 		color: @grey;
 		position: relative;
 		z-index: 200;
+		background: url('/img/logo_flat_2016.svg') 0 10px no-repeat;
+		background-size: 5%;
 
 		&-ttl {
+			padding-left: @base-margin;
 			margin-bottom: 0;
 			text-transform: capitalize;
 
@@ -80,6 +87,7 @@ body {
 		}
 
 		&-desc {
+			padding-left: @base-margin * 2;
 			margin: 0;
 			.uppercase;
 		}
@@ -152,8 +160,8 @@ body {
 		&-info {
 			color: @grey;
 			.font-size(@base-type-sm);
-			// .make-row;
-			margin: @base-margin-half @base-margin;
+			.make-row;
+			margin-top: @base-margin-half;
 
 			&-copy,
 			&-poweredby {
@@ -175,7 +183,7 @@ body {
 		box-shadow: 1px 1px 1px fade(@white, 25% ), -1px -1px 1px @grey-dark;
 		border-radius: 100%;
 		.border( 8px, solid, @white-off );
-		.size( 22.9167 * 10px - 20);
+		.size( 22.9167 * 10px - 20 );
 		.sepia(50%);
 	}
 
@@ -211,9 +219,10 @@ body {
 				vertical-align: top;
 				font-size: 0;
 				border-radius: 40px;
-				border: 1px solid @border-color;
+				border: 5px solid darken( @border-color, 25%);
 				margin: 8px 8px 8px 0;
 				.size(40px);
+				opacity: 0.5;
 				&:extend( .sprite, .opacity-transition );
 				background-size: 302%;
 				background-color: @white-off;
@@ -234,6 +243,10 @@ body {
 					.svg-sprite-position( @ico-society6 );
 				}
 
+				&-splice {
+					.svg-sprite-position( @ico-splice );
+				}
+
 				&-soundcloud 	{
 					.svg-sprite-position( @ico-soundcloud-fill );
 				}
@@ -247,7 +260,7 @@ body {
 				}
 
 				&:hover {
-					opacity: 0.7;
+					opacity: 1;
 				}
 			}
 			&-lnk {
