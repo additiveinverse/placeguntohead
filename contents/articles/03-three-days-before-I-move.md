@@ -14,5 +14,5 @@ record: 'Among Others'
 1. Begin packing by placing the heaviest clothing on the bottom, with jackets face down. Sweaters and light jackets go next, followed by lightweight items like shirts.
 1. Tuck socks inside your shoes, put the shoes in plastic bags to prevent them from soiling your clothes, and place them along the sides of the suitcase.
 1. When you’ve packed everything you’re taking, look at your suitcase. Wrinkling is caused by both under-packing and over-packing, so add or remove items until you have a snug, but not too cramped fit.
-1. unplug espresso maker, dump water resovior if necessary, put in box.
+1. unplug espresso maker, dump water reservoir if necessary, put in box.
 1. unplug laptop, wrap power cables and velcro

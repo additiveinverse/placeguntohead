@@ -2,13 +2,10 @@
 @import './_mixins';
 @import './_utilities';
 @import './_grid';
+@import './_sprite';
 @import './lesshat';
 
 /////////////////////////// Global style scaffolding
-@font-face {
-	.font-face(socicon, '/font/socicon-webfont');
-}
-
 @font-face {
 	.font-face(typicons, '/font/typicons');
 }
@@ -33,11 +30,11 @@
 		font-size: 0;
 		cursor: pointer;
 		background: linear-gradient(
-			to bottom, 
-			@tan, @tan 20%, 
-			transparent 20%, transparent 40%, 
-			@tan 40%, @tan 60%, 
-			transparent 60%, transparent 80%, 
+			to bottom,
+			@tan, @tan 20%,
+			transparent 20%, transparent 40%,
+			@tan 40%, @tan 60%,
+			transparent 60%, transparent 80%,
 			@tan 80%, @tan 100%
 		);
 		&:extend(.animate);
@@ -46,10 +43,10 @@
 	.open {
 		// .size( @item-width, @item-width / 2 );
 		background: linear-gradient(
-			to bottom, 
-			transparent, transparent 40%, 
-			@tan 40%, @tan 60%, 
-			transparent 60%, transparent 100%, 
+			to bottom,
+			transparent, transparent 40%,
+			@tan 40%, @tan 60%,
+			transparent 60%, transparent 100%,
 		);
 	}
 }
@@ -61,9 +58,7 @@ blockquote {
 body {
 	text-shadow: -1px -1px 0 fadeout(@grey-dark, 50%);
 	color: @base-type-color;
-	background: url(../img/bg.texture.png) repeat 0 0 fixed, 
-							url(../img/rando_texture.png) no-repeat top center @grey-med;
-	background-size: 500px, 100% 750px;
+	background: url(../img/bg.texture.png) repeat 0 0 fixed @grey-med;
 }
 
 /////////////////////////// Page layout
@@ -73,7 +68,7 @@ body {
 	&-header {
 		color: @grey;
 		position: relative;
-		z-index: 10;
+		z-index: 200;
 
 		&-ttl {
 			margin-bottom: 0;
@@ -84,8 +79,8 @@ body {
 			}
 		}
 
-		&-desc { 
-			margin: 0; 
+		&-desc {
+			margin: 0;
 			.uppercase;
 		}
 	}
@@ -186,7 +181,7 @@ body {
 
 	&-network {
 		&:extend(.inline-def);
-		
+
 		&-antisocial {
 			&-lst {
 				.font-size(@base-type-size);
@@ -207,77 +202,57 @@ body {
 		&-social {
 			&-lst {
 				border: none;
-				padding: 0;
-				margin-top: 0;
+				padding-top: 0;
+				&:extend( .navlist );
 			}
 
 			&-itm {
 				display: inline-block;
-				text-align: center;
-				box-shadow: 1px 1px 0 fade( @white, 25% ), 
-										1px 1px 0 @grey-dark inset;
-				overflow: hidden;
-				margin-right: 5px;
+				vertical-align: top;
 				font-size: 0;
-				opacity: @base-opacity;
-				border-radius: @border-radius;
-				&:extend(.animate);
-				.size(32px);
+				border-radius: 40px;
+				border: 1px solid @border-color;
+				margin: 8px 8px 8px 0;
+				.size(40px);
+				&:extend( .sprite, .opacity-transition );
+				background-size: 302%;
+				background-color: @white-off;
 
-				&:hover {
-					box-shadow: 1px 1px 0 @grey-dark, 
-											1px 1px 0 fade( @white, 35% ) inset;
-					opacity: 1;
-				}
-
-				&:before {
-					cursor: pointer;
-					color: @white;
-					padding: @base-margin 0;
-					font-family: socicon;
-					&:extend( .ico_base );
-					.font-size( 22, 1.15 );
+				&-bandcamp {
+					.svg-sprite-position( @ico-bandcamp );
 				}
 
 				&-flickr {
-					background-color: rgb(255, 0, 132);
-					&:before {
-						._inject('v');
-					}
-				}
-				
-				&-twitter {
-					background-color: rgb(85, 172, 238);
-					&:before {
-						._inject('a');
-					}
-				}
-				
-				&-last-fm {
-					background-color: rgb(208, 33, 39);
-					&:before {
-						._inject('q');
-					}
-				}
-				
-				&-soundcloud {
-					background-color: rgb(255, 80, 0);
-					&:before {
-						._inject('n');
-					}
-				}
-				
-				&-society6 { 
-					background-color: @black;
-					&:before{
-						._inject('s');
-					}
+					.svg-sprite-position( @ico-flickr );
 				}
 
-				// &-github:before {
-				// 	background-color: @black;
-				// 	._inject('Q');
-				// }
+				&-last-fm {
+					.svg-sprite-position( @ico-lastfm-fill );
+				}
+
+				&-society6 {
+					.svg-sprite-position( @ico-society6 );
+				}
+
+				&-soundcloud 	{
+					.svg-sprite-position( @ico-soundcloud-fill );
+				}
+
+				&-spotify {
+					.svg-sprite-position( @ico-spotify-fill );
+				}
+
+				&-twitter {
+					.svg-sprite-position( @ico-twitter-fill );
+				}
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+			&-lnk {
+				display: block;
+				.size(40px);
 			}
 		}
 	}
@@ -287,7 +262,7 @@ body {
 	&-list {
 		padding: @base-margin-half;
 		background-color: fade(@black, 65%);
-	}	
+	}
 }
 
 .navlist {
@@ -311,7 +286,7 @@ body {
 .post-index {
 	&-ttl {
 		.column(12);
-	
+
 		&-lnk {
 			.push(1);
 		}
@@ -337,7 +312,7 @@ body {
 
 		&-level2 {
 			.font-size(@base-type-size);
-		}	
+		}
 	}
 
 	&-itm {
@@ -367,7 +342,7 @@ body {
 	&-meta {
 		.font-size( @base-type-h6 );
 		font-weight: 700;
-	}	
+	}
 }
 
 @import './media';

@@ -27,14 +27,3 @@ block content
 					each item, i in track
 						li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
 							a(class=bodyclass + "-lnk lnk", href=item.url)= item.title
-					
-block prepend navtop
-	div.nav
-		if prevPage
-			a(href=prevPage.url) « Newer
-		else
-			a(href='/archive.html') « Archives
-		if nextPage
-			a(href=nextPage.url) Next page »
-
-		a(href=contents.index.url) « Full blog

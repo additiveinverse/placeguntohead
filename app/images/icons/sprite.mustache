@@ -1,0 +1,50 @@
+{{#hasMixin}}
+// mixins and helpers
+@sprite-image: "{{{ sprite }}}";
+@sprite-path: "../img/";
+@full-path: "@{sprite-path}@{sprite-image}";
+
+.{{mixinName}}-image( @image ) {
+	background: url( @image ) no-repeat;
+}
+
+.{{mixinName}}-width( @sprite ) {
+	width: extract( @sprite, 2 );
+}
+
+.{{mixinName}}-height( @sprite ) {
+	height: extract( @sprite, 3 );
+}
+
+.{{mixinName}}-square( @sprite ) {
+	.{{mixinName}}-width( @sprite );
+  .{{mixinName}}-height( @sprite );
+}
+
+.{{mixinName}}-position(@sprite) {
+  @sprite-offset-y: extract( @sprite, 1);
+  background-position: @sprite-offset-y;
+}
+
+.{{mixinName}}(@sprite) {
+  &:extend( .{{commonName}} );
+  .{{mixinName}}-position(@sprite);
+  .{{mixinName}}-square(@sprite);
+}
+{{/hasMixin}}
+{{^hasMixin}}
+.{{commonName}}{{^hasCommon}}(){{/hasCommon}} {
+	background-image: url({{{sprite}}});
+}
+{{/hasMixin}}
+
+{{#hasCommon}}
+.{{commonName}} {
+	.{{mixinName}}-image( @full-path );
+}
+{{/hasCommon}}
+
+// variables
+{{#shapes}}
+{{#selector.shape}}{{expression}}{{/selector.shape}}: {{position.relative.xy}}, {{#dimensions.inline}}{{width.outer}}px, {{height.outer}}px{{/dimensions.inline}};
+{{/shapes}}

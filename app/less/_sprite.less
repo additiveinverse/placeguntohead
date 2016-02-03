@@ -1,0 +1,46 @@
+// mixins and helpers
+@sprite-image: "icons.sprite-2f23885e.svg";
+@sprite-path: "../img/";
+@full-path: "@{sprite-path}@{sprite-image}";
+
+.svg-sprite-image( @image ) {
+	background: url( @image ) no-repeat;
+}
+
+.svg-sprite-width( @sprite ) {
+	width: extract( @sprite, 2 );
+}
+
+.svg-sprite-height( @sprite ) {
+	height: extract( @sprite, 3 );
+}
+
+.svg-sprite-square( @sprite ) {
+	.svg-sprite-width( @sprite );
+  .svg-sprite-height( @sprite );
+}
+
+.svg-sprite-position(@sprite) {
+  @sprite-offset-y: extract( @sprite, 1);
+  background-position: @sprite-offset-y;
+}
+
+.svg-sprite(@sprite) {
+  &:extend( .sprite );
+  .svg-sprite-position(@sprite);
+  .svg-sprite-square(@sprite);
+}
+
+.sprite {
+	.svg-sprite-image( @full-path );
+}
+
+// variables
+@ico-bandcamp: 0 0, 200px, 200px;
+@ico-flickr: 50% 0, 200px, 200px;
+@ico-lastfm-fill: 0 50%, 200px, 200px;
+@ico-society6: 50% 50%, 200px, 200px;
+@ico-soundcloud-fill: 100% 0, 200px, 200px;
+@ico-splice: 100% 50%, 200px, 200px;
+@ico-spotify-fill: 0 100%, 200px, 200px;
+@ico-twitter-fill: 50% 100%, 200px, 200px;

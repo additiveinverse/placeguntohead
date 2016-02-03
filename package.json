@@ -14,25 +14,24 @@
     "wintersmith-tag": "~1.0.2",
     "wintersmith": "~2.0.10",
     "wintersmith-tag-pages": "~0.1.1",
-	   "grunt": "~0.4.5"
+    "grunt": "~0.4.5"
   },
   "devDependencies": {
+    "grunt-bump": "^0.7.0",
     "grunt-cache-bust": "^0.4.13",
     "grunt-concurrent": "~0.5.0",
-    "grunt-contrib-clean": "*",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-csslint": "*",
     "grunt-contrib-htmlmin": "~0.3.0",
     "grunt-contrib-imagemin": "~0.7.1",
-    "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-less": "*",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-csscss": "~0.6.2",
     "grunt-newer": "^1.1.0",
     "grunt-open": "~0.2.3",
+    "grunt-real-favicon": "^0.1.5",
     "grunt-sftp-deploy": "~0.2.2",
-    "grunt-shell": "^1.1.2",
-    "grunt-sitemap": "^1.2.1",
+    "grunt-spritesmith": "^6.2.0",
+    "grunt-svg-sprite": "^1.2.19",
     "grunt-wintersmith": "0.0.2",
     "matchdep": ">=0.1.2"
   }

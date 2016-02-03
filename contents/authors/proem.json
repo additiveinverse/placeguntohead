@@ -2,19 +2,22 @@
 	"name": "Richard Bailey",
 	"email": "informant@proemland.com",
 	"photo": "proem-fragment.jpg",
-	"bio": "Richard Bailey has been releasing music under the 'Proem' moniker since 1999 on labels like Merck, n5MD, and Hydrant. He does a fair amount of mucking around as a Lead front end developer. And a fair amount of art. Some of it even graces other peoples walls. Bailey started experimenting with electronic devices at an early age, using thrift store turntables, some tape decks, a few bargain bin Casio SK-5s, and some circuit bent keyboards. He currently sequences in FL Studio, using a number of VST plugins, such as Kontakt and Reaktor. Proem has released several albums, EPs, and remixes. He is regarded as one of the early members of US Intelligent dance music scene.",
+	"bio": "Richard Bailey has been releasing emotive, ham-fisted electronic music under the pseudonym of 'Proem' since the 1999 release of Burnplate no.1 on Hydrant records. Proem has released a modest collection of full lengths, ep's, and various artist appearances for underground electronic labels such as n5md, merck, hymen, and toytronic.   He currently resides in eastern Pennsylvania working as a UX developer, he moonlights as visual artist for brash beers.",
 	"network": {
 		"social": {
-			"twitter": "http://twitter.com/wallofknives",
-			"soundcloud": "http://soundcloud.com/proem",
-			"last-fm": "http://www.last.fm/user/proemland",
+			"bandcamp": "http://proem.bandcamp.com/",
 			"flickr": "http://www.flickr.com/photos/proem/",
-			"society6": "http://society6.com/proem"
+			"last-fm": "http://www.last.fm/user/proemland",
+			"society6": "http://society6.com/proem",
+			"soundcloud": "http://soundcloud.com/proem",
+			"splice": "http://society6.com/proem",
+			"spotify": "https://open.spotify.com/artist/1hTlyo5QWVHUA3xUGgXqa5",
+			"twitter": "http://twitter.com/wallofknives"
 		},
 		"antisocial": {
-			"proemland": "http://proemland.com",
-			"placeguntohead": "http://placeguntohead.com",
-			"additiveinverse": "http://additiveinverse.com"
+			"discography": "//proemland.com",
+			"design": "//additiveinverse.com",
+			"dxrxt": "//dxrxt.com"
 		}
 	},
 	"template": "_author.jade"

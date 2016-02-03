@@ -1,7 +1,7 @@
 // 320px
 @media only screen and ( min-width: 320px ) {
 	.interior_row {
-		.row( 12, 85%);
+		.row( 12, 85% );
 		padding: @base-margin-half 0;
 	}
 
@@ -28,7 +28,7 @@
 
 		&-author:extend(.interior_row all) {}
 		&-content:extend(.interior_row all) {}
-	}	
+	}
 
 	.navlist {
 		padding: 0 0 @base-margin-half;
@@ -121,11 +121,8 @@
 @media only screen and ( min-width: 768px ) {
 	.page {
 		&-header:extend(.interior_row) {}
-
 		&-nav {}
-
 		&-content:extend(.interior_row all) {}
-
 		&-aside:extend(.interior_row all) {}
 	}
 
@@ -141,14 +138,14 @@
 @media only screen and ( min-width: 992px ) {
 	.interior_row {
 		padding: @base-margin-half;
-		.row(12, 984px);
+		.row(12, 55%);
 	}
 
 	.page {
 		&-header:extend(.interior_row all) {}
 
 		&-nav {
-			&:extend(.interior_row);
+			width: 100%;
 			position: relative;
 			margin-top: -5em;
 		}
@@ -162,7 +159,7 @@
 
 	.post {
 		&-header {
-			position: relative;			
+			position: relative;
 			&-title {
 				&-link {
 				}
@@ -184,7 +181,7 @@
 			position: absolute;
 			.pull(@base-margin-half);
 		}
-	}	
+	}
 
 	.author {
 		&-network {
@@ -213,7 +210,7 @@
 				.column(3);
 			}
 		}
-	}	
+	}
 }
 
 
