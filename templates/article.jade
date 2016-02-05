@@ -13,7 +13,7 @@ block content
 				= moment.utc(page.date).format('mm')
 
 			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-release')
-				= page.metadata.record	
+				= page.metadata.record
 			h1(class=bodyclass + '-header-title ttl')
 				a(class=bodyclass + '-header-title-link lnk', href=page.url)= page.title
 
@@ -23,8 +23,10 @@ block content
 
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
 
-block prepend footer 
+block prepend pagenav
 	nav.page-nav
+		a(id="navicon" ) menu
+
 		- var articles = env.helpers.getArticles( contents )
 		- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
 		- 	return article.metadata.record
@@ -41,11 +43,11 @@ block prepend footer
 block prepend navtop
 	ul.nav-list.lst
 		if nextPage
-			li.nav-list-item.itm 
+			li.nav-list-item.itm
 				a.nav-list-item-lnk.btn.btn-next(href=nextPage.url) Next Story »
 		if prevPage
-			li.nav-list-item.itm 
+			li.nav-list-item.itm
 				a.nav-list-item-lnk.btn.btn-next(href=prevPage.url) Prev Story »
-		
-		li.nav-list-item.itm 
+
+		li.nav-list-item.itm
 			a.nav-list-item-lnk.btn.btn-back(href=contents.index.url) Back to Table of Contents

@@ -26,7 +26,7 @@ block content
 
 	ul(class=bodyclass + '-lst lst ' + bodyclass + '-lst-level1')
 		- var recordK = _.chain(archives).keys().value()
-		- for(var i in recordK)
+		- for( var i in recordK )
 			- var recordName = recordK[ i ]
 			- var recordImg = recordName.toLowerCase().replace(/\s+/g, '')
 			- track = archives[ recordName ]
@@ -42,11 +42,3 @@ block content
 					each item, i in track
 						li(class=bodyclass + '-itm itm ' + bodyclass + '-itm-level2')
 							a(class=bodyclass + "-lnk lnk", href=item.url)= item.title
-
-block prepend navtop
-		//- if prevPage
-		//- 	a(href=prevPage.url) « Newer
-		//- else
-		//- 	a(href='/archive.html') « Archives
-		//- if nextPage
-		//- 	a(href=nextPage.url) Next page »

@@ -7,7 +7,7 @@ module.exports = function ( grunt ) {
     config: {
       app: {
         root: "app/",
-        js: "app/js/",
+        JS: "app/js/",
         less: "app/less/",
         img: "app/images/",
         font: "app/font/",

@@ -55,11 +55,11 @@
 .animate,
 .lnk,
 #navicon .closed,
-.page-nav:before,
+.page-nav #navicon:before,
 .page-nav-lst,
 .btn,
 .post-index-itm-level1,
-.page-nav:before,
+.page-nav #navicon:before,
 .page-nav-hdr {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -71,7 +71,7 @@
   cursor: pointer;
 }
 #navicon .closed,
-.page-nav:before {
+.page-nav #navicon:before {
   font-size: 0;
   cursor: pointer;
   background: linear-gradient(to bottom, #c1b48e, #c1b48e 20%, transparent 20%, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 80%, #c1b48e 80%, #c1b48e 100%);
@@ -79,8 +79,8 @@
   height: 35px;
 }
 #navicon .open,
-.page-nav.active:before,
-.page-nav:hover:before {
+.page-nav #navicon.active:before,
+.page-nav #navicon:hover:before {
   background: linear-gradient(to bottom, transparent, transparent 40%, #c1b48e 40%, #c1b48e 60%, transparent 60%, transparent 100%);
 }
 blockquote {
@@ -115,16 +115,26 @@ body {
   text-transform: uppercase;
 }
 .page-nav {
+  top: 0;
   text-align: right;
+  display: inline-block;
+  vertical-align: top;
+  width: 97.91666667%;
+  margin: auto 1.04166667% auto;
 }
-.page-nav:before {
+.page-nav #navicon {
+  text-transform: uppercase;
+  color: #c1b48e;
+  cursor: pointer;
+  display: block;
+}
+.page-nav #navicon:before {
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
   z-index: 90;
+  margin-right: 1rem;
   content: "";
-}
-.page-nav.active .page-nav-lst,
-.page-nav:hover .page-nav-lst {
-  top: -1.5em;
 }
 .page-nav-lst {
   position: absolute;
@@ -136,7 +146,7 @@ body {
   background-color: rgba(0, 0, 0, 0.65);
 }
 .page-nav-l1-itm {
-  width: calc(100% / 3);
+  width: calc(100% / 3 - 1.5em);
   display: inline-block;
   vertical-align: top;
 }
@@ -273,12 +283,6 @@ body {
   font-family: 'typicons';
   content: '\e047';
 }
-.post-index-ttl {
-  display: inline-block;
-  vertical-align: top;
-  width: 97.91666667%;
-  margin: auto 1.04166667% auto;
-}
 .post-index-ttl-lnk {
   left: 9.375%;
 }
@@ -330,16 +334,6 @@ body {
   .page-header-ttl {
     font-size: 32px;
     line-height: 1;
-  }
-  .page-nav {
-    z-index: 100;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 95%;
-  }
-  .page-nav:before {
-    margin: 20px;
   }
   .navlist,
   .author-network-antisocial-lst,
@@ -422,11 +416,6 @@ body {
     padding: 0.75em;
     width: 55%;
     margin: 0 auto;
-  }
-  .page-nav {
-    width: 100%;
-    position: relative;
-    margin-top: -5em;
   }
   .post-header {
     position: relative;
