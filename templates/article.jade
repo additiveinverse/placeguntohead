@@ -24,21 +24,21 @@ block content
 		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
 
 block prepend pagenav
-	nav.page-nav
-		a(id="navicon" ) menu
-
-		- var articles = env.helpers.getArticles( contents )
-		- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
-		- 	return article.metadata.record
-		- }).value()
-		ul.page-nav-lst.page-nav-l1-lst
-			- var record = _.chain( articlesGroup ).keys().value()
-			each arts, i in record
-				li.page-nav-itm.page-nav-l1-itm
-					h5.ttl.page-nav-hdr.page-nav-l1-hdr= record[i]
-					- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
-					include _nav
-					+menuMaker( 'page-nav-l2', item )
+	nav( aria-expanded='false', role="navigation" ).page-nav
+		a(class='page-nav-button') menu
+		.page-nav-wrap
+			- var articles = env.helpers.getArticles( contents )
+			- var articlesGroup = _.chain( articles ).groupBy( function( article ) {
+			- 	return article.metadata.record
+			- }).value()
+			ul.page-nav-lst.page-nav-l1-lst
+				- var record = _.chain( articlesGroup ).keys().value()
+				each arts, i in record
+					li.page-nav-itm.page-nav-l1-itm
+						h5.ttl.page-nav-hdr.page-nav-l1-hdr= record[i]
+						- var item = _( articles ).chain().filter( function( x ) { return x.metadata.record === record[i] }).value()
+						include _nav
+						+menuMaker( 'page-nav-l2', item )
 
 block prepend navtop
 	ul.nav-list.lst

@@ -25,23 +25,28 @@ var toggler = {
 		this._button(); // returns jquery element $btn_elem
 		this._menu(); // returns jquery element $menu_elem
 
+		$btn_elem.parent().attr( 'aria-expanded', 'false' )
+
 		// handles clicks and functions
 		$btn_elem.on( "click", function( e ) {
-			var elemParent
 			var elem = e.currentTarget
-			var	elemActive = elem.classList
+			var	elemActive = elem.classList[ elem.classList.length - 1 ]
 			var active = classname.toString()
+			var $parent = elem.offsetParent
 
-			if ( elemActive == 0 ) {
-				$btn_elem.attr( 'aria-expanded', 'true' ).addClass( active )
+			if ( elemActive !== active ) {
+				$btn_elem.addClass( active )
+				$menu_elem.addClass( active )
+				$parent.setAttribute( 'aria-expanded', 'true' )
 			} else {
-				console.log( elem.classList );
-				$btn_elem.attr( 'aria-expanded', 'false' ).removeClass( active )
+				$btn_elem.removeClass( active )
+				$menu_elem.removeClass( active )
+				$parent.setAttribute( 'aria-expanded', 'false' )
 			}
 		} )
 	}
 }
 
 $( function() {
-	toggler._init( ".page-nav-l1-lst", "#navicon", "open" );
+	toggler._init( ".page-nav-wrap", ".page-nav-button", "active" );
 });

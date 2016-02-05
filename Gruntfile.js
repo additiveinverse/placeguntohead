@@ -101,7 +101,13 @@ module.exports = function ( grunt ) {
           cleancss: false,
           compress: false,
         },
-        files: "<%= manifest %>"
+        files: {
+          "<%= config.winter.css %>layout.min.css": [
+                "<%= config.app.less %>normalize.less",
+                "<%= config.app.less %>base-*.less"
+          ],
+          "<%= config.winter.css %>global.css": "<%= config.app.less %>global.less"
+        }
       },
       production: {
         options: {
@@ -118,7 +124,7 @@ module.exports = function ( grunt ) {
         expand: true,
         cwd: "<%= config.app.img %>icons/",
         src: [ "*.svg" ],
-        dest: "<%= config.app.img %>",
+        dest: "../<%= config.app.img %>",
         options: {
           shape: {
             dimension: {
@@ -136,14 +142,14 @@ module.exports = function ( grunt ) {
               prefix: "@ico-%s",
               bust: true,
               sprite: "icons.sprite.svg",
-              dest: "../images",
+              dest: "../app/images",
               common: "sprite",
               dimensions: true,
               mixin: "svg-sprite",
               render: {
                 less: {
                   template: "<%= config.app.img %>icons/sprite.mustache",
-                  dest: "../less/_sprite.less"
+                  dest: "../app/less/_sprite.less"
                 }
               }
             }
@@ -294,7 +300,7 @@ module.exports = function ( grunt ) {
         "templates/*.jade",
         "Gruntfile.js"
       ],
-      tasks: [ "less:dev", "newer:copy:images", "svg_sprite", "newer:copy", "newer:imagemin" ],
+      tasks: [ "less:dev", "newer:copy:images", "newer:svg_sprite", "newer:copy" ],
       options: {
         reload: true,
         livereload: true,
@@ -306,7 +312,7 @@ module.exports = function ( grunt ) {
     },
     concurrent: {
       target: {
-        tasks: [ "wintersmith:preview", "watch" ],
+        tasks: [ "wintersmith:preview", "open", "watch" ],
         options: {
           logConcurrentOutput: true
         }
@@ -317,7 +323,7 @@ module.exports = function ( grunt ) {
   require( "matchdep" ).filterDev( "grunt-*" ).forEach( grunt.loadNpmTasks );
 
   // Develop
-  grunt.registerTask( "default", [ "open", "concurrent" ] );
+  grunt.registerTask( "default", [ "concurrent" ] );
 
   // build it
   grunt.registerTask( "build", [ "less:production", "copy", "imagemin", "wintersmith:build", "cacheBust", "htmlmin" ] );
