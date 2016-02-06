@@ -15,6 +15,14 @@ var toggler = {
 		return $btn_elem = $( this._vars.btn )
 	},
 
+	// actions: function( event ) {
+	// 	// inherits props from menu and button to use
+	// 	this._button(); // returns jquery element $btn_elem
+	// 	this._menu(); // returns jquery element $menu_elem
+
+	// 	// handles clicks and functions
+	// },
+
 	_init: function( menu, button, classname ) {
 		// sets functional properties
 		this._vars.menu = menu
@@ -24,8 +32,6 @@ var toggler = {
 		// inherits props from menu and button to use
 		this._button(); // returns jquery element $btn_elem
 		this._menu(); // returns jquery element $menu_elem
-
-		$btn_elem.parent().attr( 'aria-expanded', 'false' )
 
 		// handles clicks and functions
 		$btn_elem.on( "click", function( e ) {
@@ -37,11 +43,11 @@ var toggler = {
 			if ( elemActive !== active ) {
 				$btn_elem.addClass( active )
 				$menu_elem.addClass( active )
-				$parent.setAttribute( 'aria-expanded', 'true' )
+				$parent.setAttribute( "aria-expanded", "true" )
 			} else {
 				$btn_elem.removeClass( active )
 				$menu_elem.removeClass( active )
-				$parent.setAttribute( 'aria-expanded', 'false' )
+				$parent.setAttribute( "aria-expanded", "false" )
 			}
 		} )
 	}

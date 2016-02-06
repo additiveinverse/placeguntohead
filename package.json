@@ -24,7 +24,7 @@
     "grunt-contrib-csslint": "*",
     "grunt-contrib-htmlmin": "~0.3.0",
     "grunt-contrib-imagemin": "~0.7.1",
-    "grunt-contrib-less": "*",
+    "grunt-contrib-less": "^1.2.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-newer": "^1.1.0",
     "grunt-open": "~0.2.3",

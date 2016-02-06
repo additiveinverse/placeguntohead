@@ -13,6 +13,12 @@
 	// display: inline-block;
 }
 
+.mq(@min-width; @rules) {
+	@media only screen and (min-width: @min-width) {
+		@rules();
+	}
+}
+
 
 //////////////////////////// Helper Class
 .ico_base {
@@ -123,7 +129,7 @@
 
 .transforms-origin(...) {
 	-webkit-transform-origin: @arguments;
-  	 -moz-transform-origin: @arguments;
+		 -moz-transform-origin: @arguments;
 			-ms-transform-origin: @arguments;
 					transform-origin: @arguments;
 }

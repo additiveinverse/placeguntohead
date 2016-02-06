@@ -43,19 +43,19 @@ module.exports = function ( grunt ) {
 
 //////////////////////////////////////////////////////////////////////////////////// SCAFFOLD
     copy: {
-      main: {
-        expand: true,
-        cwd: "<%= config.app.js %>",
-        src: "*.js",
-        dest: "<%= config.winter.js %>",
-        flatten: true
-      },
-
       js_deps: {
         expand: true,
         cwd: "<%= config.app.bower %>",
         src: [ "jq/dist/jquery.min.js" ],
         dest: "<%= config.prod.js %>",
+        flatten: true
+      },
+
+      main: {
+        expand: true,
+        cwd: "<%= config.app.js %>",
+        src: "*.js",
+        dest: "<%= config.winter.js %>",
         flatten: true
       },
 
@@ -101,13 +101,7 @@ module.exports = function ( grunt ) {
           cleancss: false,
           compress: false,
         },
-        files: {
-          "<%= config.winter.css %>layout.min.css": [
-                "<%= config.app.less %>normalize.less",
-                "<%= config.app.less %>base-*.less"
-          ],
-          "<%= config.winter.css %>global.css": "<%= config.app.less %>global.less"
-        }
+        files: "<%= manifest %>"
       },
       production: {
         options: {
@@ -124,7 +118,7 @@ module.exports = function ( grunt ) {
         expand: true,
         cwd: "<%= config.app.img %>icons/",
         src: [ "*.svg" ],
-        dest: "../<%= config.app.img %>",
+        dest: "<%= config.app.img %>",
         options: {
           shape: {
             dimension: {
@@ -142,14 +136,14 @@ module.exports = function ( grunt ) {
               prefix: "@ico-%s",
               bust: true,
               sprite: "icons.sprite.svg",
-              dest: "../app/images",
+              dest: "../images",
               common: "sprite",
               dimensions: true,
               mixin: "svg-sprite",
               render: {
                 less: {
                   template: "<%= config.app.img %>icons/sprite.mustache",
-                  dest: "../app/less/_sprite.less"
+                  dest: "/<%= config.app.less %>_sprite.less"
                 }
               }
             }
@@ -300,7 +294,7 @@ module.exports = function ( grunt ) {
         "templates/*.jade",
         "Gruntfile.js"
       ],
-      tasks: [ "less:dev", "newer:copy:images", "newer:svg_sprite", "newer:copy" ],
+      tasks: [ "less:dev", "newer:copy:images" ],
       options: {
         reload: true,
         livereload: true,
@@ -312,7 +306,7 @@ module.exports = function ( grunt ) {
     },
     concurrent: {
       target: {
-        tasks: [ "wintersmith:preview", "open", "watch" ],
+        tasks: [ "wintersmith:preview", "watch" ],
         options: {
           logConcurrentOutput: true
         }
@@ -325,8 +319,10 @@ module.exports = function ( grunt ) {
   // Develop
   grunt.registerTask( "default", [ "concurrent" ] );
 
+  grunt.registerTask( "init", [ "copy", "less:dev", "imagemin" ] );
+
   // build it
-  grunt.registerTask( "build", [ "less:production", "copy", "imagemin", "wintersmith:build", "cacheBust", "htmlmin" ] );
+  grunt.registerTask( "build", [ "copy", "less:production", "imagemin", "wintersmith:build", "cacheBust", "htmlmin" ] );
 
   // upload
   grunt.registerTask( "deploy", [ "build", "bump:minor", "sftp-deploy" ] );

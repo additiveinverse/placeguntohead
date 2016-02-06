@@ -5,19 +5,6 @@ block append vars
 	- postclass = 'post'
 
 block content
-	//- each article, i in articles
-	//- 	article(class=postclass + ' ' + postclass + '-lst ' + postclass + '-' + i)
-	//- 		header(class=postclass + '-hdr hdr')
-	//- 			h1(class=postclass + '-hdr-ttl ttl')
-	//- 				a(class=postclass + '-hdr-ttl-lnk lnk', href=article.url)= article.title
-	//- 			span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-track')
-	//- 				= moment.utc(article.date).format('mm')
-	//- 			span(class=postclass + '-hdr-meta ' + postclass + '-hdr-meta-release')
-	//- 				= article.metadata.record
-
-	//- 		section(class=postclass + '-main')
-	//- 			| !{ typogr(article.intro).typogrify() }
-
 	- var archives = _.chain( articles ).groupBy( function( article ) {
 	- 	return article.metadata.record
 	- }).value()
