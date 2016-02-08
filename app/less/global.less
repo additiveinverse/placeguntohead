@@ -260,7 +260,7 @@ body {
 	&:extend(.interior_row all);
 	color: @grey-lighter;
 	font-size: 0;
-	overflow: hidden;
+	.clearfix;
 
 	.mq(@screen-xs, {
 		padding: @base-margin 0;	
@@ -273,19 +273,33 @@ body {
 			border-radius: 100%;
 			.border( 6px, solid, fadeout( darken( @border-color, 20%), 50%) );
 			.sepia(50%);
-			width: 90%;
+			min-width: 200px;
 		}
 
 		.mq(@screen-xxs, {
 			margin: unit(@base-margin * 3, %) auto;
+
+			&-img {
+				.size( 200 );
+				display: inline-block;
+			}
 		});
 
-		.mq(@screen-xxs, {
-			margin: unit(@base-margin * 3, %) auto;
+		.mq(@screen-xs, {
+			display: inline-block;
+			margin: 4% 0 0;
 		});
+
+		.mq(@screen-s, {
+			margin: 4% 2% 0 2%;
+		});
+
 
 		.mq(@screen-m, {
 			.column(4, 12, 3%);
+			&-img {
+				width: 90%;
+			}
 		});
 
 		.mq(@screen-l, {
@@ -296,20 +310,18 @@ body {
 	&-bio {
 		text-align: left;
 		.mq(@screen-xxs, {
-			padding: @base-margin-half 0;
+			padding: 0 @base-margin @base-margin;
 		});
 
 		.mq(@screen-s, {
-			.col-2;
-			margin: 0;
+			.column(8, 12, -10%);
+			float: right;
+			padding: 0 0 @base-margin 0;
+			margin-bottom: 0;
 		});
 
 		.mq(@screen-m, {
 			.column(8, 12, -15%);
-			position: relative;
-			float: right;
-			padding: 0;
-			margin-bottom: @base-margin;
 		});
 
 		.mq(@screen-l, {
@@ -322,21 +334,23 @@ body {
 	&-network {
 		&:extend(.inline-def);
 		overflow: hidden;
+
 		.mq(@screen-xxs, {
+			width: 100%;
 			text-align: center;
 		});
 
 		.mq(@screen-xs, {
+			.column( 6, 12, 5% );
+			margin-left: 5%;
 			text-align: left;
 		});
 
 		.mq(@screen-s, {
-			.col-2;
-			margin: 0;
+			.column( 7.9, 12, 2.5% );
 		});
 
 		.mq(@screen-m, {
-			.column(8);
 			margin-right: 0;
 		});
 

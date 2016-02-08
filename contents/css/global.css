@@ -267,7 +267,14 @@ body {
 .author {
   color: #c4c1b5;
   font-size: 0;
-  overflow: hidden;
+}
+.author:before,
+.author:after {
+  content: "";
+  display: table;
+}
+.author:after {
+  clear: both;
 }
 @media only screen and (min-width: 480px) {
   .author {
@@ -284,16 +291,27 @@ body {
   -moz-filter: sepia(50%);
   -ms-filter: sepia(50%);
   filter: sepia(50%);
-  width: 90%;
+  min-width: 200px;
 }
 @media only screen and (min-width: 320px) {
   .author-photo {
     margin: 4.5% auto;
   }
+  .author-photo-img {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+  }
 }
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 480px) {
   .author-photo {
-    margin: 4.5% auto;
+    display: inline-block;
+    margin: 4% 0 0;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .author-photo {
+    margin: 4% 2% 0 2%;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -302,6 +320,9 @@ body {
     vertical-align: top;
     width: 31.25%;
     margin: 3% 1.04166667% 3%;
+  }
+  .author-photo-img {
+    width: 90%;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -317,15 +338,18 @@ body {
 }
 @media only screen and (min-width: 320px) {
   .author-bio {
-    padding: 0.75em 0;
+    padding: 0 1.5em 1.5em;
   }
 }
 @media only screen and (min-width: 640px) {
   .author-bio {
-    width: calc(100% / 2);
     display: inline-block;
     vertical-align: top;
-    margin: 0;
+    width: 64.58333333%;
+    margin: -10% 1.04166667% -10%;
+    float: right;
+    padding: 0 0 1.5em 0;
+    margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -334,10 +358,6 @@ body {
     vertical-align: top;
     width: 64.58333333%;
     margin: -15% 1.04166667% -15%;
-    position: relative;
-    float: right;
-    padding: 0;
-    margin-bottom: 1.5em;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -355,28 +375,30 @@ body {
 }
 @media only screen and (min-width: 320px) {
   .author-network {
+    width: 100%;
     text-align: center;
   }
 }
 @media only screen and (min-width: 480px) {
   .author-network {
+    display: inline-block;
+    vertical-align: top;
+    width: 47.91666667%;
+    margin: 5% 1.04166667% 5%;
+    margin-left: 5%;
     text-align: left;
   }
 }
 @media only screen and (min-width: 640px) {
   .author-network {
-    width: calc(100% / 2);
     display: inline-block;
     vertical-align: top;
-    margin: 0;
+    width: 63.75%;
+    margin: 2.5% 1.04166667% 2.5%;
   }
 }
 @media only screen and (min-width: 768px) {
   .author-network {
-    display: inline-block;
-    vertical-align: top;
-    width: 64.58333333%;
-    margin: auto 1.04166667% auto;
     margin-right: 0;
   }
 }
