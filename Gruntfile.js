@@ -264,6 +264,15 @@ module.exports = function ( grunt ) {
       }
     },
 
+    combine_mq: {
+      default_options: {
+        expand: true,
+        cwd: "<%= config.winter.css %>",
+        src: "global.css",
+        dest: "<%= config.winter.css %>"
+      }
+    },
+
 //////////////////////////////////////////////////////////////////////////////////// DEPLOY
     "sftp-deploy": {
       build: {
@@ -322,7 +331,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( "init", [ "copy", "less:dev", "imagemin" ] );
 
   // build it
-  grunt.registerTask( "build", [ "copy", "less:production", "imagemin", "wintersmith:build", "cacheBust", "htmlmin" ] );
+  grunt.registerTask( "build", [ "copy", "less:production", "imagemin", "wintersmith:build", "cacheBust", "combine_mq", "htmlmin" ] );
 
   // upload
   grunt.registerTask( "deploy", [ "build", "bump:minor", "sftp-deploy" ] );

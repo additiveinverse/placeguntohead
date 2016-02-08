@@ -24,7 +24,7 @@
 }
 
 #navicon {
-	@item-width: 35px;
+	@item-width: 30px;
 
 	.closed {
 		font-size: 0;
@@ -51,6 +51,12 @@
 	}
 }
 
+.col-2 {
+	width: calc( ~"100% / 2" );
+	display: inline-block;
+	vertical-align: top;
+}
+
 blockquote {
 	font-style: italic;
 }
@@ -67,15 +73,15 @@ body {
 	&-header {
 		color: @grey;
 		position: relative;
-		background: url('/img/logo_flat_2016.svg') 0 40% no-repeat;
+		background: url('/img/logo_flat_2016.svg') 8px 40% no-repeat;
 		z-index: 210;
 		&:extend(.interior_row all);
 		.mq(@screen-xxs, {
-			background-size: 14%;
+			background-size: 15%;
 		});
 
 		.mq(@screen-xs, {
-			background-size: 8%;
+			background-size: 10%;
 		});
 
 		.mq(@screen-s, {
@@ -94,13 +100,21 @@ body {
 			margin-bottom: 0;
 			text-transform: capitalize;
 			padding-left: 1.85em;
+			position: relative;
+			z-index: 240;
 			.mq(@screen-xxs, {
-				.font-size(@base-type-h4, .75);
+				display: inline-block;
+				width: 80%;
+				.font-size(@base-type-h4, 1);
 			});
 
 			.mq(@screen-m, {
-				.font-size(@base-type-h3, 1);
+				.font-size(@base-type-h3, 1.25);
 				// padding-left: @base-margin;
+			});
+
+			.mq(@screen-l, {
+				.font-size(@base-type-h2, 2);
 			});
 
 			&-lnk {
@@ -117,19 +131,22 @@ body {
 				padding-left: 3.75em;
 			});
 
+			.mq(@screen-l, {
+				padding-left: 5em;
+				
+			});
+			display: inline-block;
+			position: relative;
+			z-index: 250;
 			margin: 0;
-			.uppercase;
 		}
 	}
 
 	&-nav {
 		top: -3em;
-		position: fixed;
-
-		.mq( @screen-xxs, {
-			width: 100%;
-		});
-
+		position: absolute;
+		left: -1.5%;
+		width: 100%;
 		z-index: 200;
 
 		&-button {
@@ -137,11 +154,18 @@ body {
 			color: @tan;
 			cursor: pointer;
 			display: block;
-			position: relative;
-			top: 4.5em;
+			position: absolute;
+			z-index: 300;
+
+			.mq(@screen-xxs, {
+				top: 3.75em;
+				right: 0%;
+				width: 52px;	
+				&-nfo {
+					font-size: 0;
+				}
+			});
 			width: 115px;
-			right: -73%;
-			z-index: 230;
 
 			&:after {
 				display: inline-block;
@@ -213,6 +237,7 @@ body {
 
 	&-footer {
 		.bt(1px, dashed, @grey);
+		&:extend(.interior_row all);
 
 		&-info {
 			color: @grey;
@@ -235,45 +260,62 @@ body {
 	&:extend(.interior_row all);
 	color: @grey-lighter;
 	font-size: 0;
+	overflow: hidden;
+
 	.mq(@screen-xs, {
 		padding: @base-margin 0;	
 	});
 
 	&-photo {
-		box-shadow: 1px 1px 1px fade(@white, 25% ), -1px -1px 1px @grey-dark;
-		border-radius: 100%;
-		.border( 8px, solid, @white-off );
-		.sepia(50%);
+		text-align: center;
+
+		&-img {
+			border-radius: 100%;
+			.border( 6px, solid, fadeout( darken( @border-color, 20%), 50%) );
+			.sepia(50%);
+			width: 90%;
+		}
 
 		.mq(@screen-xxs, {
-			.size( 22 * 10px - 20 );
-			display: block;
 			margin: unit(@base-margin * 3, %) auto;
 		});
 
-		// .mq(@screen-xs, {
-		// 	margin: unit(@base-margin * 3, %) auto 0;
-		// });
+		.mq(@screen-xxs, {
+			margin: unit(@base-margin * 3, %) auto;
+		});
 
 		.mq(@screen-m, {
-			.inline-def;
-			margin: unit(@base-margin * 3, %) unit(@base-margin, %);
+			.column(4, 12, 3%);
 		});
 
 		.mq(@screen-l, {
-			.grid-margin( 12, unit(@base-margin * 2, %) );
+			.column(3, 12, 3%);
 		});
 	}
 
 	&-bio {
+		text-align: left;
 		.mq(@screen-xxs, {
 			padding: @base-margin-half 0;
 		});
+
+		.mq(@screen-s, {
+			.col-2;
+			margin: 0;
+		});
+
 		.mq(@screen-m, {
-			.column(6.5);
+			.column(8, 12, -15%);
+			position: relative;
+			float: right;
 			padding: 0;
-			margin-top: @base-margin;
 			margin-bottom: @base-margin;
+		});
+
+		.mq(@screen-l, {
+			.column(6, 12, 2.5%);
+			float: none;
+			margin-right: 0;
 		});
 	}
 
@@ -284,18 +326,23 @@ body {
 			text-align: center;
 		});
 
-		.mq(@screen-s, {
+		.mq(@screen-xs, {
 			text-align: left;
 		});
 
+		.mq(@screen-s, {
+			.col-2;
+			margin: 0;
+		});
+
 		.mq(@screen-m, {
-			.column(8.2);
+			.column(8);
 			margin-right: 0;
 		});
 
-		// .mq(@screen-l, {
-		// 	.column(4);
-		// });
+		.mq(@screen-l, {
+			.column(3);
+		});
 
 		&-antisocial {
 			&-lst {
@@ -303,10 +350,12 @@ body {
 				.font-size(@base-type-size);
 
 				.mq(@screen-xxs, {
-					padding-top: 0;
+					margin: 0;
 					&-itm {
+						&:first-child {
+							padding-right: 1em;
+						}
 						display: inline-block;
-						padding-right: @base-margin;
 					}
 				});
 
@@ -318,7 +367,10 @@ body {
 					&-itm {
 						display: block;
 					}
-					.column(6);
+				});
+
+				.mq(@screen-m, {
+					margin-top: 0;
 				});
 
 				&-itm {
@@ -336,23 +388,21 @@ body {
 		&-social {
 			&-lst {
 				border: none;
-				padding-top: 1.5em;
 				&:extend( .navlist all );
-				
-				.mq(@screen-s, {
-					.column(6.5);
+
+				.mq(@screen-xxs, {
+					margin-bottom: 3%;
 				});
-
-
+				
 				&-itm {
 					font-size: 0;
 					border-radius: 100%;
-					border: 5px solid darken( @border-color, 20%);
-					margin: 1%;
+					border: 4px solid darken( @border-color, 20%);
+					margin: 0 1.5% 3% 0;
 					opacity: 0.5;
-					background-size: 302%;
+					background-size: 310%;
 					background-color: @white-off;
-					.size(48px);
+					.size(42px);
 					&:extend( .sprite, .opacity-transition, .inline-def );
 
 					&-bandcamp {
@@ -413,6 +463,7 @@ body {
 	.mq(@screen-xxs, {
 		padding: 0 0 @base-margin-half;
 	});
+
 	.mq(@screen-xs, {
 		padding: @base-margin 0 @base-margin-half;
 	});
@@ -440,6 +491,7 @@ body {
 
 	&-img img {
 		display: block;
+		.border( 4px, solid, fadeout( darken( @border-color, 20%), 50%) );
 	}
 
 	&-lst {
@@ -469,8 +521,8 @@ body {
 			.mq(@screen-s, {
 				.column(4);
 			});
-			.mq(@screen-xl, {
-					.column(3);
+			.mq(@screen-l, {
+				.column(3);
 			} )
 		}
 		&-level2 {
@@ -534,19 +586,23 @@ body {
 }
 
 .interior_row {
+	position: relative;
 	.mq(@screen-xxs, {
-		.row( 12, 87% );
-		padding: @base-margin-half 0;
+		.row( 12 );
+		padding: @base-margin-half 1em;
 	});
 
 	.mq(@screen-xs, {
+		.row( 12 );
+	});
+
+	.mq(@screen-m, {
+		padding: @base-margin-half;
 		.row(12, 95%);
 	});
 
-	.mq(@screen-l, {
+	.mq(@screen-xl, {
 		padding: @base-margin-half;
-		.row(12, 55%);
-	});
+		.row(12, 1024px);
+	});	
 }
-
-// @import './media';

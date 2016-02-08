@@ -41,9 +41,9 @@
 	// .clearfix;
 }
 
-.inline-block-defaults() {
+.inline-block-defaults(@align: top) {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: @align;
 }
 
 .grid-margin(@columns: @columns, @margin-top: auto ) {

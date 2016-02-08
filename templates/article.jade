@@ -25,7 +25,8 @@ block content
 
 block prepend pagenav
 	nav( aria-expanded='false', role="navigation" ).page-nav
-		a(class='page-nav-button') menu
+		a(class='page-nav-button') 
+			span.page-nav-button-nfo menu
 		.page-nav-wrap
 			- var articles = env.helpers.getArticles( contents )
 			- var articlesGroup = _.chain( articles ).groupBy( function( article ) {

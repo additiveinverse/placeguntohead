@@ -3,7 +3,8 @@ mixin author(authorName)
 	- var imagepath = locals.url + '/img/'
 
 	aside.page-author.author
-		img(class='author-photo photo', src=imagepath + author.metadata.photo)
+		.author-photo
+			img(class='author-photo-img photo', src=imagepath + author.metadata.photo)
 
 		.author-network
 			include _nav
