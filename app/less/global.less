@@ -211,8 +211,15 @@ body {
 
 		&-l1 {
 			&-itm {
-				width: calc(~"100% / 3 - 1.5em");
 				.inline-def;
+
+				.mq(@screen-s, {
+					width: calc(~"100% / 2 - 1.5em");
+				});
+
+				.mq(@screen-m, {
+					width: calc(~"100% / 3 - 1.5em");
+				});
 			}
 
 			&-lst {
@@ -316,12 +323,14 @@ body {
 		.mq(@screen-s, {
 			.column(8, 12, -10%);
 			float: right;
-			padding: 0 0 @base-margin 0;
+			padding: 0 0 @base-margin 1em;
 			margin-bottom: 0;
 		});
 
 		.mq(@screen-m, {
-			.column(8, 12, -15%);
+			.column(8, 12, -12%);
+			padding-left: 0;
+			margin-bottom: 1%;
 		});
 
 		.mq(@screen-l, {
@@ -347,7 +356,7 @@ body {
 		});
 
 		.mq(@screen-s, {
-			.column( 7.9, 12, 2.5% );
+			.column( 7.75, 12, 2.5% );
 		});
 
 		.mq(@screen-m, {
