@@ -6,7 +6,7 @@ filename: among-others/:title.html
 template: article.jade
 record: 'Among Others'
 ---
-Somehow.
+Somehow.  
 I landed a contract role as a customer support rep  
 
 - at an education startup  

@@ -71,11 +71,11 @@ body {
 /////////////////////////// Page layout
 .page {
 	&-header {
+		&:extend(.interior_row all);
 		color: @grey;
 		position: relative;
 		background: url('/img/logo_flat_2016.svg') 8px 40% no-repeat;
 		z-index: 210;
-		&:extend(.interior_row all);
 		.mq(@screen-xxs, {
 			background-size: 15%;
 		});
@@ -133,7 +133,6 @@ body {
 
 			.mq(@screen-l, {
 				padding-left: 5em;
-				
 			});
 			display: inline-block;
 			position: relative;

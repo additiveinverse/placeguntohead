@@ -331,9 +331,9 @@ module.exports = function ( grunt ) {
   grunt.registerTask( "init", [ "copy", "less:dev", "imagemin" ] );
 
   // build it
-  grunt.registerTask( "build", [ "copy", "less:production", "imagemin", "wintersmith:build", "cacheBust", "combine_mq", "htmlmin" ] );
+  grunt.registerTask( "build", [ "copy", "less:production", "wintersmith:build", "combine_mq", "htmlmin", "imagemin",  ] );
 
   // upload
-  grunt.registerTask( "deploy", [ "build", "bump:minor", "sftp-deploy" ] );
+  grunt.registerTask( "production", [ "build", "htmlmin", "imagemin", "sftp-deploy" ] );
 };
 
