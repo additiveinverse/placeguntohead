@@ -1,9 +1,9 @@
 {
 	"locals": {
 		"url": "http://localhost:8080",
-		"name": "Placeguntohead",
+		"name": "The Book of Proem",
 		"owner": "Richard Bailey",
-		"description": "the book of proem",
+		"description": "spells, occurences and historial fictions",
 		"tags": [
 			"Burnplate no.1",
 			"Negativ",
@@ -13,7 +13,9 @@
 			"A Permanent Solution",
 			"Till There's No Breath",
 			"Enough Conflict",
-			"Before It Finds You"
+			"Before It Finds You",
+			"Modern Rope",
+			"Until Here For Years"
 		]
 	},
 	"plugins": [

@@ -19,6 +19,7 @@ He resisted
 With  
 Grimaces at my long hair  
 Mean spirited remarks about clothing choices  
+- - an old dog barking at a world he no longer understood
   
 'What the fuck you wanna go and do a thing like that for? You look like a damned queer. You used to be such a nice kid. Now look at you.'  
   

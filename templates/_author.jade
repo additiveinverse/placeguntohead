@@ -1,14 +1,15 @@
 mixin author(authorName)
 	- var author = contents.authors[authorName + '.json']
-	- var imagepath = locals.url + '/img/'
+	- var imagepath = '/img/'
 
 	aside.page-author.author
-		.author-photo
-			img(class='author-photo-img photo', src=imagepath + author.metadata.photo)
+		.author__ 
+			.author__photo
+				img(class='author__photo-img photo', src=imagepath + author.metadata.photo)
 
-		.author-network
-			include _nav
-			+menuMaker( 'author-network-antisocial', author.metadata.network.antisocial, 'link' )
-			+menuMaker( 'author-network-social', author.metadata.network.social, 'link' )
+			.author__network
+				include _nav
+				+menuMaker( 'author__network-antisocial', author.metadata.network.antisocial, 'link' )
+				+menuMaker( 'author__network-social', author.metadata.network.social, 'link' )
 
-		p.author-bio= author.metadata.bio
+		p.author__bio= author.metadata.bio

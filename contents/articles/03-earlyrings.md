@@ -1,7 +1,7 @@
 ---
 title: Earlyrings
 author: Proem
-date: 2001-11-06:03:06
+date: 2001-11-06:03:07
 filename: among-others/:title.html
 template: article.jade
 record: 'Among Others'

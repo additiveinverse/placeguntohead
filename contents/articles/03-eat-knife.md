@@ -1,7 +1,7 @@
 ---
 title: Eat Knife
 author: Proem
-date: 2001-11-06:03:03
+date: 2001-11-06:03:04
 filename: among-others/:title.html
 template: article.jade
 record: 'Among Others'

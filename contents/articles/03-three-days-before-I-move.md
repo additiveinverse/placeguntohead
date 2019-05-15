@@ -1,7 +1,7 @@
 ---
 title: Three days before I move
 author: Proem
-date: 2001-11-06:03:05
+date: 2001-11-06:03:06
 filename: among-others/:title.html
 template: article.jade
 record: 'Among Others'

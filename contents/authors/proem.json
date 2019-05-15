@@ -6,13 +6,11 @@
 	"network": {
 		"social": {
 			"bandcamp": "http://proem.bandcamp.com/",
-			"flickr": "http://www.flickr.com/photos/proem/",
-			"last-fm": "http://www.last.fm/user/proemland",
-			"society6": "http://society6.com/proem",
 			"soundcloud": "http://soundcloud.com/proem",
 			"splice": "http://society6.com/proem",
+			"society6": "http://society6.com/proem",
 			"spotify": "https://open.spotify.com/artist/1hTlyo5QWVHUA3xUGgXqa5",
-			"twitter": "http://twitter.com/wallofknives"
+			"twitter": "http://twitter.com/__proem__"
 		},
 		"antisocial": {
 			"discography": "//proemland.com",

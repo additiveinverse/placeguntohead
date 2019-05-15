@@ -1,7 +1,7 @@
 ---
 title: Phat Shield
 author: Proem
-date: 2001-11-06:03:04
+date: 2001-11-06:03:05
 filename: among-others/:title.html
 template: article.jade
 record: 'Among Others'

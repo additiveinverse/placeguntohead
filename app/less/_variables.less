@@ -52,13 +52,15 @@
 @base-type-h6:							ceil( @base-type-size * 1 );		// 16px
 @base-type-sm:							ceil( @base-type-size * 0.75 );		// 12px
 
-@base-unit: 								em;
+@base-unit: 								rem;
 
 // ------------------------ Typography - spacing
 @base-margin:								unit( @base-line-height, @base-unit);
 @base-margin-half:					@base-margin / 2;
 @base-margin-quarter:				@base-margin / 4;
 @base-margin-eighth:				@base-margin / 8;
+@base-margin-double:					@base-margin * 2;
+@base-margin-triple:					@base-margin * 3;
 
 // ------------------------ Forms - Messaging
 @error: 										@orange;

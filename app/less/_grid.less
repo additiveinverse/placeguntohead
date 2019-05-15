@@ -36,8 +36,10 @@
 // ////////// GRID //
 .row( @columns: @columns, @total-width: @total-width ) {
 	@gutters: @total-width * ((@gutter-width * .5) / @gridsystem-width) * 2;
-	width: @total-width * ((@gutter-width + @gridsystem-width) / @gridsystem-width) - @gutters;
+	min-width: @total-width * ((@gutter-width + @gridsystem-width) / @gridsystem-width) - @gutters;
 	margin: 0 auto;
+	display: flex;
+	flex-basis: 100%;
 	// .clearfix;
 }
 
@@ -52,13 +54,14 @@
 
 // just the width ma'am
 .col( @x, @columns: @columns ) {
-	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	flex-basis: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	min-width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
 }
 
 .column( @x, @columns: @columns, @margin-top: auto) {
-	.inline-block-defaults;
+	// .inline-block-defaults;
 	.col(@x, @columns);
-	.grid-margin(@columns, @margin-top);
+	// .grid-margin(@columns, @margin-top);
 }
 
 .push( @offset: 1 ) {

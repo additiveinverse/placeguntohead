@@ -283,7 +283,7 @@ module.exports = function ( grunt ) {
         },
         cache: "sftpCache.json",
         src: "build",
-        dest: "/home/proemadmin/placeguntohead.com",
+        dest: "/home/proemadmin/grimoire.proemland.com",
         serverSep: "/",
         concurrency: 4,
         progress: true
@@ -331,9 +331,9 @@ module.exports = function ( grunt ) {
   grunt.registerTask( "init", [ "copy", "less:dev", "imagemin" ] );
 
   // build it
-  grunt.registerTask( "build", [ "copy", "less:production", "wintersmith:build", "combine_mq", "htmlmin", "imagemin",  ] );
+  grunt.registerTask( "build", [ "copy", "less:production", "wintersmith:build", "combine_mq", "htmlmin"  ] );
 
   // upload
-  grunt.registerTask( "production", [ "build", "htmlmin", "imagemin", "sftp-deploy" ] );
+  grunt.registerTask( "production", [ "build", "htmlmin", "imagemin" ] );
 };
 

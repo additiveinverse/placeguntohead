@@ -9,11 +9,11 @@ block prepend title
 block content
 	article(class=bodyclass)
 		header(class=bodyclass + '-header hdr')
-			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-track')
-				= moment.utc(page.date).format('mm')
+			div(class=bodyclass + '-header__meta' )
+				span(class=bodyclass + '-header__meta-track')= moment.utc(page.date).format('mm')
 
-			span(class=bodyclass + '-meta ' + bodyclass + '-header-meta-release')
-				= page.metadata.record
+				span(class=bodyclass + '-header__meta-release')= page.metadata.record
+
 			h1(class=bodyclass + '-header-title ttl')
 				a(class=bodyclass + '-header-title-link lnk', href=page.url)= page.title
 
@@ -21,7 +21,7 @@ block content
 
 
 
-		section(class=bodyclass + '-main')!= typogr(page.html).typogrify()
+		section(class=bodyclass + '-main')!=typogr( page.html ).typogrify()
 
 block prepend pagenav
 	nav( aria-expanded='false', role="navigation" ).page-nav

@@ -220,3 +220,4 @@ node_modules/
 app_modules/
 .ftppass
 sftpCache.json
+package-lock.json
